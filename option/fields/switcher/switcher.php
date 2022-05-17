@@ -23,14 +23,14 @@ if ( ! class_exists( 'CSF_Field_switcher' ) ) {
 
       echo wp_kses_post($this->field_before());
 
-      echo '<div class="csf--switcher'. esc_attr( $active ) .'"'. wp_kses_post($text_width) .'>';
-      echo '<span class="csf--on">'. esc_attr( $text_on ) .'</span>';
-      echo '<span class="csf--off">'. esc_attr( $text_off ) .'</span>';
-      echo '<span class="csf--ball"></span>';
+      echo wp_kses_post('<div class="csf--switcher'. esc_attr( $active ) .'"'. wp_kses_post($text_width) .'>');
+      echo wp_kses_post('<span class="csf--on">'. esc_attr( $text_on ) .'</span>');
+      echo wp_kses_post('<span class="csf--off">'. esc_attr( $text_off ) .'</span>');
+      echo wp_kses_post('<span class="csf--ball"></span>');
       echo '<input type="hidden" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'"'.wp_kses_post( $this->field_attributes()) .' />';
-      echo '</div>';
+      echo wp_kses_post('</div>');
 
-      echo ( ! empty( $this->field['label'] ) ) ? '<span class="csf--label">'. esc_attr( $this->field['label'] ) . '</span>' : '';
+      echo ( ! empty( $this->field['label'] ) ) ? wp_kses_post('<span class="csf--label">'. esc_attr( $this->field['label'] ) . '</span>') : '';
 
       echo wp_kses_post($this->field_after());
 

@@ -28,17 +28,17 @@ if ( ! function_exists( 'csf_get_icons' ) ) {
 
       foreach ( $icon_lists as $list ) {
 
-        echo ( count( $icon_lists ) >= 2 ) ? '<div class="csf-icon-title">'. esc_attr( $list['title'] ) .'</div>' : '';
+        echo ( count( $icon_lists ) >= 2 ) ? wp_kses_post('<div class="csf-icon-title">'. esc_attr( $list['title'] ) .'</div>') : '';
 
         foreach ( $list['icons'] as $icon ) {
-          echo '<i title="'. esc_attr( $icon ) .'" class="'. esc_attr( $icon ) .'"></i>';
+          echo wp_kses_post('<i title="'. esc_attr( $icon ) .'" class="'. esc_attr( $icon ) .'"></i>');
         }
 
       }
 
     } else {
 
-      echo '<div class="csf-error-text">'. esc_html__( 'No data available.', 'csf' ) .'</div>';
+      echo wp_kses_post('<div class="csf-error-text">'. esc_html__( 'No data available.', 'csf' ) .'</div>');
 
     }
 

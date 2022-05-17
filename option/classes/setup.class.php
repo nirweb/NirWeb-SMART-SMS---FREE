@@ -690,7 +690,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
     public static function add_custom_css() {
 
       if ( ! empty( self::$css ) ) {
-        echo '<style type="text/css">'. wp_strip_all_tags( self::$css ) .'</style>';
+        echo wp_kses_post('<style type="text/css">'. wp_strip_all_tags( self::$css ) .'</style>');
       }
 
     }
@@ -750,18 +750,18 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
       }
 
       // These attributes has been sanitized above.
-      echo '<div class="csf-field csf-field-'. wp_kses_post($field_type) . esc_attr($is_pseudo) . esc_attr($class) . esc_attr($visible) .'"'. wp_kses_post($depend) .'>';
+      echo wp_kses_post('<div class="csf-field csf-field-'. wp_kses_post($field_type) . esc_attr($is_pseudo) . esc_attr($class) . esc_attr($visible) .'"'. wp_kses_post($depend) .'>');
 
       if ( ! empty( $field_type ) ) {
 
         if ( ! empty( $field['title'] ) ) {
-          echo '<div class="csf-title">';
-          echo '<h4>'.esc_html( $field['title']) .'</h4>';
-          echo ( ! empty( $field['subtitle'] ) ) ? '<div class="csf-subtitle-text">'. esc_html($field['subtitle']) .'</div>' : '';
-          echo '</div>';
+          echo wp_kses_post('<div class="csf-title">');
+          echo wp_kses_post('<h4>'.esc_html( $field['title']) .'</h4>');
+          echo ( ! empty( $field['subtitle'] ) ) ? wp_kses_post('<div class="csf-subtitle-text">'. esc_html($field['subtitle']) .'</div>') : '';
+          echo wp_kses_post('</div>');
         }
 
-        echo ( ! empty( $field['title'] ) ) ? '<div class="csf-fieldset">' : '';
+        echo ( ! empty( $field['title'] ) ) ? wp_kses_post('<div class="csf-fieldset">') : '';
 
         $value = ( ! isset( $value ) && isset( $field['default'] ) ) ? $field['default'] : $value;
         $value = ( isset( $field['value'] ) ) ? $field['value'] : $value;
@@ -772,16 +772,16 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
           $instance = new $classname( $field, $value, $unique, $where, $parent );
           $instance->render();
         } else {
-          echo '<p>'. esc_html__( 'Field not found!', 'csf' ) .'</p>';
+          echo wp_kses_post('<p>'. esc_html__( 'Field not found!', 'csf' ) .'</p>');
         }
 
       } else {
-        echo '<p>'. esc_html__( 'Field not found!', 'csf' ) .'</p>';
+        echo wp_kses_post('<p>'. esc_html__( 'Field not found!', 'csf' ) .'</p>');
       }
 
-      echo ( ! empty( $field['title'] ) ) ? '</div>' : '';
-      echo '<div class="clear"></div>';
-      echo '</div>';
+      echo ( ! empty( $field['title'] ) ) ? wp_kses_post('</div>') : '';
+      echo wp_kses_post('<div class="clear"></div>');
+      echo wp_kses_post('</div>');
 
     }
 

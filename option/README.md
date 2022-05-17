@@ -75,8 +75,8 @@ How to get option value ?
 ```php
 $options = get_option( 'my_framework' ); // unique id of the framework
 
-echo $options['opt-text']; // id of the field
-echo $options['opt-textarea']; // id of the field
+echo esc_html( $options['opt-text']); // id of the field
+echo wp_kses_post($options['opt-textarea']); // id of the field
 ```
 
 ## Documentation

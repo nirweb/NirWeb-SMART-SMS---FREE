@@ -83,9 +83,9 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
       $id    = 'customize-control-' . str_replace( array( '[', ']' ), array( '-', '' ), $this->id );
       $class = 'customize-control customize-control-'. $this->type . $visible;
 
-      echo '<li id="'. esc_attr( $id ) .'" class="'. esc_attr( $class ) .'"'. wp_kses_post($depend) .'>';
+      echo wp_kses_post( '<li id="'. esc_attr( $id ) .'" class="'. esc_attr( $class ) .'"'. wp_kses_post($depend) .'>');
       $this->render_field_content();
-      echo '</li>';
+      echo wp_kses_post('</li>');
 
     }
 
@@ -130,11 +130,11 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
 
       $this->field['dependency'] = array();
 
-      echo '<div class="csf-customize-field'. esc_attr( $class ) .'"'. wp_kses_post($atts) .'>';
+      echo wp_kses_post('<div class="csf-customize-field'. esc_attr( $class ) .'"'. wp_kses_post($atts) .'>');
 
       CSF::field( $this->field, $this->value(), $this->unique, 'customize' );
 
-      echo '</div>';
+      echo wp_kses_post('</div>');
 
     }
 

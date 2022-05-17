@@ -26,12 +26,12 @@ if ( ! class_exists( 'CSF_Field_tabbed' ) ) {
         $tabbed_icon   = ( ! empty( $tab['icon'] ) ) ? '<i class="csf--icon '. esc_attr( $tab['icon'] ) .'"></i>' : '';
         $tabbed_active = ( empty( $key ) ) ? 'csf-tabbed-active' : '';
 
-        echo '<a href="#" class="'. esc_attr( $tabbed_active ) .'"">'. wp_kses_post($tabbed_icon) . esc_attr( $tab['title'] ) .'</a>';
+        echo wp_kses_post( '<a href="#" class="'. esc_attr( $tabbed_active ) .'"">'. wp_kses_post($tabbed_icon) . esc_attr( $tab['title'] ) .'</a>');
 
       }
-      echo '</div>';
+      echo wp_kses_post('</div>');
 
-      echo '<div class="csf-tabbed-contents">';
+      echo wp_kses_post('<div class="csf-tabbed-contents">');
       foreach ( $this->field['tabs'] as $key => $tab ) {
 
         $tabbed_hidden = ( ! empty( $key ) ) ? ' hidden' : '';
@@ -51,10 +51,10 @@ if ( ! class_exists( 'CSF_Field_tabbed' ) ) {
 
         }
 
-        echo '</div>';
+        echo wp_kses_post('</div>');
 
       }
-      echo '</div>';
+      echo wp_kses_post('</div>');
 
       echo wp_kses_post($this->field_after());
 

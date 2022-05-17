@@ -37,8 +37,8 @@ if ( ! class_exists( 'CSF_Field_date' ) ) {
           'to'   => '',
         ) );
 
-        echo '<label class="csf--from">'. esc_attr( $args['text_from'] ) .' <input type="text" name="'. esc_attr( $this->field_name( '[from]' ) ) .'" value="'. esc_attr( $value['from'] ) .'"'. esc_attr($this->field_attributes()) .'/></label>';
-        echo '<label class="csf--to">'. esc_attr( $args['text_to'] ) .' <input type="text" name="'. esc_attr( $this->field_name( '[to]' ) ) .'" value="'. esc_attr( $value['to'] ) .'"'. esc_attr($this->field_attributes()) .'/></label>';
+        echo wp_kses_post('<label class="csf--from">'. esc_attr( $args['text_from'] ) .' <input type="text" name="'. esc_attr( $this->field_name( '[from]' ) ) .'" value="'. esc_attr( $value['from'] ) .'"'. esc_attr($this->field_attributes()) .'/></label>');
+        echo wp_kses_post('<label class="csf--to">'. esc_attr( $args['text_to'] ) .' <input type="text" name="'. esc_attr( $this->field_name( '[to]' ) ) .'" value="'. esc_attr( $value['to'] ) .'"'. esc_attr($this->field_attributes()) .'/></label>');
 
       } else {
 
