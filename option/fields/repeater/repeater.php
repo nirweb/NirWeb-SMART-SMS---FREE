@@ -24,59 +24,66 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
 
       if ( preg_match( '/'. preg_quote( '['. $this->field['id'] .']' ) .'/', $this->unique ) ) {
 
-        echo wp_kses_post('<div class="csf-notice csf-notice-danger">'. esc_html__( 'Error: Field ID conflict.', 'csf' ) .'</div>');
+        echo '<div class="CFSSMARTSMS-notice CFSSMARTSMS-notice-danger">'. esc_html__( 'Error: Field ID conflict.', 'CFSSMARTSMS' ) .'</div>';
 
       } else {
 
         echo wp_kses_post($this->field_before());
 
-        echo wp_kses_post('<div class="csf-repeater-item csf-repeater-hidden" data-depend-id="'. esc_attr( $this->field['id'] ) .'">');
-        echo wp_kses_post('<div class="csf-repeater-content">');
+        echo '<div class="CFSSMARTSMS-repeater-item CFSSMARTSMS-repeater-hidden" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
+        echo '<div class="CFSSMARTSMS-repeater-content">';
         foreach ( $this->field['fields'] as $field ) {
 
           $field_default = ( isset( $field['default'] ) ) ? $field['default'] : '';
           $field_unique  = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .'][0]' : $this->field['id'] .'[0]';
 
-          CSF::field( $field, $field_default, '___'. $field_unique, 'field/repeater' );
+          CFSSMARTSMS::field( $field, $field_default, '___'. $field_unique, 'field/repeater' );
 
         }
-        echo wp_kses_post('</div>');
-        echo wp_kses_post('<div class="csf-repeater-helper">');
-        echo wp_kses_post('<div class="csf-repeater-helper-inner">');
-        echo wp_kses_post('<i class="csf-repeater-sort fas fa-arrows-alt"></i>');
-        echo wp_kses_post('<i class="csf-repeater-clone far fa-clone"></i>');
-        echo wp_kses_post('<i class="csf-repeater-remove csf-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'csf' ) .'"></i>');
-        echo wp_kses_post('</div>');
-        echo wp_kses_post('</div>');
-        echo wp_kses_post('</div>');
+        echo '</div>';
+        echo '<div class="CFSSMARTSMS-repeater-helper">';
+        echo '<div class="CFSSMARTSMS-repeater-helper-inner">';
+        echo '<i class="CFSSMARTSMS-repeater-sort fas fa-arrows-alt"></i>';
+        echo '<i class="CFSSMARTSMS-repeater-clone far fa-clone"></i>';
+        echo '<i class="CFSSMARTSMS-repeater-remove CFSSMARTSMS-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'CFSSMARTSMS' ) .'"></i>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
 
-        echo wp_kses_post('<div class="csf-repeater-wrapper csf-data-wrapper" data-field-id="['. esc_attr( $this->field['id'] ) .']" data-max="'. esc_attr( $args['max'] ) .'" data-min="'. esc_attr( $args['min'] ) .'">');
+        echo '<div class="CFSSMARTSMS-repeater-wrapper CFSSMARTSMS-data-wrapper" data-field-id="['. esc_attr( $this->field['id'] ) .']" data-max="'. esc_attr( $args['max'] ) .'" data-min="'. esc_attr( $args['min'] ) .'">';
 
         if ( ! empty( $this->value ) && is_array( $this->value ) ) {
 
           $num = 0;
-
+            array_walk_recursive(
+                $this->value,
+                function (&$value) {
+                    if (!is_array($value)) {
+                        $value = wp_kses_post($value);
+                    }
+                }
+            );
           foreach ( $this->value as $key => $value ) {
 
-            echo wp_kses_post('<div class="csf-repeater-item">');
-            echo wp_kses_post('<div class="csf-repeater-content">');
+            echo '<div class="CFSSMARTSMS-repeater-item">';
+            echo '<div class="CFSSMARTSMS-repeater-content">';
             foreach ( $this->field['fields'] as $field ) {
 
               $field_unique = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
               $field_value  = ( isset( $field['id'] ) && isset( $this->value[$key][$field['id']] ) ) ? $this->value[$key][$field['id']] : '';
 
-              CSF::field( $field, $field_value, $field_unique, 'field/repeater' );
+              CFSSMARTSMS::field( $field, $field_value, $field_unique, 'field/repeater' );
 
             }
-            echo wp_kses_post('</div>');
-            echo wp_kses_post('<div class="csf-repeater-helper">');
-            echo wp_kses_post('<div class="csf-repeater-helper-inner">');
-            echo wp_kses_post('<i class="csf-repeater-sort fas fa-arrows-alt"></i>');
-            echo wp_kses_post('<i class="csf-repeater-clone far fa-clone"></i>');
-            echo wp_kses_post('<i class="csf-repeater-remove csf-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'csf' ) .'"></i>');
-            echo wp_kses_post('</div>');
-            echo wp_kses_post('</div>');
-            echo wp_kses_post('</div>');
+            echo '</div>';
+            echo '<div class="CFSSMARTSMS-repeater-helper">';
+            echo '<div class="CFSSMARTSMS-repeater-helper-inner">';
+            echo '<i class="CFSSMARTSMS-repeater-sort fas fa-arrows-alt"></i>';
+            echo '<i class="CFSSMARTSMS-repeater-clone far fa-clone"></i>';
+            echo '<i class="CFSSMARTSMS-repeater-remove CFSSMARTSMS-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'CFSSMARTSMS' ) .'"></i>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
 
             $num++;
 
@@ -84,11 +91,11 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
 
         }
 
-        echo wp_kses_post('</div>');
+        echo '</div>';
 
-        echo wp_kses_post('<div class="csf-repeater-alert csf-repeater-max">'. esc_html__( 'You cannot add more.', 'csf' ) .'</div>');
-        echo wp_kses_post('<div class="csf-repeater-alert csf-repeater-min">'. esc_html__( 'You cannot remove more.', 'csf' ) .'</div>');
-        echo wp_kses_post( '<a href="#" class="button button-primary csf-repeater-add">'. wp_kses_post($args['button_title']) .'</a>');
+        echo '<div class="CFSSMARTSMS-repeater-alert CFSSMARTSMS-repeater-max">'. esc_html__( 'You cannot add more.', 'CFSSMARTSMS' ) .'</div>';
+        echo '<div class="CFSSMARTSMS-repeater-alert CFSSMARTSMS-repeater-min">'. esc_html__( 'You cannot remove more.', 'CFSSMARTSMS' ) .'</div>';
+        echo '<a href="#" class="button button-primary CFSSMARTSMS-repeater-add">'. wp_kses_post($args['button_title']) .'</a>';
 
         echo wp_kses_post($this->field_after());
 

@@ -5,15 +5,15 @@
     display: flex;
     flex-direction: column;
 }
-.nirweb_smart_sms_admin_container form label{
+.nirweb_smart_sms_admin_container label{
     width: 100%;
     margin-bottom: 15px;
     font-weight: 600;font-size: 16px;display: flex;flex-direction: column;}
-.nirweb_smart_sms_admin_container form select{
+.nirweb_smart_sms_admin_container select{
     width:100%;
 
     margin-top: 20px;border: 1px solid #e1e1e1;font-weight: 400;max-width: 100%;height: 45px;}
-.nirweb_smart_sms_admin_container form label input{
+.nirweb_smart_sms_admin_container input{
     width:100%;
     margin-top: 14px;height: 40px;border: 1px solid #e1e1e1;}
 .nirshop_relative{
@@ -74,16 +74,16 @@
 .pi_nav_tb svg{fill:#878D93; }
 .pi_nav_tb:hover svg,
 .pi_nav_tb.nav-tab-active svg{fill:var(--main-color); }
-.nirweb_smart_sms_admin_container > h2{
+.nirweb_smart_sms_admin_container h2{
     position:relative;
     font-family: Tahoma,Arial,sans-serif;color: var(--main-color);
     display: flex;align-items: center;border-bottom: 1px solid #DDD;padding-bottom: 10px;margin-bottom: 25px;}
-.nirweb_smart_sms_admin_container > h2 svg{
+.nirweb_smart_sms_admin_container h2 svg{
     fill:var(--main-color);
     width:40px;
     height:40px;
     margin-left: 12px;border: 1px solid var(--main-color);padding: 5px;border-radius: 5px;background-color: rgb(255 195 0 / 8%);}
-.nirweb_smart_sms_admin_container > h2::after{
+.nirweb_smart_sms_admin_container h2::after{
     content:'';
     display:block;
     width: 55px;
@@ -106,3 +106,27 @@
         width:100%;
     }
 }
+.nirwb_smart_sms_settings{
+    display: flex;
+}
+.w-75{
+    width:75%;
+}
+.nirweb_sms_group{
+    display:flex;
+    /* align-items: center; */margin-bottom: 30px;}
+.nirweb_sms_group label{margin:0}
+.nirweb_sms_group input{margin:0}
+.nirweb_sms_group label{width: 25%;font-weight: 600;font-size: 14px;margin-left: 20px;}
+.nirweb_sms_group label span{color: #727272;margin-top: 10px;font-weight: 400;}
+.nirweb_smart_sms_tabs{width: 25%;margin: 0;}
+.nirweb_sms_content_settings{width: 75%}
+.nirweb_smart_sms_tabs li{border-bottom: 1px solid #e5e5e5;background-color: transparent;margin: 0;padding: 20px 10px;font-size: 14px;}
+.nirweb_smart_sms_tabs li.active{background-color: #fff;border-right: 4px solid  var(--main-color);}
+.nirweb_inner_tabs{display: flex;align-items: center;}
+.nirweb_inner_tabs li{margin-left: 30px;font-size: 17px;padding-bottom: 15px;}
+.nirweb_inner_tabs li.active{border-bottom: 3px solid  var(--main-color);color:var(--main-color)}
+.nirweb_smart_sms_admin_container  input[type=checkbox]{width: 25px;height: 25px;margin: 0;display: flex;align-items: center;justify-content: center;margin-left: 5px;}
+.checkbox_nirweb{display:flex;align-items: center;width: max-content;margin-bottom: 25px;}
+.checkbox_nirweb label{margin:0;}
+.nirweb_smart_sms_admin_container > div{display: none}

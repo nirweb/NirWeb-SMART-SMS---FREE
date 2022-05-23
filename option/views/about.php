@@ -1,71 +1,71 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access directly. ?>
 
-<p>Welcome to the exciting world of Codestar Framework. Built in Object Oriented Programming paradigm with high number of custom fields and tons of options. Allows you to bring custom admin, metabox, taxonomy and customize settings to all of your pages, posts and categories. It's highly modern and advanced framework.</p>
+<p>به دنیای هیجان انگیز فریمورک کُداستار  خوش آمدید. ساخته شده در پارادایم برنامه نویسی شی گرا با تعداد زیاد فیلدهای سفارشی و تعداد زیادی گزینه. به شما امکان می دهد ادمین سفارشی، متاباکس، طبقه بندی را بیاورید و تنظیمات را به تمام صفحات، پست ها و دسته های خود سفارشی کنید. این چارچوب بسیار مدرن و پیشرفته است.</p>
 
-<div class="csf-welcome-cols">
+<div class="CFSSMARTSMS-welcome-cols">
 
-  <div class="csf--col csf--col-first">
-    <span class="csf--icon csf--active"><i class="fas fa-check"></i></span>
-    <div class="csf--title">Admin Option Framework</div>
-    <p class="csf--text">Built in Object Oriented Programming paradigm with high number of custom fields and tons of options. It's highly modern and advanced framework.</p>
+  <div class="CFSSMARTSMS--col CFSSMARTSMS--col-first">
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--active"><i class="fas fa-check"></i></span>
+    <div class="CFSSMARTSMS--title">تنظیمات مدیریت</div>
+    <p class="CFSSMARTSMS--text">ساخته شده در پارادایم برنامه نویسی شی گرا با تعداد زیاد فیلدهای سفارشی و تعداد زیادی گزینه. این چارچوب بسیار مدرن و پیشرفته است.</p>
   </div>
 
-  <div class="csf--col csf--col-first">
-    <span class="csf--icon csf--<?php echo esc_attr( CSF::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CSF::$premium ? 'check' : 'times' ); ?>"></i></span>
-    <div class="csf--title">Customize Option Framework</div>
-    <p class="csf--text">Inherits the default WordPress Customizer with integration of own custom fields. It's more powerful to customize your site on live.</p>
+  <div class="CFSSMARTSMS--col CFSSMARTSMS--col-first">
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <div class="CFSSMARTSMS--title">سفارشی کردن چارچوب</div>
+    <p class="CFSSMARTSMS--text">سفارشی ساز پیش فرض وردپرس را با ادغام فیلدهای سفارشی خود به ارث می برد. سفارشی کردن سایت خود به صورت زنده قدرتمندتر است.</p>
   </div>
 
-  <div class="csf--col csf--col-first csf--last">
-    <span class="csf--icon csf--<?php echo esc_attr( CSF::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CSF::$premium ? 'check' : 'times' ); ?>"></i></span>
-    <div class="csf--title">Metabox Option Framework</div>
-    <p class="csf--text">Allows you to bring custom metabox settings to all of your pages and posts. We provide advanced settings with numerious number of fields.</p>
-  </div>
-
-  <div class="clear"></div>
-
-  <div class="csf--col csf--col-first">
-    <span class="csf--icon csf--<?php echo esc_attr( CSF::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CSF::$premium ? 'check' : 'times' ); ?>"></i></span>
-    <div class="csf--title">Nav Menu Option Framework</div>
-    <p class="csf--text">Allows you to bring custom nav menu item settings to all of your menus. We provide advanced settings with numerious number of fields.</p>
-  </div>
-
-  <div class="csf--col csf--col-first">
-    <span class="csf--icon csf--<?php echo esc_attr( CSF::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CSF::$premium ? 'check' : 'times' ); ?>"></i></span>
-    <div class="csf--title">Taxonomy Option Framework</div>
-    <p class="csf--text">Allows you to bring custom taxonomy settings to all of your categories, tags or CPT. We provide advanced settings with numerious number of fields.</p>
-  </div>
-
-  <div class="csf--col csf--col-first csf--last">
-    <span class="csf--icon csf--<?php echo esc_attr( CSF::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CSF::$premium ? 'check' : 'times' ); ?>"></i></span>
-    <div class="csf--title">Profile Option Framework</div>
-    <p class="csf--text">Allows you to bring custom user profile settings to all of users. We provide advanced settings with numerious number of fields.</p>
+  <div class="CFSSMARTSMS--col CFSSMARTSMS--col-first CFSSMARTSMS--last">
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <div class="CFSSMARTSMS--title">تنظیمات متاباکس</div>
+    <p class="CFSSMARTSMS--text">به شما امکان می دهد تنظیمات متاباکس سفارشی را به همه صفحات و پست های خود بیاورید. ما تنظیمات پیشرفته را با تعداد زیادی فیلد ارائه می دهیم.</p>
   </div>
 
   <div class="clear"></div>
 
-  <div class="csf--col">
-    <span class="csf--icon csf--<?php echo esc_attr( CSF::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CSF::$premium ? 'check' : 'times' ); ?>"></i></span>
-    <div class="csf--title">Widget Option Framework</div>
-    <p class="csf--text">Allows you to creating custom widgets. We provide advanced settings wtih numerious number of fields.</p>
+  <div class="CFSSMARTSMS--col CFSSMARTSMS--col-first">
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <div class="CFSSMARTSMS--title">تنظیمات منوی ناوبری</div>
+    <p class="CFSSMARTSMS--text">به شما امکان می دهد تنظیمات آیتم منوی ناوبری سفارشی را به همه منوهای خود بیاورید. ما تنظیمات پیشرفته را با تعداد زیادی فیلد ارائه می دهیم.</p>
   </div>
 
-  <div class="csf--col">
-    <span class="csf--icon csf--<?php echo esc_attr( CSF::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CSF::$premium ? 'check' : 'times' ); ?>"></i></span>
-    <div class="csf--title">Comment Option Framework</div>
-    <p class="csf--text">Allows you to bring custom comment metabox settings to all of comments. We provide advanced settings wtih numerious number of fields.</p>
+  <div class="CFSSMARTSMS--col CFSSMARTSMS--col-first">
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <div class="CFSSMARTSMS--title">تنظیمات طبقه بندی</div>
+    <p class="CFSSMARTSMS--text">به شما امکان می دهد تنظیمات طبقه بندی سفارشی را به همه دسته ها، برچسب ها یا CPT خود بیاورید. ما تنظیمات پیشرفته را با تعداد زیادی فیلد ارائه می دهیم.</p>
   </div>
 
-  <div class="csf--col csf--last">
-    <span class="csf--icon csf--<?php echo esc_attr( CSF::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CSF::$premium ? 'check' : 'times' ); ?>"></i></span>
-    <div class="csf--title">Shortcode Option Framework</div>
-    <p class="csf--text">Comes with pre-built shortcode editor to manage your content. It's easy and flexible to build unlimited layouts with endless possibilites.</p>
+  <div class="CFSSMARTSMS--col CFSSMARTSMS--col-first CFSSMARTSMS--last">
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <div class="CFSSMARTSMS--title">تنظیمات پروفایل</div>
+    <p class="CFSSMARTSMS--text">به شما امکان می دهد تنظیمات پروفایل کاربری سفارشی را برای همه کاربران بیاورید. ما تنظیمات پیشرفته را با تعداد زیادی فیلد ارائه می دهیم.</p>
   </div>
 
-  <?php if ( ! CSF::$premium ) { ?>
   <div class="clear"></div>
-  <div class="csf--col-upgrade">
-    <a href="http://codestarframework.com/" class="button button-primary" target="_blank" rel="nofollow"><i class="fas fa-share"></i> Upgrade Premium Version</a>
+
+  <div class="CFSSMARTSMS--col">
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <div class="CFSSMARTSMS--title">تنظیمات ویجت های سفارشی</div>
+    <p class="CFSSMARTSMS--text">به شما امکان می دهد ویجت های سفارشی ایجاد کنید. ما تنظیمات پیشرفته را با تعداد زیادی فیلد ارائه می دهیم.</p>
+  </div>
+
+  <div class="CFSSMARTSMS--col">
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <div class="CFSSMARTSMS--title">تنظیمات دیدگاه ها</div>
+    <p class="CFSSMARTSMS--text">به شما امکان می دهد تنظیمات متاباکس نظرات سفارشی را برای همه نظرات بیاورید. ما تنظیمات پیشرفته ای را با تعداد زیادی فیلد ارائه می دهیم.</p>
+  </div>
+
+  <div class="CFSSMARTSMS--col CFSSMARTSMS--last">
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <div class="CFSSMARTSMS--title">تنظیمات کدهای کوتاه</div>
+    <p class="CFSSMARTSMS--text">دارای ویرایشگر کد کوتاه از پیش ساخته شده برای مدیریت محتوای شما. ساخت طرح‌بندی‌های نامحدود با امکانات بی‌پایان آسان و انعطاف‌پذیر است.</p>
+  </div>
+
+  <?php if ( ! CFSSMARTSMS::$premium ) { ?>
+  <div class="clear"></div>
+  <div class="CFSSMARTSMS--col-upgrade">
+    <a href="<?= esc_url('http://codestarframework.com/') ?>" class="button button-primary" target="_blank" rel="nofollow"><i class="fas fa-share"></i> Upgrade Premium Version</a>
   </div>
   <?php } ?>
 
@@ -74,10 +74,10 @@
 
 <hr />
 
-<div class="csf-features-cols csf--col-wrap">
-  <div class="csf--col csf--key-features">
+<div class="CFSSMARTSMS-features-cols CFSSMARTSMS--col-wrap">
+  <div class="CFSSMARTSMS--col CFSSMARTSMS--key-features">
 
-  <h4>Key Features</h4>
+  <h4>ویژگی های کلیدی</h4>
 
   <ul>
     <li>WordPress 5.9.x Ready</li>
@@ -98,11 +98,11 @@
 
   </div>
 
-  <div class="csf--col csf--available-fields">
+  <div class="CFSSMARTSMS--col CFSSMARTSMS--available-fields">
 
-  <h4>Available Fields</h4>
+  <h4>فیلدهای موجود</h4>
 
-  <table class="csf--table-fields fixed widefat">
+  <table class="CFSSMARTSMS--table-fields fixed widefat">
     <tbody>
       <tr>
         <td>text</td>
@@ -163,19 +163,17 @@
     </tbody>
   </table>
 
-  <p>and more on the way...</p>
+  <p>و امکانات و آپشن های بیشتری در راه است...</p>
 
   </div>
 
   <div class="clear"></div>
 </div>
 
-<?php if ( CSF::$premium ) { ?>
+<?php if ( CFSSMARTSMS::$premium ) { ?>
 <hr />
-<h5>You can force to disable this page with (it would works for only premium users):</h5>
-<div class="csf-code-block">
-<pre>
-add_filter( 'csf_welcome_page', '__return_false' );
-</pre>
+<h5>شما می توانید با قطعه کد زیر نمایش این صفحه را غیرفعال و غیرقابل مشاهده نمایید :</h5>
+<div class="CFSSMARTSMS-code-block">
+
 </div>
 <?php } ?>

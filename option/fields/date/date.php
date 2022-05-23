@@ -28,8 +28,8 @@ if ( ! class_exists( 'CSF_Field_date' ) ) {
       if ( ! empty( $this->field['from_to'] ) ) {
 
         $args = wp_parse_args( $this->field, array(
-          'text_from' => esc_html__( 'From', 'csf' ),
-          'text_to'   => esc_html__( 'To', 'csf' ),
+          'text_from' => esc_html__( 'From', 'CFSSMARTSMS' ),
+          'text_to'   => esc_html__( 'To', 'CFSSMARTSMS' ),
         ) );
 
         $value = wp_parse_args( $this->value, array(
@@ -37,16 +37,16 @@ if ( ! class_exists( 'CSF_Field_date' ) ) {
           'to'   => '',
         ) );
 
-        echo wp_kses_post('<label class="csf--from">'. esc_attr( $args['text_from'] ) .' <input type="text" name="'. esc_attr( $this->field_name( '[from]' ) ) .'" value="'. esc_attr( $value['from'] ) .'"'. esc_attr($this->field_attributes()) .'/></label>');
-        echo wp_kses_post('<label class="csf--to">'. esc_attr( $args['text_to'] ) .' <input type="text" name="'. esc_attr( $this->field_name( '[to]' ) ) .'" value="'. esc_attr( $value['to'] ) .'"'. esc_attr($this->field_attributes()) .'/></label>');
+        echo '<label class="CFSSMARTSMS--from">'. esc_attr( $args['text_from'] ) .' <input type="text" name="'. esc_attr( $this->field_name( '[from]' ) ) .'" value="'. esc_attr( $value['from'] ) .'"'. wp_kses_post($this->field_attributes()) .'/></label>';
+        echo '<label class="CFSSMARTSMS--to">'. esc_attr( $args['text_to'] ) .' <input type="text" name="'. esc_attr( $this->field_name( '[to]' ) ) .'" value="'. esc_attr( $value['to'] ) .'"'. wp_kses_post($this->field_attributes()) .'/></label>';
 
       } else {
 
-        echo '<input type="text" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'"'. esc_attr($this->field_attributes()) .'/>';
+        echo '<input type="text" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'"'. wp_kses_post($this->field_attributes()) .'/>';
 
       }
 
-      echo '<div class="csf-date-settings" data-settings="'. esc_attr( json_encode( $settings ) ) .'"></div>';
+      echo '<div class="CFSSMARTSMS-date-settings" data-settings="'. esc_attr( json_encode( $settings ) ) .'"></div>';
 
       echo wp_kses_post($this->field_after());
 

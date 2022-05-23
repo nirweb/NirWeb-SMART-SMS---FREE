@@ -9,7 +9,7 @@
  */
 if ( ! class_exists( 'WP_Customize_Panel_CSF' ) && class_exists( 'WP_Customize_Panel' ) ) {
   class WP_Customize_Panel_CSF extends WP_Customize_Panel {
-    public $type = 'csf';
+    public $type = 'CFSSMARTSMS';
   }
 }
 
@@ -23,7 +23,7 @@ if ( ! class_exists( 'WP_Customize_Panel_CSF' ) && class_exists( 'WP_Customize_P
  */
 if ( ! class_exists( 'WP_Customize_Section_CSF' ) && class_exists( 'WP_Customize_Section' ) ) {
   class WP_Customize_Section_CSF extends WP_Customize_Section {
-    public $type = 'csf';
+    public $type = 'CFSSMARTSMS';
   }
 }
 
@@ -38,7 +38,7 @@ if ( ! class_exists( 'WP_Customize_Section_CSF' ) && class_exists( 'WP_Customize
 if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize_Control' ) ) {
   class WP_Customize_Control_CSF extends WP_Customize_Control {
 
-    public $type   = 'csf';
+    public $type   = 'CFSSMARTSMS';
     public $field  = '';
     public $unique = '';
 
@@ -75,17 +75,17 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
         $depend .= ' data-value="'. esc_attr( $data_value ) .'"';
         $depend .= ( ! empty( $data_global ) ) ? ' data-depend-global="true"' : '';
 
-        $visible  = ' csf-dependency-control';
-        $visible .= ( ! empty( $depend_visible ) ) ? ' csf-depend-visible' : ' csf-depend-hidden';
+        $visible  = ' CFSSMARTSMS-dependency-control';
+        $visible .= ( ! empty( $depend_visible ) ) ? ' CFSSMARTSMS-depend-visible' : ' CFSSMARTSMS-depend-hidden';
 
       }
 
       $id    = 'customize-control-' . str_replace( array( '[', ']' ), array( '-', '' ), $this->id );
       $class = 'customize-control customize-control-'. $this->type . $visible;
 
-      echo wp_kses_post( '<li id="'. esc_attr( $id ) .'" class="'. esc_attr( $class ) .'"'. wp_kses_post($depend) .'>');
+      echo '<li id="'. esc_attr( $id ) .'" class="'. esc_attr( $class ) .'"'. esc_html($depend) .'>';
       $this->render_field_content();
-      echo wp_kses_post('</li>');
+      echo '</li>';
 
     }
 
@@ -119,7 +119,7 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
       $field_id   = ( ! empty( $this->field['id'] ) ) ? $this->field['id'] : '';
       $custom     = ( ! empty( $this->field['customizer'] ) ) ? true : false;
       $is_complex = ( in_array( $this->field['type'], $complex ) ) ? true : false;
-      $class      = ( $is_complex || $custom ) ? ' csf-customize-complex' : '';
+      $class      = ( $is_complex || $custom ) ? ' CFSSMARTSMS-customize-complex' : '';
       $atts       = ( $is_complex || $custom ) ? ' data-unique-id="'. esc_attr( $this->unique ) .'" data-option-id="'. esc_attr( $field_id ) .'"' : '';
 
       if ( ! $is_complex && ! $custom ) {
@@ -130,11 +130,11 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
 
       $this->field['dependency'] = array();
 
-      echo wp_kses_post('<div class="csf-customize-field'. esc_attr( $class ) .'"'. wp_kses_post($atts) .'>');
+      echo '<div class="CFSSMARTSMS-customize-field'. esc_attr( $class ) .'"'. esc_html($atts) .'>';
 
-      CSF::field( $this->field, $this->value(), $this->unique, 'customize' );
+      CFSSMARTSMS::field( $this->field, $this->value(), $this->unique, 'customize' );
 
-      echo wp_kses_post('</div>');
+      echo '</div>';
 
     }
 

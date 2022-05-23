@@ -300,10 +300,20 @@ add_action( 'save_post',function (){
 
 }, 10, 2 );
 }
+
 /***************************************************************************
 #   Send SMS
  ***************************************************************************/
 add_action('admin_menu',function() {
+
+    add_submenu_page(
+        'nirweb_ticket_manage_tickets',
+        esc_html__( 'Settings', 'nss' ),
+        esc_html__( 'Settings', 'nss' ),
+        'manage_options',
+        'nirweb_ticket_settings',
+        'nirweb_ticket_settings_func'
+    );
 
     add_menu_page(
         esc_html__('Nirweb Smart SMS','nss'),
@@ -846,7 +856,7 @@ add_action('admin_menu',function() {
         $current_tab = isset($_GET['tab']) && !empty($_GET['tab']) ? sanitize_text_field($_GET['tab']) : 'export_all';
         $tabs = array(
             'export_all' =>  [esc_html__('all customers','nss'),__('export all woocommerce billing phones','nss'),'<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+	 viewBox="0 0 496 496" >
 <g>
 	<g>
 		<path d="M413.76,319.488l-62.56-13.904v-19.768c23.344-16.848,38.8-43.88,39.832-74.56c20.712-21.864,32.168-50.28,32.168-80.512

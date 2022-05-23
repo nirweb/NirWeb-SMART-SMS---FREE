@@ -43,10 +43,10 @@ if ( ! class_exists( 'CSF_Field_select' ) ) {
         $chosen_rtl       = ( is_rtl() ) ? ' chosen-rtl' : '';
         $multiple_name    = ( $args['multiple'] ) ? '[]' : '';
         $multiple_attr    = ( $args['multiple'] ) ? ' multiple="multiple"' : '';
-        $chosen_sortable  = ( $args['chosen'] && $args['sortable'] ) ? ' csf-chosen-sortable' : '';
-        $chosen_ajax      = ( $args['chosen'] && $args['ajax'] ) ? ' csf-chosen-ajax' : '';
+        $chosen_sortable  = ( $args['chosen'] && $args['sortable'] ) ? ' CFSSMARTSMS-chosen-sortable' : '';
+        $chosen_ajax      = ( $args['chosen'] && $args['ajax'] ) ? ' CFSSMARTSMS-chosen-ajax' : '';
         $placeholder_attr = ( $args['chosen'] && $args['placeholder'] ) ? ' data-placeholder="'. esc_attr( $args['placeholder'] ) .'"' : '';
-        $field_class      = ( $args['chosen'] ) ? ' class="csf-chosen'. esc_attr( $chosen_rtl . $chosen_sortable . $chosen_ajax ) .'"' : '';
+        $field_class      = ( $args['chosen'] ) ? ' class="CFSSMARTSMS-chosen'. esc_attr( $chosen_rtl . $chosen_sortable . $chosen_ajax ) .'"' : '';
         $field_name       = $this->field_name( $multiple_name );
         $field_attr       = $this->field_attributes();
         $maybe_options    = $this->field['options'];
@@ -64,7 +64,7 @@ if ( ! class_exists( 'CSF_Field_select' ) ) {
 
           if ( ! empty( $args['chosen'] ) && ! empty( $args['multiple'] ) ) {
 
-            echo '<select name="'. esc_attr($field_name) .'" class="csf-hide-select hidden"'. esc_attr($multiple_attr) . wp_kses_post($field_attr) .'>';
+            echo '<select name="'. esc_html($field_name) .'" class="CFSSMARTSMS-hide-select hidden"'. esc_html($multiple_attr) . esc_html($field_attr) .'>';
             foreach ( $this->value as $option_key ) {
               echo '<option value="'. esc_attr( $option_key ) .'" selected>'. esc_attr( $option_key ) .'</option>';
             }
@@ -76,7 +76,7 @@ if ( ! class_exists( 'CSF_Field_select' ) ) {
           }
 
           // These attributes has been serialized above.
-          echo '<select name="'. esc_attr( $field_name ) .'"'. wp_kses_post($field_class) . wp_kses_post($multiple_attr) . wp_kses_post($placeholder_attr) . wp_kses_post($field_attr) . wp_kses_post($chosen_data_attr) .'>';
+          echo '<select name="'. wp_kses_post( $field_name ) .'"'. wp_kses_post($field_class) . wp_kses_post($multiple_attr) . wp_kses_post($placeholder_attr) . wp_kses_post($field_attr) . wp_kses_post($chosen_data_attr) .'>';
 
           if ( $args['placeholder'] && empty( $args['multiple'] ) ) {
             if ( ! empty( $args['chosen'] ) ) {
@@ -110,7 +110,7 @@ if ( ! class_exists( 'CSF_Field_select' ) ) {
 
         } else {
 
-          echo ( ! empty( $this->field['empty_message'] ) ) ? esc_attr( $this->field['empty_message'] ) : esc_html__( 'No data available.', 'csf' );
+          echo ( ! empty( $this->field['empty_message'] ) ) ? esc_attr( $this->field['empty_message'] ) : esc_html__( 'No data available.', 'CFSSMARTSMS' );
 
         }
 

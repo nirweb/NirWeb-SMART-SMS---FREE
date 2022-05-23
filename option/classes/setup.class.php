@@ -11,8 +11,8 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
   class CFSSMARTSMS {
 
     // Default constants
-    public static $premium  = false;
-    public static $version  = '2.2.8';
+    public static $premium  = true;
+    public static $version  = '2.2.6';
     public static $dir      = '';
     public static $url      = '';
     public static $css      = '';
@@ -39,13 +39,10 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
 
     private static $instance = null;
 
-    public static function init( $file = __FILE__, $premium = false ) {
+    public static function init( $file = __FILE__ ) {
 
       // Set file constant
       self::$file = $file;
-
-      // Set file constant
-      self::$premium = $premium;
 
       // Set constants
       self::constants();
@@ -70,20 +67,19 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
       // Setup textdomain
       self::textdomain();
 
-      add_action( 'after_setup_theme', array( 'CSF', 'setup' ) );
-      add_action( 'init', array( 'CSF', 'setup' ) );
-      add_action( 'switch_theme', array( 'CSF', 'setup' ) );
-      add_action( 'admin_enqueue_scripts', array( 'CSF', 'add_admin_enqueue_scripts' ) );
-      add_action( 'wp_enqueue_scripts', array( 'CSF', 'add_typography_enqueue_styles' ), 80 );
-      add_action( 'wp_head', array( 'CSF', 'add_custom_css' ), 80 );
-      add_filter( 'admin_body_class', array( 'CSF', 'add_admin_body_class' ) );
+      add_action( 'after_setup_theme', array( 'CFSSMARTSMS', 'setup' ) );
+      add_action( 'init', array( 'CFSSMARTSMS', 'setup' ) );
+      add_action( 'switch_theme', array( 'CFSSMARTSMS', 'setup' ) );
+      add_action( 'admin_enqueue_scripts', array( 'CFSSMARTSMS', 'add_admin_enqueue_scripts' ) );
+      add_action( 'wp_head', array( 'CFSSMARTSMS', 'add_custom_css' ), 80 );
+      add_filter( 'admin_body_class', array( 'CFSSMARTSMS', 'add_admin_body_class' ) );
 
     }
 
     // Setup frameworks
     public static function setup() {
 
-      // Welcome
+      // Welcome page
       self::include_plugin_file( 'views/welcome.php' );
 
       // Setup admin option framework
@@ -328,7 +324,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
 
       $path     = '';
       $file     = ltrim( $file, '/' );
-      $override = apply_filters( 'csf_override', 'csf-override' );
+      $override = apply_filters( 'csf_override', 'CFSSMARTSMS-override' );
 
       if ( file_exists( get_parent_theme_file_path( $override .'/'. $file ) ) ) {
         $path = get_parent_theme_file_path( $override .'/'. $file );
@@ -380,18 +376,18 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
     // Include files
     public static function includes() {
 
-      // Include common functions
+      // Helpers
       self::include_plugin_file( 'functions/actions.php'  );
       self::include_plugin_file( 'functions/helpers.php'  );
       self::include_plugin_file( 'functions/sanitize.php' );
       self::include_plugin_file( 'functions/validate.php' );
 
-      // Include free version classes
+      // Includes free version classes
       self::include_plugin_file( 'classes/abstract.class.php'      );
       self::include_plugin_file( 'classes/fields.class.php'        );
       self::include_plugin_file( 'classes/admin-options.class.php' );
 
-      // Include premium version classes
+      // Includes premium version classes
       if ( self::$premium ) {
         self::include_plugin_file( 'classes/customize-options.class.php' );
         self::include_plugin_file( 'classes/metabox-options.class.php'   );
@@ -463,7 +459,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
 
     // Setup textdomain
     public static function textdomain() {
-      load_textdomain( 'csf', self::$dir .'/languages/'. get_locale() .'.mo' );
+      load_textdomain( 'CFSSMARTSMS', self::$dir .'/languages/'. get_locale() .'.mo' );
         load_textdomain( 'nss', NIRWEB_SMART_SMS .'languages/nss-'. get_locale() .'.mo' );
     }
 
@@ -566,6 +562,9 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
         return;
       }
 
+      // Check for developer mode
+      $min = ( self::$premium && SCRIPT_DEBUG ) ? '' : '.min';
+
       // Admin utilities
       wp_enqueue_media();
 
@@ -575,35 +574,32 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
 
       // Font awesome 4 and 5 loader
       if ( apply_filters( 'csf_fa4', false ) ) {
-        wp_enqueue_style( 'csf-fa', 'https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css', array(), '4.7.0', 'all' );
+        wp_enqueue_style( 'CFSSMARTSMS-fa', self::include_plugin_url('assets/css/font-awesome.min.css'), array(), '4.7.0', 'all' );
       } else {
-        wp_enqueue_style( 'csf-fa5', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css', array(), '5.15.5', 'all' );
-        wp_enqueue_style( 'csf-fa5-v4-shims', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/v4-shims.min.css', array(), '5.15.5', 'all' );
+        wp_enqueue_style( 'CFSSMARTSMS-fa5', self::include_plugin_url('assets/css/all.min.css'), array(), '5.15.5', 'all' );
+        wp_enqueue_style( 'CFSSMARTSMS-fa5-v4-shims', self::include_plugin_url( 'assets/css/v4-shims.min.css'), array(), '5.15.5', 'all' );
       }
 
-      // Check for developer mode
-      $min = ( self::$premium && SCRIPT_DEBUG ) ? '' : '.min';
-
       // Main style
-      wp_enqueue_style( 'csf', self::include_plugin_url( 'assets/css/style'. $min .'.css' ), array(), self::$version, 'all' );
+      wp_enqueue_style( 'CFSSMARTSMS', self::include_plugin_url('assets/css/style'. $min .'.css') , array(), self::$version, 'all' );
 
       // Main RTL styles
       if ( is_rtl() ) {
-        wp_enqueue_style( 'csf-rtl', self::include_plugin_url( 'assets/css/style-rtl'. $min .'.css' ), array(), self::$version, 'all' );
+        wp_enqueue_style( 'CFSSMARTSMS-rtl', self::include_plugin_url( 'assets/css/style-rtl'. $min .'.css' ), array(), self::$version, 'all' );
       }
 
       // Main scripts
-      wp_enqueue_script( 'csf-plugins', self::include_plugin_url( 'assets/js/plugins'. $min .'.js' ), array(), self::$version, true );
-      wp_enqueue_script( 'csf', self::include_plugin_url( 'assets/js/main'. $min .'.js' ), array( 'csf-plugins' ), self::$version, true );
+      wp_enqueue_script( 'CFSSMARTSMS-plugins', self::include_plugin_url( 'assets/js/plugins'. $min .'.js' ), array(), self::$version, true );
+      wp_enqueue_script( 'CFSSMARTSMS', self::include_plugin_url( 'assets/js/main'. $min .'.js' ), array( 'CFSSMARTSMS-plugins' ), self::$version, true );
 
       // Main variables
-      wp_localize_script( 'csf', 'csf_vars', array(
+      wp_localize_script( 'CFSSMARTSMS', 'csf_vars', array(
         'color_palette'     => apply_filters( 'csf_color_palette', array() ),
         'i18n'              => array(
-          'confirm'         => esc_html__( 'Are you sure?', 'csf' ),
-          'typing_text'     => esc_html__( 'Please enter %s or more characters', 'csf' ),
-          'searching_text'  => esc_html__( 'Searching...', 'csf' ),
-          'no_results_text' => esc_html__( 'No results found.', 'csf' ),
+          'confirm'         => esc_html__( 'Are you sure?', 'CFSSMARTSMS' ),
+          'typing_text'     => esc_html__( 'Please enter %s or more characters', 'CFSSMARTSMS' ),
+          'searching_text'  => esc_html__( 'Searching...', 'CFSSMARTSMS' ),
+          'no_results_text' => esc_html__( 'No results found.', 'CFSSMARTSMS' ),
         ),
       ) );
 
@@ -629,57 +625,12 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
 
     }
 
-    // Add typography enqueue styles to front page
-    public static function add_typography_enqueue_styles() {
-
-      if ( ! empty( self::$webfonts ) ) {
-
-        if ( ! empty( self::$webfonts['enqueue'] ) ) {
-
-          $query = array();
-          $fonts = array();
-
-          foreach ( self::$webfonts['enqueue'] as $family => $styles ) {
-            $fonts[] = $family . ( ( ! empty( $styles ) ) ? ':'. implode( ',', $styles ) : '' );
-          }
-
-          if ( ! empty( $fonts ) ) {
-            $query['family'] = implode( '%7C', $fonts );
-          }
-
-          if ( ! empty( self::$subsets ) ) {
-            $query['subset'] = implode( ',', self::$subsets );
-          }
-
-          $query['display'] = 'swap';
-
-          wp_enqueue_style( 'csf-google-web-fonts', esc_url( add_query_arg( $query, '//fonts.googleapis.com/css' ) ), array(), null );
-
-        }
-
-        if ( ! empty( self::$webfonts['async'] ) ) {
-
-          $fonts = array();
-
-          foreach ( self::$webfonts['async'] as $family => $styles ) {
-            $fonts[] = $family . ( ( ! empty( $styles ) ) ? ':'. implode( ',', $styles ) : '' );
-          }
-
-          wp_enqueue_script( 'csf-google-web-fonts', esc_url( '//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' ), array(), null );
-
-          wp_localize_script( 'csf-google-web-fonts', 'WebFontConfig', array( 'google' => array( 'families' => $fonts ) ) );
-
-        }
-
-      }
-
-    }
 
     // Add admin body class
     public static function add_admin_body_class( $classes ) {
 
       if ( apply_filters( 'csf_fa4', false ) ) {
-        $classes .= 'csf-fa5-shims';
+        $classes .= 'CFSSMARTSMS-fa5-shims';
       }
 
       return $classes;
@@ -690,7 +641,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
     public static function add_custom_css() {
 
       if ( ! empty( self::$css ) ) {
-        echo wp_kses_post('<style type="text/css">'. wp_strip_all_tags( self::$css ) .'</style>');
+        echo '<style type="text/css">'. wp_strip_all_tags( self::$css ) .'</style>';
       }
 
     }
@@ -704,7 +655,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
         $field_type = $field['type'];
 
         $field            = array();
-        $field['content'] = esc_html__( 'Oops! Not allowed.', 'csf' ) .' <strong>('. $field_type .')</strong>';
+        $field['content'] = esc_html__( 'Oops! Not allowed.', 'CFSSMARTSMS' ) .' <strong>('. wp_kses_post($field_type) .')</strong>';
         $field['type']    = 'notice';
         $field['style']   = 'danger';
 
@@ -714,7 +665,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
       $visible    = '';
       $unique     = ( ! empty( $unique ) ) ? $unique : '';
       $class      = ( ! empty( $field['class'] ) ) ? ' ' . esc_attr( $field['class'] ) : '';
-      $is_pseudo  = ( ! empty( $field['pseudo'] ) ) ? ' csf-pseudo-field' : '';
+      $is_pseudo  = ( ! empty( $field['pseudo'] ) ) ? ' CFSSMARTSMS-pseudo-field' : '';
       $field_type = ( ! empty( $field['type'] ) ) ? esc_attr( $field['type'] ) : '';
 
       if ( ! empty( $field['dependency'] ) ) {
@@ -745,23 +696,27 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
         $depend .= ' data-value="'. esc_attr( $data_value ) .'"';
         $depend .= ( ! empty( $data_global ) ) ? ' data-depend-global="true"' : '';
 
-        $visible = ( ! empty( $depend_visible ) ) ? ' csf-depend-visible' : ' csf-depend-hidden';
+        $visible = ( ! empty( $depend_visible ) ) ? ' CFSSMARTSMS-depend-visible' : ' CFSSMARTSMS-depend-hidden';
 
       }
 
       // These attributes has been sanitized above.
-      echo wp_kses_post('<div class="csf-field csf-field-'. wp_kses_post($field_type) . esc_attr($is_pseudo) . esc_attr($class) . esc_attr($visible) .'"'. wp_kses_post($depend) .'>');
+      echo '<div class="CFSSMARTSMS-field CFSSMARTSMS-field-'. wp_kses_post($field_type) . wp_kses_post($is_pseudo) . wp_kses_post($class) . wp_kses_post($visible) .'"'. wp_kses_post($depend) .'>';
 
       if ( ! empty( $field_type ) ) {
 
-        if ( ! empty( $field['title'] ) ) {
-          echo wp_kses_post('<div class="csf-title">');
-          echo wp_kses_post('<h4>'.esc_html( $field['title']) .'</h4>');
-          echo ( ! empty( $field['subtitle'] ) ) ? wp_kses_post('<div class="csf-subtitle-text">'. esc_html($field['subtitle']) .'</div>') : '';
-          echo wp_kses_post('</div>');
+        if ( ! empty( $field['fancy_title'] ) ) {
+          echo '<div class="CFSSMARTSMS-fancy-title">' . wp_kses_post( $field['fancy_title']) .'</div>';
         }
 
-        echo ( ! empty( $field['title'] ) ) ? wp_kses_post('<div class="csf-fieldset">') : '';
+        if ( ! empty( $field['title'] ) ) {
+          echo '<div class="CFSSMARTSMS-title">';
+          echo '<h4>'. wp_kses_post($field['title']) .'</h4>';
+          echo ( ! empty( $field['subtitle'] ) ) ? '<div class="CFSSMARTSMS-subtitle-text">'. wp_kses_post($field['subtitle']) .'</div>' : '';
+          echo '</div>';
+        }
+
+        echo ( ! empty( $field['title'] ) || ! empty( $field['fancy_title'] ) ) ? '<div class="CFSSMARTSMS-fieldset">' : '';
 
         $value = ( ! isset( $value ) && isset( $field['default'] ) ) ? $field['default'] : $value;
         $value = ( isset( $field['value'] ) ) ? $field['value'] : $value;
@@ -772,16 +727,16 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
           $instance = new $classname( $field, $value, $unique, $where, $parent );
           $instance->render();
         } else {
-          echo wp_kses_post('<p>'. esc_html__( 'Field not found!', 'csf' ) .'</p>');
+          echo '<p>'. esc_html__( 'Field not found!', 'CFSSMARTSMS' ) .'</p>';
         }
 
       } else {
-        echo wp_kses_post('<p>'. esc_html__( 'Field not found!', 'csf' ) .'</p>');
+        echo '<p>'. esc_html__( 'Field not found!', 'CFSSMARTSMS' ) .'</p>';
       }
 
-      echo ( ! empty( $field['title'] ) ) ? wp_kses_post('</div>') : '';
-      echo wp_kses_post('<div class="clear"></div>');
-      echo wp_kses_post('</div>');
+      echo ( ! empty( $field['title'] ) || ! empty( $field['fancy_title'] ) ) ? '</div>' : '';
+      echo '<div class="clear"></div>';
+      echo '</div>';
 
     }
 
@@ -789,16 +744,4 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
 
 }
 
-CFSSMARTSMS::init( __FILE__, false );
-
-/**
- *
- * Extended Setup Class for Shortland
- *
- * @since 1.0.0
- * @version 1.0.0
- *
- */
-if ( ! class_exists( 'CSF' ) ) {
-  class CSF extends CFSSMARTSMS{}
-}
+CFSSMARTSMS::init( __FILE__ );

@@ -18,7 +18,7 @@ if ( ! class_exists( 'CSF_Field_fieldset' ) ) {
 
       echo wp_kses_post($this->field_before());
 
-      echo '<div class="csf-fieldset-content" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
+      echo '<div class="CFSSMARTSMS-fieldset-content" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
 
       foreach ( $this->field['fields'] as $field ) {
 
@@ -27,11 +27,11 @@ if ( ! class_exists( 'CSF_Field_fieldset' ) ) {
         $field_value   = ( isset( $this->value[$field_id] ) ) ? $this->value[$field_id] : $field_default;
         $unique_id     = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']' : $this->field['id'];
 
-        CSF::field( $field, $field_value, $unique_id, 'field/fieldset' );
+        CFSSMARTSMS::field( $field, $field_value, $unique_id, 'field/fieldset' );
 
       }
 
-      echo wp_kses_post('</div>');
+      echo '</div>';
 
       echo wp_kses_post($this->field_after());
 

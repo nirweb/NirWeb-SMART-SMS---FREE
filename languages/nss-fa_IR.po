@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Smart SMS For Wordpress\n"
-"POT-Creation-Date: 2022-05-14 07:49+0430\n"
-"PO-Revision-Date: 2022-05-15 10:40+0430\n"
+"POT-Creation-Date: 2022-05-19 12:04+0430\n"
+"PO-Revision-Date: 2022-05-19 12:10+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -22,38 +22,38 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #: core/Nirweb_smart_sms_data.php:140 core/Nirweb_smart_sms_data.php:182
-#: core/Nirweb_smart_sms_data.php:246 core/Nirweb_smart_sms_data.php:304
-#: core/Nirweb_smart_sms_data.php:341 core/Nirweb_smart_sms_data.php:400
+#: core/Nirweb_smart_sms_data.php:246 core/Nirweb_smart_sms_data.php:303
+#: core/Nirweb_smart_sms_data.php:340 core/Nirweb_smart_sms_data.php:399
 msgid "on hold"
 msgstr "سفارشات در انتظار بررسی"
 
 #: core/Nirweb_smart_sms_data.php:143 core/Nirweb_smart_sms_data.php:187
-#: core/Nirweb_smart_sms_data.php:249 core/Nirweb_smart_sms_data.php:307
-#: core/Nirweb_smart_sms_data.php:346 core/Nirweb_smart_sms_data.php:403
+#: core/Nirweb_smart_sms_data.php:249 core/Nirweb_smart_sms_data.php:306
+#: core/Nirweb_smart_sms_data.php:345 core/Nirweb_smart_sms_data.php:402
 msgid "processing"
 msgstr "سفارشات در حال انجام"
 
 #: core/Nirweb_smart_sms_data.php:146 core/Nirweb_smart_sms_data.php:192
-#: core/Nirweb_smart_sms_data.php:252 core/Nirweb_smart_sms_data.php:310
-#: core/Nirweb_smart_sms_data.php:351 core/Nirweb_smart_sms_data.php:406
+#: core/Nirweb_smart_sms_data.php:252 core/Nirweb_smart_sms_data.php:309
+#: core/Nirweb_smart_sms_data.php:350 core/Nirweb_smart_sms_data.php:405
 msgid "completed"
 msgstr "سفارشات تکمیل شده"
 
 #: core/Nirweb_smart_sms_data.php:149 core/Nirweb_smart_sms_data.php:197
-#: core/Nirweb_smart_sms_data.php:255 core/Nirweb_smart_sms_data.php:313
-#: core/Nirweb_smart_sms_data.php:356 core/Nirweb_smart_sms_data.php:409
+#: core/Nirweb_smart_sms_data.php:255 core/Nirweb_smart_sms_data.php:312
+#: core/Nirweb_smart_sms_data.php:355 core/Nirweb_smart_sms_data.php:408
 msgid "cancelled"
 msgstr "سفارشات لغو شده"
 
 #: core/Nirweb_smart_sms_data.php:152 core/Nirweb_smart_sms_data.php:202
-#: core/Nirweb_smart_sms_data.php:258 core/Nirweb_smart_sms_data.php:316
-#: core/Nirweb_smart_sms_data.php:361 core/Nirweb_smart_sms_data.php:412
+#: core/Nirweb_smart_sms_data.php:258 core/Nirweb_smart_sms_data.php:315
+#: core/Nirweb_smart_sms_data.php:360 core/Nirweb_smart_sms_data.php:411
 msgid "refunded"
 msgstr "سفارشات مسترد شده"
 
 #: core/Nirweb_smart_sms_data.php:155 core/Nirweb_smart_sms_data.php:207
-#: core/Nirweb_smart_sms_data.php:261 core/Nirweb_smart_sms_data.php:319
-#: core/Nirweb_smart_sms_data.php:366 core/Nirweb_smart_sms_data.php:415
+#: core/Nirweb_smart_sms_data.php:261 core/Nirweb_smart_sms_data.php:318
+#: core/Nirweb_smart_sms_data.php:365 core/Nirweb_smart_sms_data.php:414
 msgid "failed"
 msgstr "سفارشات ناموفق"
 
@@ -125,11 +125,18 @@ msgstr "اطلاع رسانی به کاربران وقتی محصول موجود
 msgid "notify users that product is on sale"
 msgstr "اطلاع رسانی به کاربران وقتی محصول تخفیف دار شد"
 
-#: core/core.php:309 core/core.php:310
+#: core/core.php:311 core/core.php:312 settings/settings.php:15
+#: settings/settings.php:16 settings/settings.php:26
+#, fuzzy
+#| msgid "Settings saved."
+msgid "Settings"
+msgstr "تنظیمات ذخیره شد."
+
+#: core/core.php:319 core/core.php:320
 msgid "Nirweb Smart SMS"
 msgstr "پیامک نیروب"
 
-#: core/core.php:318 option/options/woocommerce/cancelled.php:17
+#: core/core.php:328 option/options/woocommerce/cancelled.php:17
 #: option/options/woocommerce/cancelled.php:79
 #: option/options/woocommerce/cancelled.php:141
 #: option/options/woocommerce/completed.php:16
@@ -150,35 +157,35 @@ msgstr "پیامک نیروب"
 msgid "Send SMS"
 msgstr "ارسال پیامک"
 
-#: core/core.php:322 core/core.php:587
+#: core/core.php:332 core/core.php:598
 msgid "Send SMS To ALL Users"
 msgstr "ارسال پیام به همه کاربران"
 
-#: core/core.php:322
+#: core/core.php:332
 msgid "send sms to all users."
 msgstr "به همه کاربرانی که ثبت نام کرده اند پیام بفرستید."
 
-#: core/core.php:380 core/core.php:678
+#: core/core.php:390 core/core.php:689
 msgid "Send SMS To One User"
 msgstr "ارسال پیام به یک کاربر"
 
-#: core/core.php:380
+#: core/core.php:390
 msgid "Send SMS To the user you want."
 msgstr "به یک کاربر خاص پیام بفرستید."
 
-#: core/core.php:438 core/core.php:788
+#: core/core.php:448 core/core.php:799
 msgid "Send SMS To Product Customers"
 msgstr "ارسال پیام به مشتریان محصول"
 
-#: core/core.php:438
+#: core/core.php:448
 msgid "Send SMS to users who have bought a product"
 msgstr "به همه کاربرانی که یک محصول خاص را خریداری کرده اند پیام بفرستید"
 
-#: core/core.php:590 core/core.php:681 core/core.php:791
+#: core/core.php:601 core/core.php:692 core/core.php:802 core/core.php:1282
 msgid "professional version and tutorial"
 msgstr "فعال در نسخه حرفه ای"
 
-#: core/core.php:591 core/core.php:682 core/core.php:792
+#: core/core.php:602 core/core.php:693 core/core.php:803 core/core.php:1283
 msgid ""
 "to use options below , you can easily purchase and download the pro version "
 "of the plugin form the link below"
@@ -186,11 +193,11 @@ msgstr ""
 "برای استفاده از امکانات این بخش میتوانید نسخه حرفه ای آن را از لینک زیر تهیه "
 "و دانلود کنید"
 
-#: core/core.php:599 core/core.php:699 core/core.php:814
+#: core/core.php:610 core/core.php:710 core/core.php:825
 msgid "pattern code"
 msgstr "کد پترن"
 
-#: core/core.php:608 core/core.php:708
+#: core/core.php:619 core/core.php:719
 msgid ""
 "use variable display_name for user's display name in your pattern.if you are "
 "using melipayamak use 0."
@@ -198,25 +205,25 @@ msgstr ""
 "از متغیر display_name برای نام کاربر در پترن خود استفاده کنید.اگر از ملی "
 "پیامک استفاده میکنید از 0 استفاده کنید."
 
-#: core/core.php:611 core/core.php:711 core/core.php:825
+#: core/core.php:622 core/core.php:722 core/core.php:836
 msgid "Send"
 msgstr "ارسال"
 
-#: core/core.php:690
+#: core/core.php:701
 msgid "select the user"
 msgstr "انتخاب کاربر"
 
-#: core/core.php:692 core/core.php:802
+#: core/core.php:703 core/core.php:813
 #: option/options/woocommerce/first-purchase.php:23
 #: option/options/wp/post.php:21
 msgid "select an option"
 msgstr "یک گزینه را انتخاب کنید"
 
-#: core/core.php:800
+#: core/core.php:811
 msgid "select the product"
 msgstr "انتخاب محصول"
 
-#: core/core.php:823
+#: core/core.php:834
 msgid ""
 "use product_title for product's title and display_name for users's "
 "displayname in your pattern.if you are using melipayamak use 0 for "
@@ -226,31 +233,31 @@ msgstr ""
 "خود استفاده کنید.اگر از ملی پیامک استفاده میکنید از 0 برای نام نمایشی کاربر "
 "و 1 برای نام محصول استفاده کنید"
 
-#: core/core.php:843
+#: core/core.php:854
 msgid "Subscribers"
 msgstr "مشترکین"
 
-#: core/core.php:847
+#: core/core.php:858 core/core.php:1130 core/core.php:1204
 msgid "all customers"
 msgstr "تمام مشتری ها"
 
-#: core/core.php:847
+#: core/core.php:858
 msgid "export all woocommerce billing phones"
 msgstr "خروجی شماره تماس مشتریان ووکامرس"
 
-#: core/core.php:848
+#: core/core.php:917
 msgid "product customers"
 msgstr "مشتریان محصولات"
 
-#: core/core.php:848
+#: core/core.php:917
 msgid "export product customer phonenumbers"
 msgstr "خروجی شماره مشتریان محصول ووکامرس"
 
-#: core/core.php:915
+#: core/core.php:984 core/core.php:1275
 msgid "newsletter"
 msgstr "خبرنامه"
 
-#: core/core.php:915
+#: core/core.php:984
 msgid "export newsletter phonenumbers"
 msgstr "خروجی شماره های ثبت شده خبرنامه"
 
@@ -280,478 +287,135 @@ msgstr "دیدگاه ها"
 msgid "Newsletter"
 msgstr "خبرنامه"
 
-#: option/classes/options.class.php:228
-msgid "Error while saving."
+#: option/classes/admin-options.class.php:230
+#, fuzzy
+#| msgid "Error while saving."
+msgid "Error while saving the changes."
 msgstr "خطا در ذخیره سازی."
 
-#: option/classes/options.class.php:288
-msgid "Success. Imported backup options."
-msgstr "تنظیمات با موفقیت وارد شد."
+#: option/classes/admin-options.class.php:290
+#, fuzzy
+#| msgid "sent successfully"
+msgid "Settings successfully imported."
+msgstr "با موفقیت ارسال شد"
 
-#: option/classes/options.class.php:300
-msgid "Default options restored."
+#: option/classes/admin-options.class.php:302
+#: option/classes/admin-options.class.php:318
+#, fuzzy
+#| msgid "Default options restored."
+msgid "Default settings restored."
 msgstr "گزینه های پیش فرض بازیابی شد."
 
-#: option/classes/options.class.php:316
-msgid "Default options restored for only this section."
-msgstr ""
-
-#: option/classes/options.class.php:387
+#: option/classes/admin-options.class.php:389
 msgid "Settings saved."
 msgstr "تنظیمات ذخیره شد."
 
-#: option/classes/options.class.php:504
-msgid "Nirweb team"
-msgstr "تیم نیروب"
+#: option/classes/admin-options.class.php:570
+msgid "You have unsaved changes, save your changes!"
+msgstr ""
 
-#: option/classes/options.class.php:574
-msgid "Settings have changed, you should save them!"
-msgstr "تنظیمات تغییر کرده اند ، باید آنها را ذخیره کنید!"
-
-#: option/classes/options.class.php:576
-msgid "show all options"
+#: option/classes/admin-options.class.php:572
+#, fuzzy
+#| msgid "show all options"
+msgid "show all settings"
 msgstr "نمایش همه گزینه ها"
 
-#: option/classes/options.class.php:578
-msgid "Search option(s)"
-msgstr "جستجوی گزینه‌(ها)"
+#: option/classes/admin-options.class.php:574
+msgid "Search..."
+msgstr ""
 
-#: option/classes/options.class.php:581 option/classes/options.class.php:708
+#: option/classes/admin-options.class.php:577
+#: option/classes/admin-options.class.php:700
 msgid "Save"
 msgstr "ذخیره"
 
-#: option/classes/options.class.php:581 option/classes/options.class.php:708
+#: option/classes/admin-options.class.php:577
+#: option/classes/admin-options.class.php:700
 msgid "Saving..."
 msgstr "در حال ذخیره ..."
 
-#: option/classes/options.class.php:582 option/classes/options.class.php:709
+#: option/classes/admin-options.class.php:578
+#: option/classes/admin-options.class.php:701
 msgid "Reset Section"
 msgstr "ریست کردن بخش"
 
-#: option/classes/options.class.php:582 option/classes/options.class.php:709
+#: option/classes/admin-options.class.php:578
+#: option/classes/admin-options.class.php:701
 msgid "Are you sure to reset this section options?"
 msgstr "آیا مطمئن هستید که گزینه های این بخش را دوباره تنظیم می کنید؟"
 
-#: option/classes/options.class.php:583 option/classes/options.class.php:710
-#: option/fields/backup/backup.php:34
+#: option/classes/admin-options.class.php:579
+#: option/classes/admin-options.class.php:702
 msgid "Reset All"
 msgstr "ریست تمامی مقادیر"
 
-#: option/classes/options.class.php:583 option/classes/options.class.php:710
-msgid "Are you sure to reset all options?"
+#: option/classes/admin-options.class.php:579
+#: option/classes/admin-options.class.php:702
+#, fuzzy
+#| msgid "Reset All"
+msgid "Reset"
+msgstr "ریست تمامی مقادیر"
+
+#: option/classes/admin-options.class.php:579
+#: option/classes/admin-options.class.php:702
+#, fuzzy
+#| msgid "Are you sure to reset this section options?"
+msgid "Are you sure you want to reset all settings to default values?"
+msgstr "آیا مطمئن هستید که گزینه های این بخش را دوباره تنظیم می کنید؟"
+
+#: option/classes/admin-options.class.php:677
+#: option/fields/select/select.php:113 option/functions/actions.php:41
+msgid "No data available."
 msgstr ""
 
-#: option/classes/options.class.php:683
-msgid "No option provided by developer."
-msgstr ""
-
-#: option/classes/setup.class.php:434
+#: option/classes/setup.class.php:603
 msgid "Are you sure?"
 msgstr "آیا مطمئن هستید؟"
 
-#: option/classes/setup.class.php:435
-msgid "Restoring options."
-msgstr ""
-
-#: option/classes/setup.class.php:436
-msgid "Importing options."
-msgstr ""
-
-#: option/classes/setup.class.php:439
+#: option/classes/setup.class.php:604
 #, php-format
 msgid "Please enter %s or more characters"
 msgstr ""
 
-#: option/classes/setup.class.php:440
+#: option/classes/setup.class.php:605
 msgid "Searching..."
 msgstr ""
 
-#: option/classes/setup.class.php:441
-msgid "No results match"
+#: option/classes/setup.class.php:606
+msgid "No results found."
 msgstr ""
 
-#: option/classes/setup.class.php:512
-#, php-format
-msgid "Ooops! This field type (%s) can not be used here, yet."
+#: option/classes/setup.class.php:707
+msgid "Oops! Not allowed."
 msgstr ""
 
-#: option/classes/setup.class.php:582
-msgid "This field class is not available!"
+#: option/classes/setup.class.php:775 option/classes/setup.class.php:779
+msgid "Field not found!"
 msgstr ""
 
-#: option/classes/setup.class.php:586
-msgid "This type is not found!"
-msgstr ""
-
-#: option/fields/background/background.php:35
-msgid "No background selected"
-msgstr ""
-
-#: option/fields/background/background.php:66 option/fields/date/date.php:31
+#: option/fields/date/date.php:31
 msgid "From"
 msgstr ""
 
-#: option/fields/background/background.php:84 option/fields/date/date.php:32
+#: option/fields/date/date.php:32
 msgid "To"
 msgstr ""
 
-#: option/fields/background/background.php:102
-msgid "Direction"
+#: option/fields/repeater/repeater.php:27
+msgid "Error: Field ID conflict."
 msgstr ""
 
-#: option/fields/background/background.php:108
-msgid "Gradient Direction"
-msgstr ""
-
-#: option/fields/background/background.php:109
-msgid "&#8659; top to bottom"
-msgstr ""
-
-#: option/fields/background/background.php:110
-msgid "&#8658; left to right"
-msgstr ""
-
-#: option/fields/background/background.php:111
-msgid "&#8664; corner top to right"
-msgstr ""
-
-#: option/fields/background/background.php:112
-msgid "&#8665; corner top to left"
-msgstr ""
-
-#: option/fields/background/background.php:155
-msgid "Background Position"
-msgstr ""
-
-#: option/fields/background/background.php:156
-msgid "Left Top"
-msgstr ""
-
-#: option/fields/background/background.php:157
-msgid "Left Center"
-msgstr ""
-
-#: option/fields/background/background.php:158
-msgid "Left Bottom"
-msgstr ""
-
-#: option/fields/background/background.php:159
-msgid "Center Top"
-msgstr ""
-
-#: option/fields/background/background.php:160
-msgid "Center Center"
-msgstr ""
-
-#: option/fields/background/background.php:161
-msgid "Center Bottom"
-msgstr ""
-
-#: option/fields/background/background.php:162
-msgid "Right Top"
-msgstr ""
-
-#: option/fields/background/background.php:163
-msgid "Right Center"
-msgstr ""
-
-#: option/fields/background/background.php:164
-msgid "Right Bottom"
-msgstr ""
-
-#: option/fields/background/background.php:178
-msgid "Background Repeat"
-msgstr ""
-
-#: option/fields/background/background.php:179
-msgid "Repeat"
-msgstr ""
-
-#: option/fields/background/background.php:180
-msgid "No Repeat"
-msgstr ""
-
-#: option/fields/background/background.php:181
-msgid "Repeat Horizontally"
-msgstr ""
-
-#: option/fields/background/background.php:182
-msgid "Repeat Vertically"
-msgstr ""
-
-#: option/fields/background/background.php:196
-msgid "Background Attachment"
-msgstr ""
-
-#: option/fields/background/background.php:197
-msgid "Scroll"
-msgstr ""
-
-#: option/fields/background/background.php:198
-msgid "Fixed"
-msgstr ""
-
-#: option/fields/background/background.php:212
-msgid "Background Size"
-msgstr ""
-
-#: option/fields/background/background.php:213
-msgid "Cover"
-msgstr ""
-
-#: option/fields/background/background.php:214
-msgid "Contain"
-msgstr ""
-
-#: option/fields/background/background.php:228
-msgid "Background Origin"
-msgstr ""
-
-#: option/fields/background/background.php:229
-#: option/fields/background/background.php:247
-msgid "Padding Box"
-msgstr ""
-
-#: option/fields/background/background.php:230
-#: option/fields/background/background.php:246
-msgid "Border Box"
-msgstr ""
-
-#: option/fields/background/background.php:231
-#: option/fields/background/background.php:248
-msgid "Content Box"
-msgstr ""
-
-#: option/fields/background/background.php:245
-msgid "Background Clip"
-msgstr ""
-
-#: option/fields/background/background.php:262
-msgid "Background Blend Mode"
-msgstr ""
-
-#: option/fields/background/background.php:263
-#: option/fields/link_color/link_color.php:36
-#: option/fields/typography/typography.php:175
-msgid "Normal"
-msgstr ""
-
-#: option/fields/background/background.php:264
-msgid "Multiply"
-msgstr ""
-
-#: option/fields/background/background.php:265
-msgid "Screen"
-msgstr ""
-
-#: option/fields/background/background.php:266
-msgid "Overlay"
-msgstr ""
-
-#: option/fields/background/background.php:267
-msgid "Darken"
-msgstr ""
-
-#: option/fields/background/background.php:268
-msgid "Lighten"
-msgstr ""
-
-#: option/fields/background/background.php:269
-msgid "Color Dodge"
-msgstr ""
-
-#: option/fields/background/background.php:270
-msgid "Saturation"
-msgstr ""
-
-#: option/fields/background/background.php:271
-msgid "Color"
-msgstr ""
-
-#: option/fields/background/background.php:272
-msgid "Luminosity"
-msgstr ""
-
-#: option/fields/backup/backup.php:26
-msgid "Import"
-msgstr ""
-
-#: option/fields/backup/backup.php:27
-msgid "copy-paste your backup string here"
-msgstr ""
-
-#: option/fields/backup/backup.php:31
-msgid "Export and Download Backup"
-msgstr ""
-
-#: option/fields/backup/backup.php:35
-msgid "Please be sure for reset all of options."
-msgstr ""
-
-#: option/fields/border/border.php:25 option/fields/spacing/spacing.php:25
-msgid "top"
-msgstr ""
-
-#: option/fields/border/border.php:26 option/fields/spacing/spacing.php:26
-msgid "right"
-msgstr ""
-
-#: option/fields/border/border.php:27 option/fields/spacing/spacing.php:27
-msgid "bottom"
-msgstr ""
-
-#: option/fields/border/border.php:28 option/fields/spacing/spacing.php:28
-msgid "left"
-msgstr ""
-
-#: option/fields/border/border.php:29 option/fields/spacing/spacing.php:29
-msgid "all"
-msgstr ""
-
-#: option/fields/border/border.php:51
-#: option/fields/typography/typography.php:203
-msgid "Solid"
-msgstr ""
-
-#: option/fields/border/border.php:52
-#: option/fields/typography/typography.php:206
-msgid "Dashed"
-msgstr ""
-
-#: option/fields/border/border.php:53
-#: option/fields/typography/typography.php:205
-msgid "Dotted"
-msgstr ""
-
-#: option/fields/border/border.php:54
-#: option/fields/typography/typography.php:204
-msgid "Double"
-msgstr ""
-
-#: option/fields/border/border.php:55
-msgid "Inset"
-msgstr ""
-
-#: option/fields/border/border.php:56
-msgid "Outset"
-msgstr ""
-
-#: option/fields/border/border.php:57
-msgid "Groove"
-msgstr ""
-
-#: option/fields/border/border.php:58
-msgid "ridge"
-msgstr ""
-
-#: option/fields/border/border.php:59
-#: option/fields/typography/typography.php:188
-#: option/fields/typography/typography.php:202
-msgid "None"
-msgstr ""
-
-#: option/fields/button_set/button_set.php:56
-#: option/fields/checkbox/checkbox.php:63 option/fields/radio/radio.php:62
-#: option/fields/select/select.php:113
-msgid "No data provided for this option type."
-msgstr ""
-
-#: option/fields/dimensions/dimensions.php:22
-msgid "width"
-msgstr ""
-
-#: option/fields/dimensions/dimensions.php:23
-msgid "height"
-msgstr ""
-
-#: option/fields/gallery/gallery.php:20
-msgid "Add Gallery"
-msgstr ""
-
-#: option/fields/gallery/gallery.php:21
-msgid "Edit Gallery"
-msgstr ""
-
-#: option/fields/gallery/gallery.php:22
-msgid "Clear"
-msgstr ""
-
-#: option/fields/group/group.php:23
-msgid "Add New"
-msgstr ""
-
-#: option/fields/group/group.php:35 option/fields/repeater/repeater.php:30
-msgid "Error: Nested field id can not be same with another nested field id."
-msgstr ""
-
-#: option/fields/group/group.php:46 option/fields/group/group.php:87
-#: option/fields/repeater/repeater.php:51
-#: option/fields/repeater/repeater.php:82
+#: option/fields/repeater/repeater.php:48
+#: option/fields/repeater/repeater.php:76
 msgid "Are you sure to delete this item?"
 msgstr ""
 
-#: option/fields/group/group.php:122 option/fields/repeater/repeater.php:96
-msgid "You can not add more than"
+#: option/fields/repeater/repeater.php:89
+msgid "You cannot add more."
 msgstr ""
 
-#: option/fields/group/group.php:123 option/fields/repeater/repeater.php:97
-msgid "You can not remove less than"
-msgstr ""
-
-#: option/fields/icon/icon.php:20 option/functions/actions.php:209
-msgid "Add Icon"
-msgstr ""
-
-#: option/fields/icon/icon.php:21
-msgid "Remove Icon"
-msgstr ""
-
-#: option/fields/link_color/link_color.php:37
-msgid "Hover"
-msgstr ""
-
-#: option/fields/link_color/link_color.php:38
-msgid "Active"
-msgstr ""
-
-#: option/fields/link_color/link_color.php:39
-msgid "Visited"
-msgstr ""
-
-#: option/fields/link_color/link_color.php:40
-msgid "Focus"
-msgstr ""
-
-#: option/fields/map/map.php:23
-msgid "Search your address..."
-msgstr ""
-
-#: option/fields/map/map.php:24
-msgid "Latitude"
-msgstr ""
-
-#: option/fields/map/map.php:25
-msgid "Longitude"
-msgstr ""
-
-#: option/fields/media/media.php:23 option/fields/upload/upload.php:21
-msgid "Upload"
-msgstr ""
-
-#: option/fields/media/media.php:24 option/fields/upload/upload.php:22
-msgid "Remove"
-msgstr ""
-
-#: option/fields/media/media.php:57
-msgid "No media selected"
-msgstr ""
-
-#: option/fields/sorter/sorter.php:21
-msgid "Enabled"
-msgstr ""
-
-#: option/fields/sorter/sorter.php:22
-msgid "Disabled"
+#: option/fields/repeater/repeater.php:90
+msgid "You cannot remove more."
 msgstr ""
 
 #: option/fields/switcher/switcher.php:20
@@ -762,198 +426,44 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
-#: option/fields/textarea/textarea.php:37
-msgid "Add Shortcode"
-msgstr ""
-
-#: option/fields/typography/typography.php:85
-msgid "Font Family"
-msgstr ""
-
-#: option/fields/typography/typography.php:86
-msgid "Select a font"
-msgstr ""
-
-#: option/fields/typography/typography.php:94
-msgid "Backup Font Family"
-msgstr ""
-
-#: option/fields/typography/typography.php:108
-#: option/fields/typography/typography.php:121
-#: option/fields/typography/typography.php:134
-#: option/fields/typography/typography.php:149
-#: option/fields/typography/typography.php:165
-#: option/fields/typography/typography.php:178
-#: option/fields/typography/typography.php:192
-#: option/fields/typography/typography.php:210
-msgid "Default"
-msgstr ""
-
-#: option/fields/typography/typography.php:119
-msgid "Font Style"
-msgstr ""
-
-#: option/fields/typography/typography.php:133
-#: option/fields/typography/typography.php:134
-msgid "Load Extra Styles"
-msgstr ""
-
-#: option/fields/typography/typography.php:147
-msgid "Subset"
-msgstr ""
-
-#: option/fields/typography/typography.php:157
-msgid "Text Align"
-msgstr ""
-
-#: option/fields/typography/typography.php:159
-msgid "Inherit"
-msgstr ""
-
-#: option/fields/typography/typography.php:160
-msgid "Left"
-msgstr ""
-
-#: option/fields/typography/typography.php:161
-msgid "Center"
-msgstr ""
-
-#: option/fields/typography/typography.php:162
-msgid "Right"
-msgstr ""
-
-#: option/fields/typography/typography.php:163
-msgid "Justify"
-msgstr ""
-
-#: option/fields/typography/typography.php:164
-msgid "Initial"
-msgstr ""
-
-#: option/fields/typography/typography.php:173
-msgid "Font Variant"
-msgstr ""
-
-#: option/fields/typography/typography.php:176
-msgid "Small Caps"
-msgstr ""
-
-#: option/fields/typography/typography.php:177
-msgid "All Small Caps"
-msgstr ""
-
-#: option/fields/typography/typography.php:186
-msgid "Text Transform"
-msgstr ""
-
-#: option/fields/typography/typography.php:189
-msgid "Capitalize"
-msgstr ""
-
-#: option/fields/typography/typography.php:190
-msgid "Uppercase"
-msgstr ""
-
-#: option/fields/typography/typography.php:191
-msgid "Lowercase"
-msgstr ""
-
-#: option/fields/typography/typography.php:200
-msgid "Text Decoration"
-msgstr ""
-
-#: option/fields/typography/typography.php:207
-msgid "Wavy"
-msgstr ""
-
-#: option/fields/typography/typography.php:208
-msgid "Overline"
-msgstr ""
-
-#: option/fields/typography/typography.php:209
-msgid "Line-through"
-msgstr ""
-
-#: option/fields/typography/typography.php:222
-msgid "Font Size"
-msgstr ""
-
-#: option/fields/typography/typography.php:234
-msgid "Line Height"
-msgstr ""
-
-#: option/fields/typography/typography.php:246
-msgid "Letter Spacing"
-msgstr ""
-
-#: option/fields/typography/typography.php:258
-msgid "Word Spacing"
-msgstr ""
-
-#: option/fields/typography/typography.php:273
-msgid "Font Color"
-msgstr ""
-
-#: option/fields/typography/typography.php:284
-msgid "Custom Style"
-msgstr ""
-
-#: option/fields/typography/typography.php:351
-msgid "Custom Web Fonts"
-msgstr ""
-
-#: option/fields/typography/typography.php:357
-msgid "Safe Web Fonts"
-msgstr ""
-
-#: option/fields/typography/typography.php:377
-msgid "Google Web Fonts"
-msgstr ""
-
 #: option/functions/actions.php:16 option/functions/actions.php:68
 #: option/functions/actions.php:106 option/functions/actions.php:141
 #: option/functions/actions.php:170
-msgid "Error: Nonce verification has failed. Please try again."
-msgstr ""
-
-#: option/functions/actions.php:41
-msgid "No data provided by developer"
+msgid "Error: Invalid nonce verification."
 msgstr ""
 
 #: option/functions/actions.php:72 option/functions/actions.php:110
-msgid "Error: Options unique id could not valid."
+msgid "Error: Invalid key."
 msgstr ""
 
 #: option/functions/actions.php:114
-msgid "Error: Import data could not valid."
+msgid "Error: The response is not a valid JSON response."
 msgstr ""
 
 #: option/functions/actions.php:174
-msgid "Error: Missing request arguments."
+msgid "Error: Invalid term ID."
 msgstr ""
 
 #: option/functions/actions.php:180
-msgid "You do not have required permissions to access."
-msgstr ""
-
-#: option/functions/actions.php:213
-msgid "Search a Icon..."
+msgid "Error: You do not have permission to do that."
 msgstr ""
 
 #: option/functions/validate.php:14 option/functions/validate.php:86
-msgid "Please write a valid email address!"
+msgid "Please enter a valid email address."
 msgstr ""
 
 #: option/functions/validate.php:32 option/functions/validate.php:106
-msgid "Please write a numeric data!"
-msgstr ""
+#, fuzzy
+#| msgid "enter a valid phoneumber"
+msgid "Please enter a valid number."
+msgstr "یک تلفن همراه معتبر وارد کنید"
 
 #: option/functions/validate.php:50 option/functions/validate.php:126
-msgid "Error! This field is required!"
+msgid "This field is required."
 msgstr ""
 
 #: option/functions/validate.php:68 option/functions/validate.php:146
-msgid "Please write a valid url!"
+msgid "Please enter a valid URL."
 msgstr ""
 
 #: option/options/options.php:6
@@ -964,7 +474,7 @@ msgstr "تنظیمات عمومی"
 msgid "NirWeb Team"
 msgstr "تیم نیروب"
 
-#: option/options/options.php:18
+#: option/options/options.php:18 settings/settings.php:35
 msgid "Woocommerce"
 msgstr "ووکامرس"
 
@@ -1358,7 +868,8 @@ msgstr "سفارشات در حال انجام"
 msgid "Refunded"
 msgstr "سفارشات مسترد شده"
 
-#: option/options/woocommerce/general.php:3
+#: option/options/woocommerce/general.php:3 settings/settings.php:34
+#: settings/settings.php:39
 msgid "General settings"
 msgstr "تنظیمات عمومی"
 
@@ -1368,7 +879,7 @@ msgstr "تنظیمات عمومی"
 msgid "Select an option"
 msgstr "یک گزینه را انتخاب کنید"
 
-#: option/options/woocommerce/general.php:15
+#: option/options/woocommerce/general.php:15 settings/settings.php:45
 msgid "SMS Panel"
 msgstr "پنل پیامکی"
 
@@ -1740,6 +1251,26 @@ msgstr ""
 "برای ارسال پیامک تاییدیه شماره موبایل از متغیر code در پترن خود استفاده "
 "کنید ، اگر از ملی پیامک استفاده میکنید از متغیر 0 استفاده کنید"
 
+#: option/options/wp/phone.php:3
+msgid "phone"
+msgstr ""
+
+#: option/options/wp/phone.php:8
+#, fuzzy
+#| msgid "use shortcode"
+msgid "active phone shortcode."
+msgstr "استفاده از کد کوتاه"
+
+#: option/options/wp/phone.php:9
+msgid "user's phone numbers will be saved and shown in admin panel."
+msgstr "شماره تلفن کاربر ذخیره خواهد شد و در پنل مدیریت نشان داده شده است."
+
+#: option/options/wp/phone.php:16
+#, fuzzy
+#| msgid "use shortcode [on_sale_nirweb]"
+msgid "use shortcode [phone_box_nirweb]"
+msgstr "استفاده از کد کوتاه [on_sale_nirweb]"
+
 #: option/options/wp/post.php:3
 msgid "New Post"
 msgstr "پست جدید"
@@ -1837,17 +1368,79 @@ msgstr "الزامی کردن فیلد شماره تماس"
 msgid "Add phone number field to woocommerce registration form."
 msgstr "افزودن فیلد شماره موبایل به فیلد پیش فرض ثبت نام ووکامرس"
 
-#. Plugin Name of the plugin/theme
-msgid "پیامک رایگان نیروب"
+#: settings/settings.php:48
+#, fuzzy
+#| msgid "SMS Panel"
+msgid "IP Panel"
+msgstr "پنل پیامکی"
+
+#: settings/settings.php:49
+#, fuzzy
+#| msgid "Melipayamak username"
+msgid "Melipayamak"
+msgstr "نام‌کاربری"
+
+#: settings/settings.php:50
+msgid "Sms.ir"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "nirweb"
-msgstr "نیروب"
+#: settings/settings.php:55
+msgid "Username"
+msgstr "نام کاربری"
 
+#: settings/settings.php:56
+msgid "enter api key for melipayamak."
+msgstr "اگر از ملی پیامک استفاده میکنید api key را وارد کنید "
+
+#: settings/settings.php:62
+msgid "Password"
+msgstr "رمزعبور"
+
+#: settings/settings.php:63
+msgid "enter security key for melipayamak."
+msgstr "اگر از ملی پیامک استفاده میکنید  security key را وارد کنید "
+
+#: settings/settings.php:69
+msgid "sender number if you are using ip panel"
+msgstr "شماره فرستنده آی پی پنل "
+
+#: settings/settings.php:75
+msgid "Admin phone number"
+msgstr "شماره تلفن مدیر"
+
+#. Plugin Name of the plugin/theme
+msgid "پیامک رایگان ووکامرس و وردپرس نیر وب"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
 #. Author URI of the plugin/theme
 msgid "https://nirweb.ir/"
 msgstr ""
+
+#. Description of the plugin/theme
+msgid "کاملترین افزونه پیامک ووکامرس و وردپرس"
+msgstr ""
+
+#. Author of the plugin/theme
+#, fuzzy
+#| msgid "NirWeb Team"
+msgid "NirWeb"
+msgstr "تیم نیروب"
+
+#~ msgid "Success. Imported backup options."
+#~ msgstr "تنظیمات با موفقیت وارد شد."
+
+#~ msgid "Nirweb team"
+#~ msgstr "تیم نیروب"
+
+#~ msgid "Settings have changed, you should save them!"
+#~ msgstr "تنظیمات تغییر کرده اند ، باید آنها را ذخیره کنید!"
+
+#~ msgid "Search option(s)"
+#~ msgstr "جستجوی گزینه‌(ها)"
+
+#~ msgid "nirweb"
+#~ msgstr "نیروب"
 
 #~ msgid ""
 #~ "Through this section you can send sms to all users.Make sure you have "
@@ -1863,9 +1456,6 @@ msgstr ""
 
 #~ msgid "ID"
 #~ msgstr "شناسه"
-
-#~ msgid "phone number"
-#~ msgstr "شماره همراه"
 
 #~ msgid "Export"
 #~ msgstr "خروجی"

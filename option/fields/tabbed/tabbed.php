@@ -20,23 +20,23 @@ if ( ! class_exists( 'CSF_Field_tabbed' ) ) {
 
       echo wp_kses_post($this->field_before());
 
-      echo '<div class="csf-tabbed-nav" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
+      echo '<div class="CFSSMARTSMS-tabbed-nav" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
       foreach ( $this->field['tabs'] as $key => $tab ) {
 
-        $tabbed_icon   = ( ! empty( $tab['icon'] ) ) ? '<i class="csf--icon '. esc_attr( $tab['icon'] ) .'"></i>' : '';
-        $tabbed_active = ( empty( $key ) ) ? 'csf-tabbed-active' : '';
+        $tabbed_icon   = ( ! empty( $tab['icon'] ) ) ? '<i class="CFSSMARTSMS--icon '. esc_attr( $tab['icon'] ) .'"></i>' : '';
+        $tabbed_active = ( empty( $key ) ) ? 'CFSSMARTSMS-tabbed-active' : '';
 
-        echo wp_kses_post( '<a href="#" class="'. esc_attr( $tabbed_active ) .'"">'. wp_kses_post($tabbed_icon) . esc_attr( $tab['title'] ) .'</a>');
+        echo '<a href="#" class="'. esc_attr( $tabbed_active ) .'"">'. wp_kses_post($tabbed_icon) . esc_attr( $tab['title'] ) .'</a>';
 
       }
-      echo wp_kses_post('</div>');
+      echo '</div>';
 
-      echo wp_kses_post('<div class="csf-tabbed-contents">');
+      echo '<div class="CFSSMARTSMS-tabbed-contents">';
       foreach ( $this->field['tabs'] as $key => $tab ) {
 
         $tabbed_hidden = ( ! empty( $key ) ) ? ' hidden' : '';
 
-        echo '<div class="csf-tabbed-content'. esc_attr( $tabbed_hidden ) .'">';
+        echo '<div class="CFSSMARTSMS-tabbed-content'. esc_attr( $tabbed_hidden ) .'">';
 
         foreach ( $tab['fields'] as $field ) {
 
@@ -47,14 +47,14 @@ if ( ! class_exists( 'CSF_Field_tabbed' ) ) {
           $field_value   = ( isset( $this->value[$field_id] ) ) ? $this->value[$field_id] : $field_default;
           $unique_id     = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']' : $this->field['id'];
 
-          CSF::field( $field, $field_value, $unique_id, 'field/tabbed' );
+          CFSSMARTSMS::field( $field, $field_value, $unique_id, 'field/tabbed' );
 
         }
 
-        echo wp_kses_post('</div>');
+        echo '</div>';
 
       }
-      echo wp_kses_post('</div>');
+      echo '</div>';
 
       echo wp_kses_post($this->field_after());
 
