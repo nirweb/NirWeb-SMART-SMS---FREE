@@ -73,7 +73,7 @@
 .pi_nav_tb.nav-tab-active .nirweb_tab_title{color:var(--main-color);}
 .pi_nav_tb svg{fill:#878D93; }
 .pi_nav_tb:hover svg,
-.pi_nav_tb.nav-tab-active svg{fill:var(--main-color); }
+.pi_nav_tb.nav-tab-active svg{fill: #ffc300; }
 .nirweb_smart_sms_admin_container h2{
     position:relative;
     font-family: Tahoma,Arial,sans-serif;color: var(--main-color);
@@ -92,8 +92,10 @@
 .nirweb_submit{background-color:var(--main-color);width: 150px;height: 40px;border: 0;border-radius: 8px;color: #fff;font-weight: 600;font-size: 15px;margin-top: 20px;cursor: pointer;}
 .nirweb_submit.disabled{cursor: default;opacity: 0.4;}
 .nirweb_massage{background-color: #edfbf5;color: #05c58a;position: relative;padding: 0 15px 23px;border-radius: 5px;font-size: 15px;overflow: hidden;margin-bottom: 20px;}
+.nirweb_massage.info{background-color: rgb(255 195 0 / 8%);color: #FF9600;}
+.nirweb_massage.info svg{bottom:0;top: 5px;}
 .nirweb_massage h5{font-size: 18px;font-family: Tahoma,Arial,sans-serif;;font-weight: 600;}
-.nirweb_massage p{font-size: 15px;}
+.nirweb_massage p{font-size: 15px;width:60%;}
 .nirweb_massage svg{position: absolute;left: 10%;bottom: -50px;transform: scale(0.95);}
 @media screen and (max-width:991px) {
     .nirshop_main{
@@ -115,18 +117,15 @@
 .nirweb_sms_group{
     display:flex;
     /* align-items: center; */margin-bottom: 30px;}
-.nirweb_sms_group label{margin:0}
-.nirweb_sms_group input{margin:0}
-.nirweb_sms_group label{width: 25%;font-weight: 600;font-size: 14px;margin-left: 20px;}
-.nirweb_sms_group label span{color: #727272;margin-top: 10px;font-weight: 400;}
-.nirweb_smart_sms_tabs{width: 25%;margin: 0;}
-.nirweb_sms_content_settings{width: 75%}
-.nirweb_smart_sms_tabs li{border-bottom: 1px solid #e5e5e5;background-color: transparent;margin: 0;padding: 20px 10px;font-size: 14px;}
-.nirweb_smart_sms_tabs li.active{background-color: #fff;border-right: 4px solid  var(--main-color);}
-.nirweb_inner_tabs{display: flex;align-items: center;}
-.nirweb_inner_tabs li{margin-left: 30px;font-size: 17px;padding-bottom: 15px;}
-.nirweb_inner_tabs li.active{border-bottom: 3px solid  var(--main-color);color:var(--main-color)}
-.nirweb_smart_sms_admin_container  input[type=checkbox]{width: 25px;height: 25px;margin: 0;display: flex;align-items: center;justify-content: center;margin-left: 5px;}
-.checkbox_nirweb{display:flex;align-items: center;width: max-content;margin-bottom: 25px;}
-.checkbox_nirweb label{margin:0;}
-.nirweb_smart_sms_admin_container > div{display: none}
+.nirweb_warning_massage{background-color: rgb(236 6 6 / 13%);color: #EC0606;position: relative;padding: 0 15px 23px;border-radius: 5px;font-size: 15px;overflow: hidden;margin: 20px 0;}
+.nirweb_warning_massage h5{font-size: 18px;
+    font-family: Tahoma,Arial,sans-serif;
+    font-weight: 600;}
+.nirweb_warning_massage p{font-size: 15px;max-width: 60%;}
+.nirweb_warning_massage svg{position: absolute;
+    left: 10%;
+    bottom: -50px;
+    transform: scale(0.95);}
+form.bordered{border-bottom: 1px solid #cccc;padding-bottom: 30px;margin-bottom: 30px;}
+.CFSSMARTSMS-field.CFSSMARTSMS-field-content{background-color: #f7f7f7;}
+.nirweb_activate_pro_notice{background-color: rgb(255 195 0 / 8%);box-shadow: 0 1px 1px rgb(0 0 0 / 10%);padding: 12px;border-right: 4px solid var(--main-color);color: #000;}

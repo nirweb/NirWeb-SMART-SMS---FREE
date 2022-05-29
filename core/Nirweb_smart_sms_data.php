@@ -557,5 +557,6 @@ class Nirweb_smart_sms_data
             $UltraFastSend = $SmsIR_UltraFastSend->UltraFastSend($data);
         }
     }
+
 }
 new Nirweb_smart_sms_data;

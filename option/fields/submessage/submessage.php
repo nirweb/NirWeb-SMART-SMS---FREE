@@ -8,7 +8,7 @@
  *
  */
 if ( ! class_exists( 'CSF_Field_submessage' ) ) {
-  class CSF_Field_submessage extends CSF_Fields {
+  class CSF_Field_submessage extends CSFSMARTSMS_Fields {
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );
@@ -18,7 +18,7 @@ if ( ! class_exists( 'CSF_Field_submessage' ) ) {
 
       $style = ( ! empty( $this->field['style'] ) ) ? $this->field['style'] : 'normal';
 
-      echo '<div class="CFSSMARTSMS-submessage CFSSMARTSMS-submessage-'. esc_attr( $style ) .'">'. wp_kses_post($this->field['content']) .'</div>';
+      echo '<div class="CFSSMARTSMS-submessage CFSSMARTSMS-submessage-'. wp_kses_post( $style ) .'">'. wp_kses_post($this->field['content']) .'</div>';
 
     }
 

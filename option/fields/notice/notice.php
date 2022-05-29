@@ -8,7 +8,7 @@
  *
  */
 if ( ! class_exists( 'CSF_Field_notice' ) ) {
-  class CSF_Field_notice extends CSF_Fields {
+  class CSF_Field_notice extends CSFSMARTSMS_Fields {
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );
@@ -18,7 +18,7 @@ if ( ! class_exists( 'CSF_Field_notice' ) ) {
 
       $style = ( ! empty( $this->field['style'] ) ) ? $this->field['style'] : 'normal';
 
-      echo ( ! empty( $this->field['content'] ) ) ? '<div class="CFSSMARTSMS-notice CFSSMARTSMS-notice-'. esc_attr( $style ) .'">'. wp_kses_post($this->field['content']) .'</div>' : '';
+      echo ( ! empty( $this->field['content'] ) ) ? '<div class="CFSSMARTSMS-notice CFSSMARTSMS-notice-'. wp_kses_post( $style ) .'">'. wp_kses_post($this->field['content']) .'</div>' : '';
 
     }
 

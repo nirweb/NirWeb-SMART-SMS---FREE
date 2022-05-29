@@ -8,7 +8,7 @@
  *
  */
 if ( ! class_exists( 'CSF_Field_fieldset' ) ) {
-  class CSF_Field_fieldset extends CSF_Fields {
+  class CSF_Field_fieldset extends CSFSMARTSMS_Fields {
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );
@@ -18,7 +18,7 @@ if ( ! class_exists( 'CSF_Field_fieldset' ) ) {
 
       echo wp_kses_post($this->field_before());
 
-      echo '<div class="CFSSMARTSMS-fieldset-content" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
+      echo '<div class="CFSSMARTSMS-fieldset-content" data-depend-id="'. wp_kses_post( $this->field['id'] ) .'">';
 
       foreach ( $this->field['fields'] as $field ) {
 

@@ -70,9 +70,9 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
           $depend_visible  = ( ! empty( $dependency[4] ) ) ? $dependency[4] : '';
         }
 
-        $depend .= ' data-controller="'. esc_attr( $data_controller ) .'"';
-        $depend .= ' data-condition="'. esc_attr( $data_condition ) .'"';
-        $depend .= ' data-value="'. esc_attr( $data_value ) .'"';
+        $depend .= ' data-controller="'. wp_kses_post( $data_controller ) .'"';
+        $depend .= ' data-condition="'. wp_kses_post( $data_condition ) .'"';
+        $depend .= ' data-value="'. wp_kses_post( $data_value ) .'"';
         $depend .= ( ! empty( $data_global ) ) ? ' data-depend-global="true"' : '';
 
         $visible  = ' CFSSMARTSMS-dependency-control';
@@ -83,7 +83,7 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
       $id    = 'customize-control-' . str_replace( array( '[', ']' ), array( '-', '' ), $this->id );
       $class = 'customize-control customize-control-'. $this->type . $visible;
 
-      echo '<li id="'. esc_attr( $id ) .'" class="'. esc_attr( $class ) .'"'. esc_html($depend) .'>';
+      echo '<li id="'. wp_kses_post( $id ) .'" class="'. wp_kses_post( $class ) .'"'. wp_kses_post($depend) .'>';
       $this->render_field_content();
       echo '</li>';
 
@@ -120,7 +120,7 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
       $custom     = ( ! empty( $this->field['customizer'] ) ) ? true : false;
       $is_complex = ( in_array( $this->field['type'], $complex ) ) ? true : false;
       $class      = ( $is_complex || $custom ) ? ' CFSSMARTSMS-customize-complex' : '';
-      $atts       = ( $is_complex || $custom ) ? ' data-unique-id="'. esc_attr( $this->unique ) .'" data-option-id="'. esc_attr( $field_id ) .'"' : '';
+      $atts       = ( $is_complex || $custom ) ? ' data-unique-id="'. wp_kses_post( $this->unique ) .'" data-option-id="'. wp_kses_post( $field_id ) .'"' : '';
 
       if ( ! $is_complex && ! $custom ) {
         $this->field['attributes']['data-customize-setting-link'] = $this->settings['default']->id;
@@ -130,7 +130,7 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
 
       $this->field['dependency'] = array();
 
-      echo '<div class="CFSSMARTSMS-customize-field'. esc_attr( $class ) .'"'. esc_html($atts) .'>';
+      echo '<div class="CFSSMARTSMS-customize-field'. wp_kses_post( $class ) .'"'. wp_kses_post($atts) .'>';
 
       CFSSMARTSMS::field( $this->field, $this->value(), $this->unique, 'customize' );
 

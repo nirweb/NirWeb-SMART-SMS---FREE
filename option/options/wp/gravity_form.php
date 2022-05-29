@@ -12,6 +12,10 @@ CFSSMARTSMS::createSection( $prefix, array(
     'title'  => '<div class="nirweb_codestar_icon">'.esc_html__('Gravity Form', 'nss').'<span><i class="fas fa-lock"></i>PRO</span></div>',
     'fields' => array(
         array(
+            'type'    => 'content',
+            'content' => '<div class="nirweb_activate_pro_notice">'.esc_html__('activate pro version for the settings.','nss').'</div>',
+        ),
+        array(
           'type'    => 'notice',
           'style'   => 'info',
           'content' =>esc_html__( 'activate this section to notify you when a gravity form is submitted.Make sure you have the plugin gravity form installed and activated.','nss'),

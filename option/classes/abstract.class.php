@@ -7,8 +7,8 @@
  * @version 1.0.0
  *
  */
-if ( ! class_exists( 'CSF_Abstract' ) ) {
-  abstract class CSF_Abstract {
+if ( ! class_exists( 'CSFSMARTSMS_Abstract' ) ) {
+  abstract class CSFSMARTSMS_Abstract {
 
     public $abstract   = '';
     public $output_css = '';

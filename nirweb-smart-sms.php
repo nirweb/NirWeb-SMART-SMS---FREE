@@ -30,3 +30,18 @@ add_action( 'plugins_loaded',function() {
 
 require_once NIRWEB_SMART_SMS . '/core/includes.php';
 
+//$product_id = 612;
+//global $wpdb;
+//$phone_numbers =  $wpdb->get_col(
+//    $wpdb->prepare("
+//     SELECT DISTINCT users.meta_value
+//     FROM {$wpdb->prefix}wc_order_product_lookup as orders
+//     JOIN {$wpdb->prefix}wc_customer_lookup as customer ON orders.customer_id = customer.customer_id
+//     JOIN $wpdb->usermeta as users ON users.user_id = customer.user_id
+//    WHERE ( orders.product_id = %d OR orders.variation_id = %d) AND (customer.user_id IS NOT NULL ) AND (meta_key = 'billing_phone')  ",$product_id,$product_id));
+//
+//$user_ids =  $wpdb->get_results("SELECT user_id FROM {$wpdb->prefix}wc_customer_lookup WHERE customer_id IN ('" .implode("','", $customer_ids). "')", ARRAY_A);
+//
+//
+//$rcpt_nm = $wpdb->get_col("SELECT meta_value FROM $wpdb->usermeta WHERE meta_key = 'billing_phone' WHERE user_id IN ('" .implode("','", $user_ids). "') " );
+

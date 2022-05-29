@@ -8,7 +8,7 @@
  *
  */
 if ( ! class_exists( 'CSF_Field_content' ) ) {
-  class CSF_Field_content extends CSF_Fields {
+  class CSF_Field_content extends CSFSMARTSMS_Fields {
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );

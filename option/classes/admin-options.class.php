@@ -7,8 +7,8 @@
  * @version 1.0.0
  *
  */
-if ( ! class_exists( 'CSF_Options' ) ) {
-  class CSF_Options extends CSF_Abstract {
+if ( ! class_exists( 'CSFSMARTSMS_Options' ) ) {
+  class CSFSMARTSMS_Options extends CSFSMARTSMS_Abstract {
 
     // constans
     public $unique       = '';
@@ -199,12 +199,12 @@ if ( ! class_exists( 'CSF_Options' ) ) {
         global $submenu;
 
         $menu_slug = $this->args['menu_slug'];
-        $menu_icon = ( ! empty( $this->args['admin_bar_menu_icon'] ) ) ? '<span class="CFSSMARTSMS-ab-icon ab-icon '. esc_html( $this->args['admin_bar_menu_icon'] ) .'"></span>' : '';
+        $menu_icon = ( ! empty( $this->args['admin_bar_menu_icon'] ) ) ? '<span class="CFSSMARTSMS-ab-icon ab-icon '. wp_kses_post( $this->args['admin_bar_menu_icon'] ) .'"></span>' : '';
 
         $wp_admin_bar->add_node( array(
           'id'    => $menu_slug,
-          'title' => $menu_icon . esc_html( $this->args['menu_title'] ),
-          'href'  => esc_url( ( is_network_admin() ) ? network_admin_url( 'admin.php?page='. esc_html($menu_slug) ) : admin_url( 'admin.php?page='. esc_html($menu_slug) ) ),
+          'title' => $menu_icon . wp_kses_post( $this->args['menu_title'] ),
+          'href'  => esc_url( ( is_network_admin() ) ? network_admin_url( 'admin.php?page='. wp_kses_post($menu_slug) ) : admin_url( 'admin.php?page='. wp_kses_post($menu_slug) ) ),
         ) );
 
         if ( ! empty( $submenu[$menu_slug] ) ) {
@@ -213,7 +213,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
               'parent' => $menu_slug,
               'id'     => $menu_slug .'-'. $menu_key,
               'title'  => $menu_value[0],
-              'href'   => esc_url( ( is_network_admin() ) ? network_admin_url( 'admin.php?page='. esc_html($menu_value[2]) ) : admin_url( 'admin.php?page='. esc_html($menu_value[2]) ) ),
+              'href'   => esc_url( ( is_network_admin() ) ? network_admin_url( 'admin.php?page='. wp_kses_post($menu_value[2]) ) : admin_url( 'admin.php?page='. wp_kses_post($menu_value[2]) ) ),
             ) );
           }
         }
@@ -277,12 +277,12 @@ if ( ! class_exists( 'CSF_Options' ) ) {
         );
       // Set variables.
       $data      = array();
-      $noncekey  = 'csf_options_nonce'. $this->unique;
+      $noncekey  = 'CSFSMARTSMS_Options_nonce'. $this->unique;
       $nonce     = ( ! empty( $response[$noncekey] ) ) ? $response[$noncekey] : '';
       $options   = ( ! empty( $response[$this->unique] ) ) ? $response[$this->unique] : array();
       $transient = ( ! empty( $response['csf_transient'] ) ) ? $response['csf_transient'] : array();
 
-      if ( wp_verify_nonce( $nonce, 'csf_options_nonce' ) ) {
+      if ( wp_verify_nonce( $nonce, 'CSFSMARTSMS_Options_nonce' ) ) {
 
         $importing  = false;
         $section_id = ( ! empty( $transient['section'] ) ) ? $transient['section'] : '';
@@ -457,21 +457,21 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
           if ( $menu_type === 'submenu' ) {
 
-              $menu_page = call_user_func( 'add_submenu_page', esc_html($menu_parent), esc_attr( $menu_title ), esc_attr( $menu_title ),esc_html($menu_capability), esc_html($menu_slug), array( $this, 'add_options_html' ) );
+              $menu_page = call_user_func( 'add_submenu_page', wp_kses_post($menu_parent), wp_kses_post( $menu_title ), wp_kses_post( $menu_title ),wp_kses_post($menu_capability), wp_kses_post($menu_slug), array( $this, 'add_options_html' ) );
 
           } else {
 
-              $menu_page = call_user_func( 'add_menu_page', esc_attr( $menu_title ), esc_attr( $menu_title ), esc_html($menu_capability), esc_html($menu_slug), array( $this, 'add_options_html' ), wp_kses_post($menu_icon), $menu_position );
+              $menu_page = call_user_func( 'add_menu_page', wp_kses_post( $menu_title ), wp_kses_post( $menu_title ), wp_kses_post($menu_capability), wp_kses_post($menu_slug), array( $this, 'add_options_html' ), wp_kses_post($menu_icon), $menu_position );
 
               if ( ! empty( $sub_menu_title ) ) {
-                  call_user_func( 'add_submenu_page', wp_kses_post($menu_slug), esc_attr( $sub_menu_title ), esc_attr( $sub_menu_title ), esc_html($menu_capability), esc_html($menu_slug), array( $this, 'add_options_html' ) );
+                  call_user_func( 'add_submenu_page', wp_kses_post($menu_slug), wp_kses_post( $sub_menu_title ), wp_kses_post( $sub_menu_title ), wp_kses_post($menu_capability), wp_kses_post($menu_slug), array( $this, 'add_options_html' ) );
               }
 
               if ( ! empty( $this->args['show_sub_menu'] ) && count( $this->pre_tabs ) > 1 ) {
 
                   // create submenus
                   foreach ( $this->pre_tabs as $section ) {
-                      call_user_func( 'add_submenu_page', wp_kses_post($menu_slug), esc_attr( $section['title'] ),  esc_attr( $section['title'] ), esc_html($menu_capability), esc_html($menu_slug) .'#tab='. sanitize_title( $section['title'] ), '__return_null' );
+                      call_user_func( 'add_submenu_page', wp_kses_post($menu_slug), wp_kses_post( $section['title'] ),  wp_kses_post( $section['title'] ), wp_kses_post($menu_capability), wp_kses_post($menu_slug) .'#tab='. sanitize_title( $section['title'] ), '__return_null' );
                   }
 
                   remove_submenu_page( $menu_slug, $menu_slug );
@@ -555,19 +555,19 @@ if ( ! class_exists( 'CSF_Options' ) ) {
       $nav_type      = ( $this->args['nav'] === 'inline' ) ? 'inline' : 'normal';
       $form_action   = ( $this->args['form_action'] ) ? $this->args['form_action'] : '';
 
-      do_action( 'csf_options_before' );
+      do_action( 'CSFSMARTSMS_Options_before' );
 
-      echo '<div class="CFSSMARTSMS CFSSMARTSMS-options'. esc_html( $theme . $class . $wrapper_class ) .'" data-slug="'. esc_html( $this->args['menu_slug'] ) .'" data-unique="'. esc_html( $this->unique ) .'">';
+      echo '<div class="CFSSMARTSMS CFSSMARTSMS-options'. wp_kses_post( $theme . $class . $wrapper_class ) .'" data-slug="'. wp_kses_post( $this->args['menu_slug'] ) .'" data-unique="'. wp_kses_post( $this->unique ) .'">';
 
         echo '<div class="CFSSMARTSMS-container">';
 
-        echo '<form method="post" action="'. esc_html( $form_action ) .'" enctype="multipart/form-data" id="CFSSMARTSMS-form" autocomplete="off" novalidate="novalidate">';
+        echo '<form method="post" action="'. wp_kses_post( $form_action ) .'" enctype="multipart/form-data" id="CFSSMARTSMS-form" autocomplete="off" novalidate="novalidate">';
 
         echo '<input type="hidden" class="CFSSMARTSMS-section-id" name="csf_transient[section]" value="1">';
 
-        wp_nonce_field( 'csf_options_nonce', 'csf_options_nonce'. $this->unique );
+        wp_nonce_field( 'CSFSMARTSMS_Options_nonce', 'CSFSMARTSMS_Options_nonce'. $this->unique );
 
-        echo '<div class="CFSSMARTSMS-header'. esc_html( $sticky_class ) .'">';
+        echo '<div class="CFSSMARTSMS-header'. wp_kses_post( $sticky_class ) .'">';
         echo '<div class="CFSSMARTSMS-header-inner">';
 
           echo '<div class="CFSSMARTSMS-header-left">';
@@ -579,7 +579,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
             $notice_class = ( ! empty( $this->notice ) ) ? 'CFSSMARTSMS-form-show' : '';
             $notice_text  = ( ! empty( $this->notice ) ) ? $this->notice : '';
 
-            echo '<div class="CFSSMARTSMS-form-result CFSSMARTSMS-form-success '. esc_html( $notice_class ) .'">'. wp_kses_post($notice_text) .'</div>';
+            echo '<div class="CFSSMARTSMS-form-result CFSSMARTSMS-form-success '. wp_kses_post( $notice_class ) .'">'. wp_kses_post($notice_text) .'</div>';
 
             echo ( $this->args['show_form_warning'] ) ? '<div class="CFSSMARTSMS-form-result CFSSMARTSMS-form-warning">'. esc_html__( 'You have unsaved changes, save your changes!', 'CFSSMARTSMS' ) .'</div>' : '';
 
@@ -588,7 +588,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
             echo ( $this->args['show_search'] ) ? '<div class="CFSSMARTSMS-search"><input type="text" name="CFSSMARTSMS-search" placeholder="'. esc_html__( 'Search...', 'CFSSMARTSMS' ) .'" autocomplete="off" /></div>' : '';
 
             echo '<div class="CFSSMARTSMS-buttons">';
-            echo '<input type="submit" name="'. esc_html( $this->unique ) .'[_nonce][save]" class="button button-primary CFSSMARTSMS-top-save CFSSMARTSMS-save'. esc_html( $ajax_class ) .'" value="'. esc_html__( 'Save', 'CFSSMARTSMS' ) .'" data-save="'. esc_html__( 'Saving...', 'CFSSMARTSMS' ) .'">';
+            echo '<input type="submit" name="'. wp_kses_post( $this->unique ) .'[_nonce][save]" class="button button-primary CFSSMARTSMS-top-save CFSSMARTSMS-save'. wp_kses_post( $ajax_class ) .'" value="'. esc_html__( 'Save', 'CFSSMARTSMS' ) .'" data-save="'. esc_html__( 'Saving...', 'CFSSMARTSMS' ) .'">';
             echo ( $this->args['show_reset_section'] ) ? '<input type="submit" name="csf_transient[reset_section]" class="button button-secondary CFSSMARTSMS-reset-section CFSSMARTSMS-confirm" value="'. esc_html__( 'Reset Section', 'CFSSMARTSMS' ) .'" data-confirm="'. esc_html__( 'Are you sure to reset this section options?', 'CFSSMARTSMS' ) .'">' : '';
             echo ( $this->args['show_reset_all'] ) ? '<input type="submit" name="csf_transient[reset]" class="button CFSSMARTSMS-warning-primary CFSSMARTSMS-reset-all CFSSMARTSMS-confirm" value="'. ( ( $this->args['show_reset_section'] ) ? esc_html__( 'Reset All', 'CFSSMARTSMS' ) : esc_html__( 'Reset', 'CFSSMARTSMS' ) ) .'" data-confirm="'. esc_html__( 'Are you sure you want to reset all settings to default values?', 'CFSSMARTSMS' ) .'">' : '';
             echo '</div>';
@@ -599,11 +599,11 @@ if ( ! class_exists( 'CSF_Options' ) ) {
           echo '</div>';
         echo '</div>';
 
-        echo '<div class="CFSSMARTSMS-wrapper'. esc_html( $show_all ) .'">';
+        echo '<div class="CFSSMARTSMS-wrapper'. wp_kses_post( $show_all ) .'">';
 
           if ( $has_nav ) {
 
-            echo '<div class="CFSSMARTSMS-nav CFSSMARTSMS-nav-'. esc_html( $nav_type ) .' CFSSMARTSMS-nav-options">';
+            echo '<div class="CFSSMARTSMS-nav CFSSMARTSMS-nav-'. wp_kses_post( $nav_type ) .' CFSSMARTSMS-nav-options">';
 
               echo '<ul>';
 
@@ -611,13 +611,13 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
                 $tab_id    = sanitize_title( $tab['title'] );
                 $tab_error = $this->error_check( $tab );
-                $tab_icon  = ( ! empty( $tab['icon'] ) ) ? '<i class="CFSSMARTSMS-tab-icon '. esc_html( $tab['icon'] ) .'"></i>' : '';
+                $tab_icon  = ( ! empty( $tab['icon'] ) ) ? '<i class="CFSSMARTSMS-tab-icon '. wp_kses_post( $tab['icon'] ) .'"></i>' : '';
 
                 if ( ! empty( $tab['subs'] ) ) {
 
                   echo '<li class="CFSSMARTSMS-tab-item">';
 
-                    echo '<a href="#tab='. esc_html( $tab_id ) .'" data-tab-id="'. esc_html( $tab_id ) .'" class="CFSSMARTSMS-arrow">'. wp_kses_post($tab_icon) . wp_kses_post($tab['title']) . wp_kses_post($tab_error) .'</a>';
+                    echo '<a href="#tab='. wp_kses_post( $tab_id ) .'" data-tab-id="'. wp_kses_post( $tab_id ) .'" class="CFSSMARTSMS-arrow">'. wp_kses_post($tab_icon) . wp_kses_post($tab['title']) . wp_kses_post($tab_error) .'</a>';
 
                     echo '<ul>';
 
@@ -625,9 +625,9 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
                       $sub_id    = $tab_id .'/'. sanitize_title( $sub['title'] );
                       $sub_error = $this->error_check( $sub );
-                      $sub_icon  = ( ! empty( $sub['icon'] ) ) ? '<i class="CFSSMARTSMS-tab-icon '. esc_html( $sub['icon'] ) .'"></i>' : '';
+                      $sub_icon  = ( ! empty( $sub['icon'] ) ) ? '<i class="CFSSMARTSMS-tab-icon '. wp_kses_post( $sub['icon'] ) .'"></i>' : '';
 
-                      echo '<li><a href="#tab='. esc_html( $sub_id ) .'" data-tab-id="'. esc_html( $sub_id ) .'">'. wp_kses_post($sub_icon) . wp_kses_post($sub['title']) . wp_kses_post($sub_error) .'</a></li>';
+                      echo '<li><a href="#tab='. wp_kses_post( $sub_id ) .'" data-tab-id="'. wp_kses_post( $sub_id ) .'">'. wp_kses_post($sub_icon) . wp_kses_post($sub['title']) . wp_kses_post($sub_error) .'</a></li>';
 
                     }
 
@@ -637,7 +637,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
                 } else {
 
-                  echo '<li class="CFSSMARTSMS-tab-item"><a href="'.esc_url('#tab='. esc_html( $tab_id )).'" data-tab-id="'. esc_html( $tab_id ) .'">'. wp_kses_post($tab_icon) . wp_kses_post($tab['title']) . wp_kses_post($tab_error) .'</a></li>';
+                  echo '<li class="CFSSMARTSMS-tab-item"><a href="'.esc_url('#tab='. wp_kses_post( $tab_id )).'" data-tab-id="'. wp_kses_post( $tab_id ) .'">'. wp_kses_post($tab_icon) . wp_kses_post($tab['title']) . wp_kses_post($tab_error) .'</a></li>';
 
                 }
 
@@ -656,13 +656,13 @@ if ( ! class_exists( 'CSF_Options' ) ) {
             foreach ( $this->pre_sections as $section ) {
 
               $section_onload = ( ! $has_nav ) ? ' CFSSMARTSMS-onload' : '';
-              $section_class  = ( ! empty( $section['class'] ) ) ? ' '. esc_html($section['class']) : '';
-              $section_icon   = ( ! empty( $section['icon'] ) ) ? '<i class="CFSSMARTSMS-section-icon '. esc_html( $section['icon'] ) .'"></i>' : '';
+              $section_class  = ( ! empty( $section['class'] ) ) ? ' '. wp_kses_post($section['class']) : '';
+              $section_icon   = ( ! empty( $section['icon'] ) ) ? '<i class="CFSSMARTSMS-section-icon '. wp_kses_post( $section['icon'] ) .'"></i>' : '';
               $section_title  = ( ! empty( $section['title'] ) ) ? $section['title'] : '';
               $section_parent = ( ! empty( $section['ptitle'] ) ) ? sanitize_title( $section['ptitle'] ) .'/' : '';
               $section_slug   = ( ! empty( $section['title'] ) ) ? sanitize_title( $section_title ) : '';
 
-              echo '<div class="CFSSMARTSMS-section hidden'. esc_html( $section_onload . $section_class ) .'" data-section-id="'. esc_html( $section_parent . $section_slug ) .'">';
+              echo '<div class="CFSSMARTSMS-section hidden'. wp_kses_post( $section_onload . $section_class ) .'" data-section-id="'. wp_kses_post( $section_parent . $section_slug ) .'">';
               echo ( $has_nav ) ? '<div class="CFSSMARTSMS-section-title"><h3>'. wp_kses_post($section_icon) . wp_kses_post($section_title) .'</h3></div>' : '';
               echo ( ! empty( $section['description'] ) ) ? '<div class="CFSSMARTSMS-field CFSSMARTSMS-section-description">'. wp_kses_post($section['description']) .'</div>' : '';
 
@@ -718,7 +718,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
           echo '<div class="CFSSMARTSMS-footer">';
 
           echo '<div class="CFSSMARTSMS-buttons">';
-          echo '<input type="submit" name="csf_transient[save]" class="button button-primary CFSSMARTSMS-save'. esc_html( $ajax_class ) .'" value="'. esc_html__( 'Save', 'CFSSMARTSMS' ) .'" data-save="'. esc_html__( 'Saving...', 'CFSSMARTSMS' ) .'">';
+          echo '<input type="submit" name="csf_transient[save]" class="button button-primary CFSSMARTSMS-save'. wp_kses_post( $ajax_class ) .'" value="'. esc_html__( 'Save', 'CFSSMARTSMS' ) .'" data-save="'. esc_html__( 'Saving...', 'CFSSMARTSMS' ) .'">';
           echo ( $this->args['show_reset_section'] ) ? '<input type="submit" name="csf_transient[reset_section]" class="button button-secondary CFSSMARTSMS-reset-section CFSSMARTSMS-confirm" value="'. esc_html__( 'Reset Section', 'CFSSMARTSMS' ) .'" data-confirm="'. esc_html__( 'Are you sure to reset this section options?', 'CFSSMARTSMS' ) .'">' : '';
           echo ( $this->args['show_reset_all'] ) ? '<input type="submit" name="csf_transient[reset]" class="button CFSSMARTSMS-warning-primary CFSSMARTSMS-reset-all CFSSMARTSMS-confirm" value="'. ( ( $this->args['show_reset_section'] ) ? esc_html__( 'Reset All', 'CFSSMARTSMS' ) : esc_html__( 'Reset', 'CFSSMARTSMS' ) ) .'" data-confirm="'. esc_html__( 'Are you sure you want to reset all settings to default values?', 'CFSSMARTSMS' ) .'">' : '';
           echo '</div>';
@@ -740,7 +740,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
       echo '</div>';
 
-      do_action( 'csf_options_after' );
+      do_action( 'CSFSMARTSMS_Options_after' );
 
     }
   }

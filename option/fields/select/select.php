@@ -8,7 +8,7 @@
  *
  */
 if ( ! class_exists( 'CSF_Field_select' ) ) {
-  class CSF_Field_select extends CSF_Fields {
+  class CSF_Field_select extends CSFSMARTSMS_Fields {
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );
@@ -45,12 +45,12 @@ if ( ! class_exists( 'CSF_Field_select' ) ) {
         $multiple_attr    = ( $args['multiple'] ) ? ' multiple="multiple"' : '';
         $chosen_sortable  = ( $args['chosen'] && $args['sortable'] ) ? ' CFSSMARTSMS-chosen-sortable' : '';
         $chosen_ajax      = ( $args['chosen'] && $args['ajax'] ) ? ' CFSSMARTSMS-chosen-ajax' : '';
-        $placeholder_attr = ( $args['chosen'] && $args['placeholder'] ) ? ' data-placeholder="'. esc_attr( $args['placeholder'] ) .'"' : '';
-        $field_class      = ( $args['chosen'] ) ? ' class="CFSSMARTSMS-chosen'. esc_attr( $chosen_rtl . $chosen_sortable . $chosen_ajax ) .'"' : '';
+        $placeholder_attr = ( $args['chosen'] && $args['placeholder'] ) ? ' data-placeholder="'. wp_kses_post( $args['placeholder'] ) .'"' : '';
+        $field_class      = ( $args['chosen'] ) ? ' class="CFSSMARTSMS-chosen'. wp_kses_post( $chosen_rtl . $chosen_sortable . $chosen_ajax ) .'"' : '';
         $field_name       = $this->field_name( $multiple_name );
         $field_attr       = $this->field_attributes();
         $maybe_options    = $this->field['options'];
-        $chosen_data_attr = ( $args['chosen'] && ! empty( $args['settings'] ) ) ? ' data-chosen-settings="'. esc_attr( json_encode( $args['settings'] ) ) .'"' : '';
+        $chosen_data_attr = ( $args['chosen'] && ! empty( $args['settings'] ) ) ? ' data-chosen-settings="'. wp_kses_post( json_encode( $args['settings'] ) ) .'"' : '';
 
         if ( is_string( $maybe_options ) && ! empty( $args['chosen'] ) && ! empty( $args['ajax'] ) ) {
           $options = $this->field_wp_query_data_title( $maybe_options, $this->value );
@@ -64,9 +64,9 @@ if ( ! class_exists( 'CSF_Field_select' ) ) {
 
           if ( ! empty( $args['chosen'] ) && ! empty( $args['multiple'] ) ) {
 
-            echo '<select name="'. esc_html($field_name) .'" class="CFSSMARTSMS-hide-select hidden"'. esc_html($multiple_attr) . esc_html($field_attr) .'>';
+            echo '<select name="'. wp_kses_post($field_name) .'" class="CFSSMARTSMS-hide-select hidden"'. wp_kses_post($multiple_attr) . wp_kses_post($field_attr) .'>';
             foreach ( $this->value as $option_key ) {
-              echo '<option value="'. esc_attr( $option_key ) .'" selected>'. esc_attr( $option_key ) .'</option>';
+              echo '<option value="'. wp_kses_post( $option_key ) .'" selected>'. wp_kses_post( $option_key ) .'</option>';
             }
             echo '</select>';
 
@@ -82,7 +82,7 @@ if ( ! class_exists( 'CSF_Field_select' ) ) {
             if ( ! empty( $args['chosen'] ) ) {
               echo '<option value=""></option>';
             } else {
-              echo '<option value="">'. esc_attr( $args['placeholder'] ) .'</option>';
+              echo '<option value="">'. wp_kses_post( $args['placeholder'] ) .'</option>';
             }
           }
 
@@ -90,18 +90,18 @@ if ( ! class_exists( 'CSF_Field_select' ) ) {
 
             if ( is_array( $option ) && ! empty( $option ) ) {
 
-              echo '<optgroup label="'. esc_attr( $option_key ) .'">';
+              echo '<optgroup label="'. wp_kses_post( $option_key ) .'">';
 
               foreach ( $option as $sub_key => $sub_value ) {
                 $selected = ( in_array( $sub_key, $this->value ) ) ? ' selected' : '';
-                echo '<option value="'. esc_attr( $sub_key ) .'" '. esc_attr( $selected ) .'>'. esc_attr( $sub_value ) .'</option>';
+                echo '<option value="'. wp_kses_post( $sub_key ) .'" '. wp_kses_post( $selected ) .'>'. wp_kses_post( $sub_value ) .'</option>';
               }
 
               echo '</optgroup>';
 
             } else {
               $selected = ( in_array( $option_key, $this->value ) ) ? ' selected' : '';
-              echo '<option value="'. esc_attr( $option_key ) .'" '. esc_attr( $selected ) .'>'. esc_attr( $option ) .'</option>';
+              echo '<option value="'. wp_kses_post( $option_key ) .'" '. wp_kses_post( $selected ) .'>'. wp_kses_post( $option ) .'</option>';
             }
 
           }
@@ -110,7 +110,7 @@ if ( ! class_exists( 'CSF_Field_select' ) ) {
 
         } else {
 
-          echo ( ! empty( $this->field['empty_message'] ) ) ? esc_attr( $this->field['empty_message'] ) : esc_html__( 'No data available.', 'CFSSMARTSMS' );
+          echo ( ! empty( $this->field['empty_message'] ) ) ? wp_kses_post( $this->field['empty_message'] ) : esc_html__( 'No data available.', 'CFSSMARTSMS' );
 
         }
 

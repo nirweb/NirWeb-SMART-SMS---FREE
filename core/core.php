@@ -300,12 +300,11 @@ add_action( 'save_post',function (){
 
 }, 10, 2 );
 }
-
 /***************************************************************************
 #   Send SMS
  ***************************************************************************/
 add_action('admin_menu',function() {
-
+    $icon = NIRWEB_SMART_SMS_URL.'assets/smartsms.svg';
     add_submenu_page(
         'nirweb_ticket_manage_tickets',
         esc_html__( 'Settings', 'nss' ),
@@ -321,7 +320,7 @@ add_action('admin_menu',function() {
         'manage_options',
         'send_sms_nirweb_smart_sms',
         false,
-        'dashicons-bell',
+        $icon,
         30);
 
 
@@ -600,10 +599,77 @@ add_action('admin_menu',function() {
                     <div class="nirweb_massage">
                         <h5><?= esc_html__( 'professional version and tutorial','nss') ?></h5>
                         <p><?= esc_html__('to use options below , you can easily purchase and download the pro version of the plugin form the link below','nss') ?></p>
-                        <a href="<?= esc_url('https://nirweb.ir/') ?>"><?= esc_url('https://nirweb.ir/') ?></a>
+                        <a href="<?= esc_url('https://nirweb.ir/product/nirweb-smart-sms-pro/') ?>"><?= esc_url('https://nirweb.ir/product/nirweb-smart-sms-pro/') ?></a>
                         <svg width="200px" height="200px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="none" stroke="#caf3e5" stroke-width="2" d="M10,13 L10,16 L13,16 L13,19 L16,19 L16,21 L18,23 L23,23 L23,19 L12.74,8.74 C12.91,8.19 13,7.6 13,7 C13,3.69 10.31,1 7,1 C3.69,1 1,3.69 1,7 C1,10.31 3.69,13 7,13 C7.88,13 8.72,12.81 9.47,12.47 L10,13 Z M6,7 C5.4475,7 5,6.5525 5,6 C5,5.4475 5.4475,5 6,5 C6.5525,5 7,5.4475 7,6 C7,6.5525 6.5525,7 6,7 Z"/>
                         </svg>
+                    </div>
+
+
+                    <form action="" method="post" class="bordered">
+                        <label ><?= esc_html__('your message','nss') ?></label>
+                        <textarea name="bulk_send_sms_message" rows="5" cols="50"></textarea>
+                        <?php wp_nonce_field( 'bulk_send_sms', 'bulk_send_sms_act' ); ?>
+                        <button name="bulk_all_send_sms" class="nirweb_submit disabled"><?= esc_html__('Send','nss') ?></button>
+                    </form>
+
+
+                    <div class="nirweb_warning_massage">
+                        <h5><?= esc_html__( 'Warning!','nss') ?></h5>
+                        <p><?= esc_html__('This is a bulk text but used with fast sms.','nss') ?></p>
+                        <svg width="200px" height="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 306.627 306.627"  xml:space="preserve">
+<g>
+    <g>
+        <path style="fill:#EC0606;" d="M171.902,85.013c0.022-0.022,0.049-0.038,0.071-0.06c-10.041-2.85-20.244-4.705-30.665-5.548
+			c-0.163,0.245-0.348,0.468-0.511,0.713c-0.761-0.016-1.501-0.114-2.268-0.114c-62.582,0-113.312,50.73-113.312,113.312
+			s50.73,113.312,113.312,113.312s113.312-50.73,113.312-113.312C251.84,142.351,218.194,99.263,171.902,85.013z M100.123,193.038
+			c-17.236,0-31.209-13.973-31.209-31.209s13.973-31.209,31.209-31.209c17.236,0,31.209,13.973,31.209,31.209
+			C131.327,179.065,117.359,193.038,100.123,193.038z"/>
+        <path style="fill:#EC0606;" d="M181.937,76.615c5.173-3.682,10.829-6.913,17.122-9.622c6.81-2.937,8.278-12.804,4.879-18.607
+			c-4.079-6.967-11.797-7.81-18.602-4.879c-13.946,6.01-26.282,14.68-36.121,25.7C160.322,70.594,171.217,73.096,181.937,76.615z"/>
+        <path style="fill:#EC0606;" d="M271.617,14.751c-18.264,7.31-36.523,14.637-54.527,22.578c-9.611,4.237-1.3,18.292,8.235,14.087
+			c16.714-7.37,33.673-14.152,50.627-20.935C285.6,26.624,281.396,10.835,271.617,14.751z"/>
+        <path style="fill:#EC0606;" d="M250.573,67.325c-6.141-2.159-11.77-5.548-18.128-7.25c-10.176-2.725-14.49,13.016-4.34,15.735
+			c6.347,1.702,11.961,5.08,18.128,7.25c4.199,1.479,8.92-1.637,10.035-5.7C257.513,72.845,254.761,68.799,250.573,67.325z"/>
+        <path style="fill:#EC0606;" d="M218.194,24.786c1.42-4.264,2.991-9.197,4.618-12.553c1.936-4.003,1.131-8.784-2.926-11.161
+			c-3.612-2.116-9.225-1.077-11.161,2.926c-2.562,5.292-4.406,10.889-6.26,16.453c-1.409,4.221,1.583,8.904,5.7,10.035
+			C212.619,31.71,216.791,29.001,218.194,24.786z"/>
+        <path style="fill:#EC0606;" d="M187.251,31.476c3.633-2.127,5.439-7.484,2.926-11.161c-4.041-5.912-8.92-11.107-13.968-16.154
+			c-7.446-7.446-18.982,4.09-11.536,11.536c4.063,4.063,8.229,8.191,11.417,12.853C178.592,32.21,183.21,33.842,187.251,31.476z"/>
+    </g>
+</g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+</svg>
                     </div>
                     <form action="" method="post">
                         <label for="">
@@ -691,7 +757,7 @@ add_action('admin_menu',function() {
                     <div class="nirweb_massage">
                         <h5><?= esc_html__( 'professional version and tutorial','nss') ?></h5>
                         <p><?= esc_html__('to use options below , you can easily purchase and download the pro version of the plugin form the link below','nss') ?></p>
-                        <a href="<?= esc_url('https://nirweb.ir/') ?>"><?= esc_url('https://nirweb.ir/') ?></a>
+                        <a href="<?= esc_url('https://nirweb.ir/product/nirweb-smart-sms-pro/') ?>"><?= esc_url('https://nirweb.ir/product/nirweb-smart-sms-pro/') ?></a>
                         <svg width="200px" height="200px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="none" stroke="#caf3e5" stroke-width="2" d="M10,13 L10,16 L13,16 L13,19 L16,19 L16,21 L18,23 L23,23 L23,19 L12.74,8.74 C12.91,8.19 13,7.6 13,7 C13,3.69 10.31,1 7,1 C3.69,1 1,3.69 1,7 C1,10.31 3.69,13 7,13 C7.88,13 8.72,12.81 9.47,12.47 L10,13 Z M6,7 C5.4475,7 5,6.5525 5,6 C5,5.4475 5.4475,5 6,5 C6.5525,5 7,5.4475 7,6 C7,6.5525 6.5525,7 6,7 Z"/>
                         </svg>
@@ -801,10 +867,87 @@ add_action('admin_menu',function() {
                     <div class="nirweb_massage">
                         <h5><?= esc_html__( 'professional version and tutorial','nss') ?></h5>
                         <p><?= esc_html__('to use options below , you can easily purchase and download the pro version of the plugin form the link below','nss') ?></p>
-                        <a href="<?= esc_url('https://nirweb.ir/') ?>"><?= esc_url('https://nirweb.ir/') ?></a>
+                        <a href="<?= esc_url('https://nirweb.ir/product/nirweb-smart-sms-pro/') ?>"><?= esc_url('https://nirweb.ir/product/nirweb-smart-sms-pro/') ?></a>
                         <svg width="200px" height="200px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="none" stroke="#caf3e5" stroke-width="2" d="M10,13 L10,16 L13,16 L13,19 L16,19 L16,21 L18,23 L23,23 L23,19 L12.74,8.74 C12.91,8.19 13,7.6 13,7 C13,3.69 10.31,1 7,1 C3.69,1 1,3.69 1,7 C1,10.31 3.69,13 7,13 C7.88,13 8.72,12.81 9.47,12.47 L10,13 Z M6,7 C5.4475,7 5,6.5525 5,6 C5,5.4475 5.4475,5 6,5 C6.5525,5 7,5.4475 7,6 C7,6.5525 6.5525,7 6,7 Z"/>
                         </svg>
+                    </div>
+                    <form action="" method="post" class="bordered">
+                        <label for="" name="product_id">
+                            <?= esc_html__('select the product','nss') ?>
+                            <select  id="select_product" name="product_id">
+                                <option value="-1"><?= esc_html__('select an option','nss') ?></option>
+                                <?php    $args = array(
+                                    'post_type' => 'product',
+                                    'posts_per_page' => -1
+                                );
+                                $loop = new WP_Query( $args );
+                                if ( $loop->have_posts() ): while ( $loop->have_posts() ): $loop->the_post();?>
+                                    <option value="<?= esc_html(get_the_ID()) ?>"><?= esc_html(get_the_title()) ?></option>
+                                <?php endwhile;wp_reset_query();endif;?>
+                            </select>
+                        </label>
+                        <label ><?= esc_html__('your message','nss') ?></label>
+                        <textarea name="bulk_send_sms_message_product" rows="5" cols="50"></textarea>
+                        <?php wp_nonce_field( 'bulk_send_sms_product', 'bulk_send_sms_product_act' ); ?>
+                        <button name="bulk_all_send_sms_product" class="nirweb_submit disabled"><?= esc_html__('Send','nss') ?></button>
+                    </form>
+                    <div class="nirweb_warning_massage">
+                        <h5><?= esc_html__( 'Warning!','nss') ?></h5>
+                        <p><?= esc_html__('This is a bulk text but used with fast sms.','nss') ?></p>
+                        <svg width="200px" height="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 306.627 306.627"  xml:space="preserve">
+<g>
+    <g>
+        <path style="fill:#EC0606;" d="M171.902,85.013c0.022-0.022,0.049-0.038,0.071-0.06c-10.041-2.85-20.244-4.705-30.665-5.548
+			c-0.163,0.245-0.348,0.468-0.511,0.713c-0.761-0.016-1.501-0.114-2.268-0.114c-62.582,0-113.312,50.73-113.312,113.312
+			s50.73,113.312,113.312,113.312s113.312-50.73,113.312-113.312C251.84,142.351,218.194,99.263,171.902,85.013z M100.123,193.038
+			c-17.236,0-31.209-13.973-31.209-31.209s13.973-31.209,31.209-31.209c17.236,0,31.209,13.973,31.209,31.209
+			C131.327,179.065,117.359,193.038,100.123,193.038z"/>
+        <path style="fill:#EC0606;" d="M181.937,76.615c5.173-3.682,10.829-6.913,17.122-9.622c6.81-2.937,8.278-12.804,4.879-18.607
+			c-4.079-6.967-11.797-7.81-18.602-4.879c-13.946,6.01-26.282,14.68-36.121,25.7C160.322,70.594,171.217,73.096,181.937,76.615z"/>
+        <path style="fill:#EC0606;" d="M271.617,14.751c-18.264,7.31-36.523,14.637-54.527,22.578c-9.611,4.237-1.3,18.292,8.235,14.087
+			c16.714-7.37,33.673-14.152,50.627-20.935C285.6,26.624,281.396,10.835,271.617,14.751z"/>
+        <path style="fill:#EC0606;" d="M250.573,67.325c-6.141-2.159-11.77-5.548-18.128-7.25c-10.176-2.725-14.49,13.016-4.34,15.735
+			c6.347,1.702,11.961,5.08,18.128,7.25c4.199,1.479,8.92-1.637,10.035-5.7C257.513,72.845,254.761,68.799,250.573,67.325z"/>
+        <path style="fill:#EC0606;" d="M218.194,24.786c1.42-4.264,2.991-9.197,4.618-12.553c1.936-4.003,1.131-8.784-2.926-11.161
+			c-3.612-2.116-9.225-1.077-11.161,2.926c-2.562,5.292-4.406,10.889-6.26,16.453c-1.409,4.221,1.583,8.904,5.7,10.035
+			C212.619,31.71,216.791,29.001,218.194,24.786z"/>
+        <path style="fill:#EC0606;" d="M187.251,31.476c3.633-2.127,5.439-7.484,2.926-11.161c-4.041-5.912-8.92-11.107-13.968-16.154
+			c-7.446-7.446-18.982,4.09-11.536,11.536c4.063,4.063,8.229,8.191,11.417,12.853C178.592,32.21,183.21,33.842,187.251,31.476z"/>
+    </g>
+</g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+</svg>
                     </div>
                      <form action="" method="post">
                         <label for="" name="product_id">
@@ -1274,6 +1417,11 @@ add_action('admin_menu',function() {
 </svg>
                             <?= esc_html__('newsletter','nss') ?>
                         </h2>
+                        <div class="nirweb_massage info">
+                            <h5><?= esc_html__( 'Activate Newsletter','nss') ?></h5>
+                            <p><?= esc_html__('activate newsletter from general settings. ','nss') ?></p>
+                            <svg width="150px" height="150px" viewBox="0 0 1024 1024" class="icon" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M640 608h-64V416h64v192zm0 160v160a32 32 0 01-32 32H416a32 32 0 01-32-32V768h64v128h128V768h64zM384 608V416h64v192h-64zm256-352h-64V128H448v128h-64V96a32 32 0 0132-32h192a32 32 0 0132 32v160z"/><path fill="currentColor" d="M220.8 256l-71.232 80 71.168 80H768V256H220.8zm-14.4-64H800a32 32 0 0132 32v224a32 32 0 01-32 32H206.4a32 32 0 01-23.936-10.752l-99.584-112a32 32 0 010-42.496l99.584-112A32 32 0 01206.4 192zm678.784 496l-71.104 80H266.816V608h547.2l71.168 80zm-56.768-144H234.88a32 32 0 00-32 32v224a32 32 0 0032 32h593.6a32 32 0 0023.936-10.752l99.584-112a32 32 0 000-42.496l-99.584-112A32 32 0 00828.48 544z"/></svg>
+                        </div>
                         <?php
                         break;
                 endswitch;
@@ -1281,7 +1429,7 @@ add_action('admin_menu',function() {
                     <div class="nirweb_massage">
                         <h5><?= esc_html__( 'professional version and tutorial','nss') ?></h5>
                         <p><?= esc_html__('to use options below , you can easily purchase and download the pro version of the plugin form the link below','nss') ?></p>
-                        <a href="<?= esc_url('https://nirweb.ir/') ?>"><?= esc_url('https://nirweb.ir/') ?></a>
+                        <a href="<?= esc_url('https://nirweb.ir/product/nirweb-smart-sms-pro/') ?>"><?= esc_url('https://nirweb.ir/product/nirweb-smart-sms-pro/') ?></a>
                         <svg width="200px" height="200px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="none" stroke="#caf3e5" stroke-width="2" d="M10,13 L10,16 L13,16 L13,19 L16,19 L16,21 L18,23 L23,23 L23,19 L12.74,8.74 C12.91,8.19 13,7.6 13,7 C13,3.69 10.31,1 7,1 C3.69,1 1,3.69 1,7 C1,10.31 3.69,13 7,13 C7.88,13 8.72,12.81 9.47,12.47 L10,13 Z M6,7 C5.4475,7 5,6.5525 5,6 C5,5.4475 5.4475,5 6,5 C6.5525,5 7,5.4475 7,6 C7,6.5525 6.5525,7 6,7 Z"/>
                         </svg>

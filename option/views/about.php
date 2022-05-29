@@ -11,13 +11,13 @@
   </div>
 
   <div class="CFSSMARTSMS--col CFSSMARTSMS--col-first">
-    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
     <div class="CFSSMARTSMS--title">سفارشی کردن چارچوب</div>
     <p class="CFSSMARTSMS--text">سفارشی ساز پیش فرض وردپرس را با ادغام فیلدهای سفارشی خود به ارث می برد. سفارشی کردن سایت خود به صورت زنده قدرتمندتر است.</p>
   </div>
 
   <div class="CFSSMARTSMS--col CFSSMARTSMS--col-first CFSSMARTSMS--last">
-    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
     <div class="CFSSMARTSMS--title">تنظیمات متاباکس</div>
     <p class="CFSSMARTSMS--text">به شما امکان می دهد تنظیمات متاباکس سفارشی را به همه صفحات و پست های خود بیاورید. ما تنظیمات پیشرفته را با تعداد زیادی فیلد ارائه می دهیم.</p>
   </div>
@@ -25,19 +25,19 @@
   <div class="clear"></div>
 
   <div class="CFSSMARTSMS--col CFSSMARTSMS--col-first">
-    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
     <div class="CFSSMARTSMS--title">تنظیمات منوی ناوبری</div>
     <p class="CFSSMARTSMS--text">به شما امکان می دهد تنظیمات آیتم منوی ناوبری سفارشی را به همه منوهای خود بیاورید. ما تنظیمات پیشرفته را با تعداد زیادی فیلد ارائه می دهیم.</p>
   </div>
 
   <div class="CFSSMARTSMS--col CFSSMARTSMS--col-first">
-    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
     <div class="CFSSMARTSMS--title">تنظیمات طبقه بندی</div>
     <p class="CFSSMARTSMS--text">به شما امکان می دهد تنظیمات طبقه بندی سفارشی را به همه دسته ها، برچسب ها یا CPT خود بیاورید. ما تنظیمات پیشرفته را با تعداد زیادی فیلد ارائه می دهیم.</p>
   </div>
 
   <div class="CFSSMARTSMS--col CFSSMARTSMS--col-first CFSSMARTSMS--last">
-    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
     <div class="CFSSMARTSMS--title">تنظیمات پروفایل</div>
     <p class="CFSSMARTSMS--text">به شما امکان می دهد تنظیمات پروفایل کاربری سفارشی را برای همه کاربران بیاورید. ما تنظیمات پیشرفته را با تعداد زیادی فیلد ارائه می دهیم.</p>
   </div>
@@ -45,19 +45,19 @@
   <div class="clear"></div>
 
   <div class="CFSSMARTSMS--col">
-    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
     <div class="CFSSMARTSMS--title">تنظیمات ویجت های سفارشی</div>
     <p class="CFSSMARTSMS--text">به شما امکان می دهد ویجت های سفارشی ایجاد کنید. ما تنظیمات پیشرفته را با تعداد زیادی فیلد ارائه می دهیم.</p>
   </div>
 
   <div class="CFSSMARTSMS--col">
-    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
     <div class="CFSSMARTSMS--title">تنظیمات دیدگاه ها</div>
     <p class="CFSSMARTSMS--text">به شما امکان می دهد تنظیمات متاباکس نظرات سفارشی را برای همه نظرات بیاورید. ما تنظیمات پیشرفته ای را با تعداد زیادی فیلد ارائه می دهیم.</p>
   </div>
 
   <div class="CFSSMARTSMS--col CFSSMARTSMS--last">
-    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo esc_attr( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo esc_attr( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
+    <span class="CFSSMARTSMS--icon CFSSMARTSMS--<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'active' : 'deactive' ); ?>"><i class="fas fa-<?php echo wp_kses_post( CFSSMARTSMS::$premium ? 'check' : 'times' ); ?>"></i></span>
     <div class="CFSSMARTSMS--title">تنظیمات کدهای کوتاه</div>
     <p class="CFSSMARTSMS--text">دارای ویرایشگر کد کوتاه از پیش ساخته شده برای مدیریت محتوای شما. ساخت طرح‌بندی‌های نامحدود با امکانات بی‌پایان آسان و انعطاف‌پذیر است.</p>
   </div>

@@ -21,8 +21,9 @@ if(is_plugin_active('woocommerce/woocommerce.php') ) {
         }
         if ($tab['hold_admin_activate'] == '1' && !empty($tab['hold_admin_pattern'])) {
             $data = Nirweb_smart_sms_data::prepare_panel_order_data($tab['hold_admin_options'],$order_id,$order);
-            $phone = trim(nirweb_smart_sms_option['to']);
-            Nirweb_smart_sms_data::nirweb_smart_send_sms(trim($tab['hold_admin_pattern']), $data, $phone);
+            foreach (nirweb_smart_sms_option['to'] as $item){
+                Nirweb_smart_sms_data::nirweb_smart_send_sms($tab['hold_admin_pattern'], $data, $item['to_phone']);
+            }
         }
         if ($tab['hold_vendor_activate'] == '1' && !empty($tab['hold_vendor_pattern'])) {
             $vendors = [];
@@ -57,8 +58,9 @@ if(is_plugin_active('woocommerce/woocommerce.php') ) {
         }
         if ($tab['processing_admin_activate'] == '1' && !empty($tab['processing_admin_pattern'])) {
             $data = Nirweb_smart_sms_data::prepare_panel_order_data($tab['processing_admin_options'],$order_id,$order);
-            $phone = trim(nirweb_smart_sms_option['to']);
-            Nirweb_smart_sms_data::nirweb_smart_send_sms(trim($tab['processing_admin_pattern']), $data, $phone);
+            foreach (nirweb_smart_sms_option['to'] as $item){
+                Nirweb_smart_sms_data::nirweb_smart_send_sms(trim($tab['processing_admin_pattern']), $data, $item['to_phone']);
+            }
         }
         if ($tab['processing_vendor_activate'] == '1' && !empty($tab['processing_vendor_pattern'])) {
             $vendors = [];
@@ -93,8 +95,9 @@ if(is_plugin_active('woocommerce/woocommerce.php') ) {
         }
         if ($tab['completed_admin_activate'] == '1' && !empty($tab['completed_admin_pattern'])) {
             $data = Nirweb_smart_sms_data::prepare_panel_order_data($tab['completed_admin_options'], $order_id,$order);
-            $phone = trim(nirweb_smart_sms_option['to']);
-            Nirweb_smart_sms_data::nirweb_smart_send_sms(trim($tab['completed_admin_pattern']), $data, $phone);
+            foreach (nirweb_smart_sms_option['to'] as $item){
+                Nirweb_smart_sms_data::nirweb_smart_send_sms($tab['completed_admin_pattern'], $data, $item['to_phone']);
+            }
         }
         if ($tab['completed_vendor_activate'] == '1' && !empty($tab['completed_vendor_pattern'])) {
             $vendors = [];
@@ -130,8 +133,9 @@ if(is_plugin_active('woocommerce/woocommerce.php') ) {
         }
         if ($tab['refunded_admin_activate'] == '1' && !empty($tab['refunded_admin_pattern'])) {
             $data = Nirweb_smart_sms_data::prepare_panel_order_data($tab['refunded_admin_options'], $order_id,$order);
-            $phone = trim(nirweb_smart_sms_option['to']);
-            Nirweb_smart_sms_data::nirweb_smart_send_sms(trim($tab['refunded_admin_pattern']), $data, $phone);
+            foreach (nirweb_smart_sms_option['to'] as $item){
+                Nirweb_smart_sms_data::nirweb_smart_send_sms($tab['refunded_admin_pattern'], $data, $item['to_phone']);
+            }
         }
         if ($tab['refunded_vendor_activate'] == '1' && !empty($tab['refunded_vendor_pattern'])) {
             $vendors = [];
@@ -167,8 +171,9 @@ if(is_plugin_active('woocommerce/woocommerce.php') ) {
         }
         if ($tab['failed_admin_activate'] == '1' && !empty($tab['failed_admin_pattern'])) {
             $data = Nirweb_smart_sms_data::prepare_panel_order_data($tab['failed_admin_options'], $order_id,$order);
-            $phone = trim(nirweb_smart_sms_option['to']);
-            Nirweb_smart_sms_data::nirweb_smart_send_sms(trim($tab['failed_admin_pattern']), $data, $phone);
+            foreach (nirweb_smart_sms_option['to'] as $item){
+                Nirweb_smart_sms_data::nirweb_smart_send_sms($tab['failed_admin_pattern'], $data, $item['to_phone']);
+            }
         }
         if ($tab['failed_vendor_activate'] == '1' && !empty($tab['failed_vendor_pattern'])) {
             $vendors = [];
@@ -203,8 +208,9 @@ if(is_plugin_active('woocommerce/woocommerce.php') ) {
         }
         if ($tab['cancelled_admin_activate'] == '1' && !empty($tab['cancelled_admin_pattern'])) {
             $data = Nirweb_smart_sms_data::prepare_panel_order_data($tab['cancelled_admin_options'], $order_id,$order);
-            $phone = trim(nirweb_smart_sms_option['to']);
-            Nirweb_smart_sms_data::nirweb_smart_send_sms(trim($tab['cancelled_admin_pattern']), $data, $phone);
+            foreach (nirweb_smart_sms_option['to'] as $item){
+                Nirweb_smart_sms_data::nirweb_smart_send_sms($tab['cancelled_admin_pattern'], $data, $item['to_phone']);
+            }
         }
         if ($tab['cancelled_vendor_activate'] == '1' && !empty($tab['cancelled_vendor_pattern'])) {
             $vendors = [];
@@ -225,7 +231,6 @@ if(is_plugin_active('woocommerce/woocommerce.php') ) {
      **********************************************/
     if(nirweb_smart_sms_option['low_stock_pattern']){
         add_filter( 'woocommerce_email_recipient_low_stock',function ($rec,$product){
-            $phone = trim(nirweb_smart_sms_option['to']);
             $product_name = $product->get_formatted_name();
             if (nirweb_smart_sms_option['sms_panel'] == 'ip_panel') {
                 $output['product'] = $product_name;
@@ -237,7 +242,9 @@ if(is_plugin_active('woocommerce/woocommerce.php') ) {
             }elseif(nirweb_smart_sms_option['sms_panel'] == 'melipayamak'){
                 $output[] = $product_name;
             }
-            Nirweb_smart_sms_data::nirweb_smart_send_sms(trim(nirweb_smart_sms_option['low_stock_pattern']),$output,$phone);
+            foreach (nirweb_smart_sms_option['to'] as $item){
+                Nirweb_smart_sms_data::nirweb_smart_send_sms(nirweb_smart_sms_option['low_stock_pattern'], $output, $item['to_phone']);
+            }
         }, 10, 2 );
     }
     /**********************************************
@@ -245,7 +252,6 @@ if(is_plugin_active('woocommerce/woocommerce.php') ) {
      **********************************************/
     if(nirweb_smart_sms_option['out_of_stock_pattern']) {
         add_filter('woocommerce_email_recipient_no_stock', function ($rec, $product) {
-            $phone = trim(nirweb_smart_sms_option['to']);
             $product_name = $product->get_formatted_name();
             if (nirweb_smart_sms_option['sms_panel'] == 'ip_panel') {
                 $output['product'] = $product_name;
@@ -257,7 +263,9 @@ if(is_plugin_active('woocommerce/woocommerce.php') ) {
             }elseif(nirweb_smart_sms_option['sms_panel'] == 'melipayamak'){
                 $output[] = $product_name;
             }
-            Nirweb_smart_sms_data::nirweb_smart_send_sms(trim(nirweb_smart_sms_option['out_of_stock_pattern']), $output, $phone);
+            foreach (nirweb_smart_sms_option['to'] as $item){
+                Nirweb_smart_sms_data::nirweb_smart_send_sms(nirweb_smart_sms_option['out_of_stock_pattern'], $output, $item['to_phone']);
+            }
         }, 10, 2);
     }
 

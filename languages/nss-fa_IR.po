@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Smart SMS For Wordpress\n"
-"POT-Creation-Date: 2022-05-19 12:04+0430\n"
-"PO-Revision-Date: 2022-05-19 12:10+0430\n"
+"POT-Creation-Date: 2022-05-26 08:49+0430\n"
+"PO-Revision-Date: 2022-05-26 08:50+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -125,18 +125,17 @@ msgstr "اطلاع رسانی به کاربران وقتی محصول موجود
 msgid "notify users that product is on sale"
 msgstr "اطلاع رسانی به کاربران وقتی محصول تخفیف دار شد"
 
-#: core/core.php:311 core/core.php:312 settings/settings.php:15
-#: settings/settings.php:16 settings/settings.php:26
+#: core/core.php:310 core/core.php:311
 #, fuzzy
 #| msgid "Settings saved."
 msgid "Settings"
 msgstr "تنظیمات ذخیره شد."
 
-#: core/core.php:319 core/core.php:320
+#: core/core.php:318 core/core.php:319
 msgid "Nirweb Smart SMS"
 msgstr "پیامک نیروب"
 
-#: core/core.php:328 option/options/woocommerce/cancelled.php:17
+#: core/core.php:327 option/options/woocommerce/cancelled.php:17
 #: option/options/woocommerce/cancelled.php:79
 #: option/options/woocommerce/cancelled.php:141
 #: option/options/woocommerce/completed.php:16
@@ -157,35 +156,35 @@ msgstr "پیامک نیروب"
 msgid "Send SMS"
 msgstr "ارسال پیامک"
 
-#: core/core.php:332 core/core.php:598
+#: core/core.php:331 core/core.php:597
 msgid "Send SMS To ALL Users"
 msgstr "ارسال پیام به همه کاربران"
 
-#: core/core.php:332
+#: core/core.php:331
 msgid "send sms to all users."
 msgstr "به همه کاربرانی که ثبت نام کرده اند پیام بفرستید."
 
-#: core/core.php:390 core/core.php:689
+#: core/core.php:389 core/core.php:755
 msgid "Send SMS To One User"
 msgstr "ارسال پیام به یک کاربر"
 
-#: core/core.php:390
+#: core/core.php:389
 msgid "Send SMS To the user you want."
 msgstr "به یک کاربر خاص پیام بفرستید."
 
-#: core/core.php:448 core/core.php:799
+#: core/core.php:447 core/core.php:865
 msgid "Send SMS To Product Customers"
 msgstr "ارسال پیام به مشتریان محصول"
 
-#: core/core.php:448
+#: core/core.php:447
 msgid "Send SMS to users who have bought a product"
 msgstr "به همه کاربرانی که یک محصول خاص را خریداری کرده اند پیام بفرستید"
 
-#: core/core.php:601 core/core.php:692 core/core.php:802 core/core.php:1282
+#: core/core.php:600 core/core.php:758 core/core.php:868 core/core.php:1430
 msgid "professional version and tutorial"
 msgstr "فعال در نسخه حرفه ای"
 
-#: core/core.php:602 core/core.php:693 core/core.php:803 core/core.php:1283
+#: core/core.php:601 core/core.php:759 core/core.php:869 core/core.php:1431
 msgid ""
 "to use options below , you can easily purchase and download the pro version "
 "of the plugin form the link below"
@@ -193,11 +192,33 @@ msgstr ""
 "برای استفاده از امکانات این بخش میتوانید نسخه حرفه ای آن را از لینک زیر تهیه "
 "و دانلود کنید"
 
-#: core/core.php:610 core/core.php:710 core/core.php:825
+#: core/core.php:610 core/core.php:890
+msgid "your message"
+msgstr "پیام شما"
+
+#: core/core.php:613 core/core.php:688 core/core.php:788 core/core.php:893
+#: core/core.php:979
+msgid "Send"
+msgstr "ارسال"
+
+#: core/core.php:618 core/core.php:896
+msgid "Warning!"
+msgstr "اخطار!"
+
+#: core/core.php:619 core/core.php:897
+msgid "This is a bulk text but used with fast sms."
+msgstr ""
+"از آنجایی که در ارسال پترنی باید براساس رخداد مشخصی باشد ولی این بخش ارسال "
+"انبوه به حساب می آید درحالی که به صورت ارسال سریع بلک لیست ارسال می شود، "
+"امکان دارد برخی از پنل های پیامکی پشتیبانی نکنند یا زمانی که کاربران شما "
+"زیاد باشند شما را جریمه کنند، پس لطفا قبل از ارسال به صورت پترنی با پنل "
+"پیامکی خود هماهنگ نمایید و هیچگونه مسئولیتی از تیم نیروب پذیرفته نیست."
+
+#: core/core.php:676 core/core.php:776 core/core.php:968
 msgid "pattern code"
 msgstr "کد پترن"
 
-#: core/core.php:619 core/core.php:719
+#: core/core.php:685 core/core.php:785
 msgid ""
 "use variable display_name for user's display name in your pattern.if you are "
 "using melipayamak use 0."
@@ -205,25 +226,21 @@ msgstr ""
 "از متغیر display_name برای نام کاربر در پترن خود استفاده کنید.اگر از ملی "
 "پیامک استفاده میکنید از 0 استفاده کنید."
 
-#: core/core.php:622 core/core.php:722 core/core.php:836
-msgid "Send"
-msgstr "ارسال"
-
-#: core/core.php:701
+#: core/core.php:767
 msgid "select the user"
 msgstr "انتخاب کاربر"
 
-#: core/core.php:703 core/core.php:813
+#: core/core.php:769 core/core.php:879 core/core.php:956
 #: option/options/woocommerce/first-purchase.php:23
-#: option/options/wp/post.php:21
+#: option/options/wp/post.php:25
 msgid "select an option"
 msgstr "یک گزینه را انتخاب کنید"
 
-#: core/core.php:811
+#: core/core.php:877 core/core.php:954
 msgid "select the product"
 msgstr "انتخاب محصول"
 
-#: core/core.php:834
+#: core/core.php:977
 msgid ""
 "use product_title for product's title and display_name for users's "
 "displayname in your pattern.if you are using melipayamak use 0 for "
@@ -233,39 +250,49 @@ msgstr ""
 "خود استفاده کنید.اگر از ملی پیامک استفاده میکنید از 0 برای نام نمایشی کاربر "
 "و 1 برای نام محصول استفاده کنید"
 
-#: core/core.php:854
+#: core/core.php:997
 msgid "Subscribers"
 msgstr "مشترکین"
 
-#: core/core.php:858 core/core.php:1130 core/core.php:1204
+#: core/core.php:1001 core/core.php:1273 core/core.php:1347
 msgid "all customers"
 msgstr "تمام مشتری ها"
 
-#: core/core.php:858
+#: core/core.php:1001
 msgid "export all woocommerce billing phones"
 msgstr "خروجی شماره تماس مشتریان ووکامرس"
 
-#: core/core.php:917
+#: core/core.php:1060
 msgid "product customers"
 msgstr "مشتریان محصولات"
 
-#: core/core.php:917
+#: core/core.php:1060
 msgid "export product customer phonenumbers"
 msgstr "خروجی شماره مشتریان محصول ووکامرس"
 
-#: core/core.php:984 core/core.php:1275
+#: core/core.php:1127 core/core.php:1418
 msgid "newsletter"
 msgstr "خبرنامه"
 
-#: core/core.php:984
+#: core/core.php:1127
 msgid "export newsletter phonenumbers"
 msgstr "خروجی شماره های ثبت شده خبرنامه"
 
-#: core/includes.php:38
+#: core/core.php:1421
+msgid "Activate Newsletter"
+msgstr "فعال سازی خبرنامه"
+
+#: core/core.php:1422
+msgid "activate newsletter from general settings. "
+msgstr ""
+"برای استفاده از خبرنامه اختصاصی افزونه لطفا از منوی \" تنظیمات => خبر نامه "
+"\" آن را فعال نمایید."
+
+#: core/includes.php:37
 msgid "please wait till all texts are sent"
 msgstr "لطفا صبر کنید تا تمام متون ارسال شود"
 
-#: core/includes.php:39
+#: core/includes.php:38
 msgid "sent successfully"
 msgstr "با موفقیت ارسال شد"
 
@@ -287,109 +314,117 @@ msgstr "دیدگاه ها"
 msgid "Newsletter"
 msgstr "خبرنامه"
 
+#: inc/wp.php:49 inc/wp.php:83
+msgid "Phone number"
+msgstr "شماره همراه  شما"
+
+#: inc/wp.php:59 inc/wp.php:91
+msgid "<strong>ERROR</strong>: phone number is missing"
+msgstr "خطا ! شماره تماس خود را وارد کنید"
+
 #: option/classes/admin-options.class.php:230
 #, fuzzy
 #| msgid "Error while saving."
 msgid "Error while saving the changes."
 msgstr "خطا در ذخیره سازی."
 
-#: option/classes/admin-options.class.php:290
+#: option/classes/admin-options.class.php:305
 #, fuzzy
 #| msgid "sent successfully"
 msgid "Settings successfully imported."
 msgstr "با موفقیت ارسال شد"
 
-#: option/classes/admin-options.class.php:302
-#: option/classes/admin-options.class.php:318
+#: option/classes/admin-options.class.php:317
+#: option/classes/admin-options.class.php:333
 #, fuzzy
 #| msgid "Default options restored."
 msgid "Default settings restored."
 msgstr "گزینه های پیش فرض بازیابی شد."
 
-#: option/classes/admin-options.class.php:389
+#: option/classes/admin-options.class.php:404
 msgid "Settings saved."
 msgstr "تنظیمات ذخیره شد."
 
-#: option/classes/admin-options.class.php:570
+#: option/classes/admin-options.class.php:584
 msgid "You have unsaved changes, save your changes!"
 msgstr ""
 
-#: option/classes/admin-options.class.php:572
+#: option/classes/admin-options.class.php:586
 #, fuzzy
 #| msgid "show all options"
 msgid "show all settings"
 msgstr "نمایش همه گزینه ها"
 
-#: option/classes/admin-options.class.php:574
+#: option/classes/admin-options.class.php:588
 msgid "Search..."
 msgstr ""
 
-#: option/classes/admin-options.class.php:577
-#: option/classes/admin-options.class.php:700
+#: option/classes/admin-options.class.php:591
+#: option/classes/admin-options.class.php:721
 msgid "Save"
 msgstr "ذخیره"
 
-#: option/classes/admin-options.class.php:577
-#: option/classes/admin-options.class.php:700
+#: option/classes/admin-options.class.php:591
+#: option/classes/admin-options.class.php:721
 msgid "Saving..."
 msgstr "در حال ذخیره ..."
 
-#: option/classes/admin-options.class.php:578
-#: option/classes/admin-options.class.php:701
+#: option/classes/admin-options.class.php:592
+#: option/classes/admin-options.class.php:722
 msgid "Reset Section"
 msgstr "ریست کردن بخش"
 
-#: option/classes/admin-options.class.php:578
-#: option/classes/admin-options.class.php:701
+#: option/classes/admin-options.class.php:592
+#: option/classes/admin-options.class.php:722
 msgid "Are you sure to reset this section options?"
 msgstr "آیا مطمئن هستید که گزینه های این بخش را دوباره تنظیم می کنید؟"
 
-#: option/classes/admin-options.class.php:579
-#: option/classes/admin-options.class.php:702
+#: option/classes/admin-options.class.php:593
+#: option/classes/admin-options.class.php:723
 msgid "Reset All"
 msgstr "ریست تمامی مقادیر"
 
-#: option/classes/admin-options.class.php:579
-#: option/classes/admin-options.class.php:702
+#: option/classes/admin-options.class.php:593
+#: option/classes/admin-options.class.php:723
 #, fuzzy
 #| msgid "Reset All"
 msgid "Reset"
 msgstr "ریست تمامی مقادیر"
 
-#: option/classes/admin-options.class.php:579
-#: option/classes/admin-options.class.php:702
+#: option/classes/admin-options.class.php:593
+#: option/classes/admin-options.class.php:723
 #, fuzzy
 #| msgid "Are you sure to reset this section options?"
 msgid "Are you sure you want to reset all settings to default values?"
 msgstr "آیا مطمئن هستید که گزینه های این بخش را دوباره تنظیم می کنید؟"
 
-#: option/classes/admin-options.class.php:677
+#: option/classes/admin-options.class.php:698
 #: option/fields/select/select.php:113 option/functions/actions.php:41
 msgid "No data available."
 msgstr ""
 
-#: option/classes/setup.class.php:603
+#: option/classes/setup.class.php:599
 msgid "Are you sure?"
 msgstr "آیا مطمئن هستید؟"
 
-#: option/classes/setup.class.php:604
+#: option/classes/setup.class.php:600
 #, php-format
 msgid "Please enter %s or more characters"
 msgstr ""
 
-#: option/classes/setup.class.php:605
+#: option/classes/setup.class.php:601
 msgid "Searching..."
 msgstr ""
 
-#: option/classes/setup.class.php:606
+#: option/classes/setup.class.php:602
 msgid "No results found."
 msgstr ""
 
-#: option/classes/setup.class.php:707
+#: option/classes/setup.class.php:658
 msgid "Oops! Not allowed."
 msgstr ""
 
-#: option/classes/setup.class.php:775 option/classes/setup.class.php:779
+#: option/classes/setup.class.php:730 option/classes/setup.class.php:734
 msgid "Field not found!"
 msgstr ""
 
@@ -406,15 +441,15 @@ msgid "Error: Field ID conflict."
 msgstr ""
 
 #: option/fields/repeater/repeater.php:48
-#: option/fields/repeater/repeater.php:76
+#: option/fields/repeater/repeater.php:83
 msgid "Are you sure to delete this item?"
 msgstr ""
 
-#: option/fields/repeater/repeater.php:89
+#: option/fields/repeater/repeater.php:96
 msgid "You cannot add more."
 msgstr ""
 
-#: option/fields/repeater/repeater.php:90
+#: option/fields/repeater/repeater.php:97
 msgid "You cannot remove more."
 msgstr ""
 
@@ -474,7 +509,7 @@ msgstr "تنظیمات عمومی"
 msgid "NirWeb Team"
 msgstr "تیم نیروب"
 
-#: option/options/options.php:18 settings/settings.php:35
+#: option/options/options.php:18
 msgid "Woocommerce"
 msgstr "ووکامرس"
 
@@ -488,9 +523,9 @@ msgstr "سفارشات لغو شده"
 #: option/options/woocommerce/failed.php:11
 #: option/options/woocommerce/on-hold.php:11
 #: option/options/woocommerce/processing.php:11
-#: option/options/woocommerce/refunded.php:12 option/options/wp/comments.php:10
-#: option/options/wp/learndash.php:15 option/options/wp/learnpress.php:15
-#: option/options/wp/user.php:10
+#: option/options/woocommerce/refunded.php:12 option/options/wp/comments.php:14
+#: option/options/wp/learndash.php:15 option/options/wp/learnpress.php:19
+#: option/options/wp/user.php:14
 msgid "Admin"
 msgstr "مدیر سایت"
 
@@ -535,7 +570,7 @@ msgstr "کد پترن"
 #: option/options/woocommerce/refunded.php:92
 #: option/options/woocommerce/refunded.php:162
 #: option/options/woocommerce/stock-management.php:80
-#: option/options/wp/post.php:31
+#: option/options/wp/post.php:35 option/options/wp/woowallet.php:23
 msgid "Activate the variables used in your pattern"
 msgstr "متغیر های استفاده شده در پترن خود را فعال کنید"
 
@@ -795,7 +830,7 @@ msgstr "فروشنده"
 #: option/options/woocommerce/cancelled.php:155
 #: option/options/woocommerce/completed.php:154
 #: option/options/woocommerce/failed.php:154
-#: option/options/woocommerce/general.php:80
+#: option/options/woocommerce/general.php:89
 #: option/options/woocommerce/on-hold.php:154
 #: option/options/woocommerce/processing.php:154
 #: option/options/woocommerce/refunded.php:155
@@ -830,19 +865,19 @@ msgid "Activate to send a text when a user has done their purchase."
 msgstr "فعال سازی ارسال پیام بعد از اولین خرید کاربر"
 
 #: option/options/woocommerce/first-purchase.php:15
-#: option/options/wp/birthday.php:26 option/options/wp/comments.php:21
-#: option/options/wp/comments.php:44 option/options/wp/contact_7.php:30
-#: option/options/wp/gravity_form.php:35 option/options/wp/learndash.php:26
-#: option/options/wp/learndash.php:44 option/options/wp/learnpress.php:26
-#: option/options/wp/learnpress.php:44 option/options/wp/newsletters.php:27
-#: option/options/wp/post.php:14 option/options/wp/scheduled.php:24
-#: option/options/wp/user.php:21 option/options/wp/user.php:39
+#: option/options/wp/birthday.php:30 option/options/wp/comments.php:25
+#: option/options/wp/comments.php:48 option/options/wp/contact_7.php:30
+#: option/options/wp/gravity_form.php:39 option/options/wp/learndash.php:26
+#: option/options/wp/learndash.php:44 option/options/wp/learnpress.php:30
+#: option/options/wp/learnpress.php:48 option/options/wp/newsletters.php:31
+#: option/options/wp/post.php:18 option/options/wp/scheduled.php:28
+#: option/options/wp/user.php:25 option/options/wp/user.php:43
 msgid "Pattern"
 msgstr "کد پترن"
 
 #: option/options/woocommerce/first-purchase.php:16
-#: option/options/wp/birthday.php:27 option/options/wp/comments.php:45
-#: option/options/wp/user.php:22 option/options/wp/user.php:40
+#: option/options/wp/birthday.php:31 option/options/wp/comments.php:49
+#: option/options/wp/user.php:26 option/options/wp/user.php:44
 msgid ""
 "use variable display_name to refer to user's name in your pattern.or use 0 "
 "if you are using melipayamak."
@@ -868,8 +903,7 @@ msgstr "سفارشات در حال انجام"
 msgid "Refunded"
 msgstr "سفارشات مسترد شده"
 
-#: option/options/woocommerce/general.php:3 settings/settings.php:34
-#: settings/settings.php:39
+#: option/options/woocommerce/general.php:3
 msgid "General settings"
 msgstr "تنظیمات عمومی"
 
@@ -879,7 +913,7 @@ msgstr "تنظیمات عمومی"
 msgid "Select an option"
 msgstr "یک گزینه را انتخاب کنید"
 
-#: option/options/woocommerce/general.php:15 settings/settings.php:45
+#: option/options/woocommerce/general.php:15
 msgid "SMS Panel"
 msgstr "پنل پیامکی"
 
@@ -904,26 +938,35 @@ msgid "Melipayamak password"
 msgstr "رمز عبور "
 
 #: option/options/woocommerce/general.php:50
-msgid "RayganSMS username"
-msgstr "نام‌کاربری"
+msgid "Melipayamak Sender Number"
+msgstr "شماره فرستنده ملی پیامک"
 
-#: option/options/woocommerce/general.php:56
-msgid "RayganSMS password"
-msgstr "رمز عبور "
+#: option/options/woocommerce/general.php:52
+#: option/options/woocommerce/general.php:71
+msgid "used in bulk sms."
+msgstr "برای استفاده در ارسال پیامک انبوه"
 
-#: option/options/woocommerce/general.php:62
+#: option/options/woocommerce/general.php:57
 msgid "SMS.IR api key"
 msgstr "api key"
 
-#: option/options/woocommerce/general.php:68
+#: option/options/woocommerce/general.php:63
 msgid "SMS.IR Security key"
 msgstr "security key"
 
-#: option/options/woocommerce/general.php:74
-msgid "Your Phone Number"
-msgstr "شماره همراه  شما"
+#: option/options/woocommerce/general.php:69
+msgid "SMS.IR Line Number"
+msgstr "شماره خط ( line number )"
+
+#: option/options/woocommerce/general.php:76
+msgid "Admin Phone numbers"
+msgstr "شماره تلفن مدیران"
 
 #: option/options/woocommerce/general.php:81
+msgid "Admin Phone number"
+msgstr "شماره تلفن مدیر"
+
+#: option/options/woocommerce/general.php:90
 msgid "to access user's phone number , specify the meta key"
 msgstr "برای دسترسی به شماره تلفن کاربران ، کلید متا را مشخص کنید"
 
@@ -1088,7 +1131,18 @@ msgstr "استفاده از کد کوتاه [in_stock_nirweb]"
 msgid "Birthday congrats"
 msgstr "تبریک تولد"
 
-#: option/options/wp/birthday.php:8
+#: option/options/wp/birthday.php:7 option/options/wp/comments.php:7
+#: option/options/wp/gravity_form.php:16 option/options/wp/learnpress.php:7
+#: option/options/wp/newsletters.php:7 option/options/wp/phone.php:7
+#: option/options/wp/post.php:7 option/options/wp/scheduled.php:7
+#: option/options/wp/user.php:7 option/options/wp/woowallet.php:7
+#: option/options/wp/wordpress_update.php:7
+msgid "activate pro version for the settings."
+msgstr ""
+"این امکان فقط در نسخه تجاری فعال می باشد و تنظیمات این قسمت  حالت نمایشی "
+"دارد."
+
+#: option/options/wp/birthday.php:12
 msgid ""
 "to access user's birthday specify birthday meta key and to send sms specify "
 "phone user meta.Make sure it's in Gregorian date."
@@ -1097,19 +1151,19 @@ msgstr ""
 "شماره تماس را از تنظیمات کلی مشخص کنید و اطمینان حاصل کنید که تاریخ تولد به "
 "صورت میلادی باشد."
 
-#: option/options/wp/birthday.php:13
+#: option/options/wp/birthday.php:17
 msgid "Activate to send happy birthday sms."
 msgstr "فعال سازی ارسال پیام تبریک تولد به کاربران"
 
-#: option/options/wp/birthday.php:20
+#: option/options/wp/birthday.php:24
 msgid "birthday meta key"
 msgstr "یوز متا تاریخ تولد"
 
-#: option/options/wp/comments.php:15
+#: option/options/wp/comments.php:19
 msgid "Activate to notify you when you have a new comment."
 msgstr "فعال سازی اطلاع رسانی کامنت جدید"
 
-#: option/options/wp/comments.php:22
+#: option/options/wp/comments.php:26
 msgid ""
 "use variable display_name to refer to the ID of the comment in your pattern."
 "or use 0 if you are using melipayamak."
@@ -1117,12 +1171,12 @@ msgstr ""
 "از متغیر display_name برای آیدی کامنت در پترن خود استفاده کنید.اگر از ملی "
 "پیامک استفاده میکنید از 0 استفاده کنید."
 
-#: option/options/wp/comments.php:28 option/options/wp/learndash.php:33
-#: option/options/wp/learnpress.php:33 option/options/wp/user.php:28
+#: option/options/wp/comments.php:32 option/options/wp/learndash.php:33
+#: option/options/wp/learnpress.php:37 option/options/wp/user.php:32
 msgid "User"
 msgstr "کاربر"
 
-#: option/options/wp/comments.php:33
+#: option/options/wp/comments.php:37
 msgid ""
 "Make sure you have selected user meta in general settings of the plugin to "
 "send notification to logged in users."
@@ -1130,11 +1184,11 @@ msgstr ""
 "اطمینان حاصل کنید که یوزر متا در تنظیمات عمومیپلاگین برای ارسال اطلاع رسانی "
 "به کاربران وارد شده است."
 
-#: option/options/wp/comments.php:38
+#: option/options/wp/comments.php:42
 msgid "Activate to notify user that you have replied their comment."
 msgstr "فعال سازی اطلاع رسانی کاربران از پاسخ دیدگاه خود"
 
-#: option/options/wp/comments.php:51
+#: option/options/wp/comments.php:55
 msgid "Checkbox text"
 msgstr "متن چک باکس"
 
@@ -1150,11 +1204,11 @@ msgstr ""
 "با فعال سازی این قسمت میتوانید از ارسال فرم جدید آگاه شوید ابتدا افزونه فرم "
 "تماس 7 را نصب و فعال کنید ."
 
-#: option/options/wp/contact_7.php:24 option/options/wp/gravity_form.php:29
+#: option/options/wp/contact_7.php:24 option/options/wp/gravity_form.php:33
 msgid "Activate Notification"
 msgstr "اطلاع رسانی"
 
-#: option/options/wp/contact_7.php:31 option/options/wp/gravity_form.php:36
+#: option/options/wp/contact_7.php:31 option/options/wp/gravity_form.php:40
 msgid ""
 "use variable form_id in your pattern to refer to the id of the form and use "
 "0 if you are using melipayamak."
@@ -1162,15 +1216,15 @@ msgstr ""
 "از متغیر form_id برای آیدی فرم در پترن خود استفاده کنید.اگر از ملی پیامک "
 "استفاده میکنید از 0 استفاده کنید."
 
-#: option/options/wp/contact_7.php:37 option/options/wp/gravity_form.php:42
+#: option/options/wp/contact_7.php:37 option/options/wp/gravity_form.php:46
 msgid "specify the form and phonenumber"
 msgstr "فرم و شماره همراه را وارد کنید"
 
-#: option/options/wp/contact_7.php:43 option/options/wp/gravity_form.php:48
+#: option/options/wp/contact_7.php:43 option/options/wp/gravity_form.php:52
 msgid "Your phone Number"
 msgstr "شماره همراه  شما"
 
-#: option/options/wp/contact_7.php:48 option/options/wp/gravity_form.php:53
+#: option/options/wp/contact_7.php:48 option/options/wp/gravity_form.php:57
 msgid "select the form"
 msgstr "فرم را انتخاب کنید"
 
@@ -1178,7 +1232,7 @@ msgstr "فرم را انتخاب کنید"
 msgid "Gravity Form"
 msgstr "گرویتی فرم"
 
-#: option/options/wp/gravity_form.php:17
+#: option/options/wp/gravity_form.php:21
 msgid ""
 "activate this section to notify you when a gravity form is submitted.Make "
 "sure you have the plugin gravity form installed and activated."
@@ -1199,7 +1253,7 @@ msgid "Activate to notify you when a student has completed their course."
 msgstr "فعال سازی اطلاع رسانی اتمام دوره کاربر"
 
 #: option/options/wp/learndash.php:27 option/options/wp/learndash.php:45
-#: option/options/wp/learnpress.php:27 option/options/wp/learnpress.php:45
+#: option/options/wp/learnpress.php:31 option/options/wp/learnpress.php:49
 msgid ""
 "use display_name for user's display name and course for course's title.if "
 "you are using melipayamak use 0 for user's display name and 1 for course "
@@ -1217,23 +1271,23 @@ msgstr "فعال سازی ارسال پیام بعد از اتمام دوره ک
 msgid "LearnPress"
 msgstr "لرن پرس"
 
-#: option/options/wp/learnpress.php:8
+#: option/options/wp/learnpress.php:12
 msgid "Make sure you have LearnPress installed and activated."
 msgstr "اطمینان حاصل کنید که LearnPress را نصب و فعال کرده باشید."
 
-#: option/options/wp/learnpress.php:20
+#: option/options/wp/learnpress.php:24
 msgid "Activate to notify you when a new student has enrolled."
 msgstr "فعال سازی اطلاع رسانی ثبت نام کاربر در دوره"
 
-#: option/options/wp/learnpress.php:38
+#: option/options/wp/learnpress.php:42
 msgid "Activate to send user successful enrollment sms."
 msgstr "فعال سازی ارسال پیام ثبت نام موفق در دوره "
 
-#: option/options/wp/newsletters.php:8
+#: option/options/wp/newsletters.php:12
 msgid "Activate newsletter."
 msgstr "خبرنامه را فعال کنید."
 
-#: option/options/wp/newsletters.php:14
+#: option/options/wp/newsletters.php:18
 msgid ""
 "use this shortcode to create form to get users's phone numbers : "
 "[nirweb_newsletter]  "
@@ -1241,11 +1295,11 @@ msgstr ""
 "از شرتکد   [nirweb_phone_form]    برای ایجاد فرم دریافت شماره تماس کاربر "
 "استفاده کنید"
 
-#: option/options/wp/newsletters.php:20
+#: option/options/wp/newsletters.php:24
 msgid "Activate to confrim user's phone number."
 msgstr "فعال سازی  ارسال پیام تایید شماره موبایل"
 
-#: option/options/wp/newsletters.php:28
+#: option/options/wp/newsletters.php:32
 msgid "use variable code in your pattern to send verification code."
 msgstr ""
 "برای ارسال پیامک تاییدیه شماره موبایل از متغیر code در پترن خود استفاده "
@@ -1255,17 +1309,17 @@ msgstr ""
 msgid "phone"
 msgstr ""
 
-#: option/options/wp/phone.php:8
+#: option/options/wp/phone.php:12
 #, fuzzy
 #| msgid "use shortcode"
 msgid "active phone shortcode."
 msgstr "استفاده از کد کوتاه"
 
-#: option/options/wp/phone.php:9
+#: option/options/wp/phone.php:13
 msgid "user's phone numbers will be saved and shown in admin panel."
 msgstr "شماره تلفن کاربر ذخیره خواهد شد و در پنل مدیریت نشان داده شده است."
 
-#: option/options/wp/phone.php:16
+#: option/options/wp/phone.php:20
 #, fuzzy
 #| msgid "use shortcode [on_sale_nirweb]"
 msgid "use shortcode [phone_box_nirweb]"
@@ -1275,62 +1329,62 @@ msgstr "استفاده از کد کوتاه [on_sale_nirweb]"
 msgid "New Post"
 msgstr "پست جدید"
 
-#: option/options/wp/post.php:8
+#: option/options/wp/post.php:12
 msgid "Activate to notify users when a new post is published."
 msgstr "اطلاع رسانی به کاربران از انتشار پست جدید"
 
-#: option/options/wp/post.php:22
+#: option/options/wp/post.php:26
 msgid "Post Type"
 msgstr "نوع پست"
 
-#: option/options/wp/post.php:32
+#: option/options/wp/post.php:36
 msgid ""
 "for mellipayamak use 0 for title , 1 for excerpt , 2 for author , 3 for guid,"
 msgstr ""
 "اگر از ملی پیامک استفاده میکنید ، از 0 برای عنوان ، 1 خلاصه مطلب ، 2 برای "
 "نام نویسنده ، 3 برای لینک کوتاه پست استفاده کنید"
 
-#: option/options/wp/post.php:38
+#: option/options/wp/post.php:42
 msgid "Title"
 msgstr "عنوان"
 
-#: option/options/wp/post.php:40
+#: option/options/wp/post.php:44
 msgid "use variable post_title for the title of the post in your pattern"
 msgstr "از متغیر post_title برای عنوان پست در پترن خود استفاده کنید"
 
-#: option/options/wp/post.php:45
+#: option/options/wp/post.php:49
 msgid "Excerpt"
 msgstr "خلاصه مطلب"
 
-#: option/options/wp/post.php:47
+#: option/options/wp/post.php:51
 msgid "use variable post_excerpt for the excerpt of the post in your pattern"
 msgstr "از متغیر post_excerpt برای خلاصه مطلب در پترن خود استفاده کنید"
 
-#: option/options/wp/post.php:52
+#: option/options/wp/post.php:56
 msgid "Author"
 msgstr "نویسنده"
 
-#: option/options/wp/post.php:54
+#: option/options/wp/post.php:58
 msgid "use variable post_author for the author of the post in your pattern"
 msgstr "از متغیر post_author برای نام نویسنده در پترن خود استفاده کنید"
 
-#: option/options/wp/post.php:59
+#: option/options/wp/post.php:63
 msgid "Guid"
 msgstr "لینک کوتاه"
 
-#: option/options/wp/post.php:61
+#: option/options/wp/post.php:65
 msgid "use variable guid for the short link of the post in your pattern"
 msgstr "از متغیر guid برای لینک کوتاه نوشته در پترن خود استفاده کنید"
 
-#: option/options/wp/scheduled.php:3 option/options/wp/scheduled.php:8
+#: option/options/wp/scheduled.php:3 option/options/wp/scheduled.php:12
 msgid "Scheduled SMS"
 msgstr "پیام زمانبندی شده"
 
-#: option/options/wp/scheduled.php:19
+#: option/options/wp/scheduled.php:23
 msgid "Users"
 msgstr "کاربران"
 
-#: option/options/wp/scheduled.php:33
+#: option/options/wp/scheduled.php:37
 msgid "Date"
 msgstr "تاریخ"
 
@@ -1338,75 +1392,87 @@ msgstr "تاریخ"
 msgid "User Registeration"
 msgstr "ثبت نام کاربر"
 
-#: option/options/wp/user.php:15
+#: option/options/wp/user.php:19
 msgid "Activate to notify you when a user has registered."
 msgstr "فعال سازی اطلاع رسانی ثبت نام کابران"
 
-#: option/options/wp/user.php:33
+#: option/options/wp/user.php:37
 msgid "Activate to send a welcome text to the user."
 msgstr "فعال سازی ارسال پیام خوش آمد گویی به کاربران"
+
+#: option/options/wp/woowallet.php:3
+msgid "Tera Wallet"
+msgstr "کیف پول"
+
+#: option/options/wp/woowallet.php:12
+msgid "Make sure you have Tera wallet installed and activated."
+msgstr "اطمینان حاصل کنید که افزونه tera wallet را نصب و فعال کرده باشید."
+
+#: option/options/wp/woowallet.php:17
+msgid "Activate to send a notification to the user."
+msgstr "فعال سازی اطلاع رسانی به کاربر"
+
+#: option/options/wp/woowallet.php:24
+msgid ""
+"for mellipayamak use 0 for amount , 1 for type , 2 for date , 3 for balance"
+msgstr ""
+"اگر از ملی پیامک استفاده میکنید ، از 0 برای مقدار تراکنش، 1 برای نوع "
+"تراکنش ، 2 برای تاریخ تراکنش و  3 برای موجودی استفاده کنید"
+
+#: option/options/wp/woowallet.php:30
+msgid "amount"
+msgstr "مقدار"
+
+#: option/options/wp/woowallet.php:32
+msgid "use variable amount for transaction's amount in your pattern"
+msgstr "از متغیر amount برای مقدار تراکنش در پترن خود استفاده کنید"
+
+#: option/options/wp/woowallet.php:37
+msgid "type"
+msgstr "نوع تراکنش"
+
+#: option/options/wp/woowallet.php:39
+msgid "use variable type for transaction's type in your pattern"
+msgstr ""
+"از متغیر type برای نوع تراکنش ( کاهش / افزایش ) در پترن خود استفاده کنید"
+
+#: option/options/wp/woowallet.php:44
+msgid "date"
+msgstr "تاریخ"
+
+#: option/options/wp/woowallet.php:46
+msgid "use variable date for the transaction's date in your pattern"
+msgstr "از متغیر date برای تاریخ تراکنش در پترن خود استفاده کنید"
+
+#: option/options/wp/woowallet.php:51
+msgid "balance"
+msgstr "موجودی"
+
+#: option/options/wp/woowallet.php:53
+msgid "use variable balance for the transaction's balance in your pattern"
+msgstr "از متغیر balance برای موجودی کاربر استفاده کنید."
 
 #: option/options/wp/wordpress_update.php:3
 msgid "phone registration"
 msgstr "فیلد تماس ثبت نام"
 
-#: option/options/wp/wordpress_update.php:8
+#: option/options/wp/wordpress_update.php:12
 msgid "Add phone number field to wordpress registration form."
 msgstr "افزودن فیلد شماره موبایل به فیلد پیش فرض ثبت نام وردپرس"
 
-#: option/options/wp/wordpress_update.php:9
-#: option/options/wp/wordpress_update.php:25
+#: option/options/wp/wordpress_update.php:13
+#: option/options/wp/wordpress_update.php:29
 msgid "user's phone number will be saved in nirweb_phone user meta."
 msgstr "شماره تماس کاربر پس از ثبت نام در یوزر متا nirweb_phone ذخیره می شود."
 
-#: option/options/wp/wordpress_update.php:16
-#: option/options/wp/wordpress_update.php:32
+#: option/options/wp/wordpress_update.php:20
+#: option/options/wp/wordpress_update.php:36
 msgid "require phone number field."
 msgstr "الزامی کردن فیلد شماره تماس"
 
-#: option/options/wp/wordpress_update.php:24
+#: option/options/wp/wordpress_update.php:28
 msgid "Add phone number field to woocommerce registration form."
 msgstr "افزودن فیلد شماره موبایل به فیلد پیش فرض ثبت نام ووکامرس"
-
-#: settings/settings.php:48
-#, fuzzy
-#| msgid "SMS Panel"
-msgid "IP Panel"
-msgstr "پنل پیامکی"
-
-#: settings/settings.php:49
-#, fuzzy
-#| msgid "Melipayamak username"
-msgid "Melipayamak"
-msgstr "نام‌کاربری"
-
-#: settings/settings.php:50
-msgid "Sms.ir"
-msgstr ""
-
-#: settings/settings.php:55
-msgid "Username"
-msgstr "نام کاربری"
-
-#: settings/settings.php:56
-msgid "enter api key for melipayamak."
-msgstr "اگر از ملی پیامک استفاده میکنید api key را وارد کنید "
-
-#: settings/settings.php:62
-msgid "Password"
-msgstr "رمزعبور"
-
-#: settings/settings.php:63
-msgid "enter security key for melipayamak."
-msgstr "اگر از ملی پیامک استفاده میکنید  security key را وارد کنید "
-
-#: settings/settings.php:69
-msgid "sender number if you are using ip panel"
-msgstr "شماره فرستنده آی پی پنل "
-
-#: settings/settings.php:75
-msgid "Admin phone number"
-msgstr "شماره تلفن مدیر"
 
 #. Plugin Name of the plugin/theme
 msgid "پیامک رایگان ووکامرس و وردپرس نیر وب"
@@ -1422,10 +1488,42 @@ msgid "کاملترین افزونه پیامک ووکامرس و وردپرس"
 msgstr ""
 
 #. Author of the plugin/theme
-#, fuzzy
-#| msgid "NirWeb Team"
 msgid "NirWeb"
 msgstr "تیم نیروب"
+
+#~ msgid "RayganSMS username"
+#~ msgstr "نام‌کاربری"
+
+#~ msgid "RayganSMS password"
+#~ msgstr "رمز عبور "
+
+#~ msgid "Your Phone Number"
+#~ msgstr "شماره همراه  شما"
+
+#, fuzzy
+#~| msgid "SMS Panel"
+#~ msgid "IP Panel"
+#~ msgstr "پنل پیامکی"
+
+#, fuzzy
+#~| msgid "Melipayamak username"
+#~ msgid "Melipayamak"
+#~ msgstr "نام‌کاربری"
+
+#~ msgid "Username"
+#~ msgstr "نام کاربری"
+
+#~ msgid "enter api key for melipayamak."
+#~ msgstr "اگر از ملی پیامک استفاده میکنید api key را وارد کنید "
+
+#~ msgid "Password"
+#~ msgstr "رمزعبور"
+
+#~ msgid "enter security key for melipayamak."
+#~ msgstr "اگر از ملی پیامک استفاده میکنید  security key را وارد کنید "
+
+#~ msgid "sender number if you are using ip panel"
+#~ msgstr "شماره فرستنده آی پی پنل "
 
 #~ msgid "Success. Imported backup options."
 #~ msgstr "تنظیمات با موفقیت وارد شد."
@@ -1515,12 +1613,6 @@ msgstr "تیم نیروب"
 
 #~ msgid "Notify me when answered."
 #~ msgstr "وقتي جواب داده شد بهم خبر بده"
-
-#~ msgid "Phone number"
-#~ msgstr "شماره همراه  شما"
-
-#~ msgid "<strong>ERROR</strong>: phone number is missing"
-#~ msgstr "خطا ! شماره تماس خود را وارد کنید"
 
 #~ msgid "Nirweb SMS"
 #~ msgstr "پیامک نیروب"

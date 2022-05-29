@@ -84,7 +84,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
 
       // Setup admin option framework
       $params = array();
-      if ( class_exists( 'CSF_Options' ) && ! empty( self::$args['admin_options'] ) ) {
+      if ( class_exists( 'CSFSMARTSMS_Options' ) && ! empty( self::$args['admin_options'] ) ) {
         foreach ( self::$args['admin_options'] as $key => $value ) {
           if ( ! empty( self::$args['sections'][$key] ) && ! isset( self::$inited[$key] ) ) {
 
@@ -92,7 +92,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
             $params['sections'] = self::$args['sections'][$key];
             self::$inited[$key] = true;
 
-            CSF_Options::instance( $key, $params );
+            CSFSMARTSMS_Options::instance( $key, $params );
 
             if ( ! empty( $value['show_in_customizer'] ) ) {
               $value['output_css'] = false;
@@ -400,7 +400,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
       }
 
       // Include all framework fields
-      $fields = apply_filters( 'csf_fields', array(
+      $fields = apply_filters( 'CSFSMARTSMS_Fields', array(
         'accordion',
         'background',
         'backup',
@@ -449,7 +449,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
 
       if ( ! empty( $fields ) ) {
         foreach ( $fields as $field ) {
-          if ( ! class_exists( 'CSF_Field_'. $field ) && class_exists( 'CSF_Fields' ) ) {
+          if ( ! class_exists( 'CSF_Field_'. $field ) && class_exists( 'CSFSMARTSMS_Fields' ) ) {
             self::include_plugin_file( 'fields/'. $field .'/'. $field .'.php' );
           }
         }
@@ -664,9 +664,9 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
       $depend     = '';
       $visible    = '';
       $unique     = ( ! empty( $unique ) ) ? $unique : '';
-      $class      = ( ! empty( $field['class'] ) ) ? ' ' . esc_attr( $field['class'] ) : '';
+      $class      = ( ! empty( $field['class'] ) ) ? ' ' . wp_kses_post( $field['class'] ) : '';
       $is_pseudo  = ( ! empty( $field['pseudo'] ) ) ? ' CFSSMARTSMS-pseudo-field' : '';
-      $field_type = ( ! empty( $field['type'] ) ) ? esc_attr( $field['type'] ) : '';
+      $field_type = ( ! empty( $field['type'] ) ) ? wp_kses_post( $field['type'] ) : '';
 
       if ( ! empty( $field['dependency'] ) ) {
 
@@ -691,9 +691,9 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
           $depend_visible  = ( ! empty( $dependency[4] ) ) ? $dependency[4] : '';
         }
 
-        $depend .= ' data-controller="'. esc_attr( $data_controller ) .'"';
-        $depend .= ' data-condition="'. esc_attr( $data_condition ) .'"';
-        $depend .= ' data-value="'. esc_attr( $data_value ) .'"';
+        $depend .= ' data-controller="'. wp_kses_post( $data_controller ) .'"';
+        $depend .= ' data-condition="'. wp_kses_post( $data_condition ) .'"';
+        $depend .= ' data-value="'. wp_kses_post( $data_value ) .'"';
         $depend .= ( ! empty( $data_global ) ) ? ' data-depend-global="true"' : '';
 
         $visible = ( ! empty( $depend_visible ) ) ? ' CFSSMARTSMS-depend-visible' : ' CFSSMARTSMS-depend-hidden';

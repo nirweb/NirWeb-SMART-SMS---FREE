@@ -3,6 +3,10 @@ CFSSMARTSMS::createSection( $prefix, array(
     'title'  => '<div class="nirweb_codestar_icon">'.esc_html__('Comments', 'nss').'<span><i class="fas fa-lock"></i>PRO</span></div>',
     'fields' => array(
         array(
+            'type'    => 'content',
+            'content' => '<div class="nirweb_activate_pro_notice">'.esc_html__('activate pro version for the settings.','nss').'</div>',
+        ),
+        array(
           'id'            => 'comment',
           'type'          => 'tabbed',
           'tabs'          => array(

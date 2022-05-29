@@ -4,13 +4,10 @@ if (!defined('ABSPATH')) exit;
 include_once(ABSPATH . 'wp-includes/pluggable.php');
 require_once NIRWEB_SMART_SMS . 'core/Nirweb_smart_sms_data.php';
 require_once NIRWEB_SMART_SMS . 'core/core.php';
-//require_once NIRWEB_SMART_SMS . 'option/framework.php';
-//require_once NIRWEB_SMART_SMS . 'option/options/options.php';
 require_once NIRWEB_SMART_SMS . 'inc/woocommerce.php';
 require_once NIRWEB_SMART_SMS . 'inc/wp.php';
 require_once NIRWEB_SMART_SMS . 'option/codestar-framework.php';
 require_once NIRWEB_SMART_SMS . 'option/options/options.php';
-//require_once NIRWEB_SMART_SMS . 'settings/settings.php';
 
 add_action('wp_enqueue_scripts',function (){
     wp_enqueue_style( 'style-nirweb-smart-sms', NIRWEB_SMART_SMS_URL.'assets/style.css', false,'1.0.0' );

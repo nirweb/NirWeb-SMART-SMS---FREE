@@ -7,8 +7,8 @@
  * @version 1.0.0
  *
  */
-if ( ! class_exists( 'CSF_Fields' ) ) {
-  abstract class CSF_Fields extends CSF_Abstract {
+if ( ! class_exists( 'CSFSMARTSMS_Fields' ) ) {
+  abstract class CSFSMARTSMS_Fields extends CSFSMARTSMS_Abstract {
 
     public function __construct( $field = array(), $value = '', $unique = '', $where = '', $parent = '' ) {
       $this->field  = $field;
@@ -53,9 +53,9 @@ if ( ! class_exists( 'CSF_Fields' ) ) {
       if ( ! empty( $attributes ) ) {
         foreach ( $attributes as $key => $value ) {
           if ( $value === 'only-key' ) {
-            $atts .= ' '. esc_attr( $key );
+            $atts .= ' '. wp_kses_post( $key );
           } else {
-            $atts .= ' '. esc_attr( $key ) . '="'. esc_attr( $value ) .'"';
+            $atts .= ' '. wp_kses_post( $key ) . '="'. wp_kses_post( $value ) .'"';
           }
         }
       }

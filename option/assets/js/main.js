@@ -569,62 +569,6 @@
   };
 
   //
-  // Field: code_editor
-  //
-  $.fn.csf_field_code_editor = function() {
-    return this.each( function() {
-
-      if ( typeof CodeMirror !== 'function' ) { return; }
-
-      var $this       = $(this),
-          $textarea   = $this.find('textarea'),
-          $inited     = $this.find('.CodeMirror'),
-          data_editor = $textarea.data('editor');
-
-      if ( $inited.length ) {
-        $inited.remove();
-      }
-
-      var interval = setInterval(function () {
-        if ( $this.is(':visible') ) {
-
-          var code_editor = CodeMirror.fromTextArea( $textarea[0], data_editor );
-
-          // load code-mirror theme css.
-          if ( data_editor.theme !== 'default' && CFSSMARTSMS.vars.code_themes.indexOf(data_editor.theme) === -1 ) {
-
-            var $cssLink = $('<link>');
-
-            $('#CFSSMARTSMS-codemirror-css').after( $cssLink );
-
-            $cssLink.attr({
-              rel: 'stylesheet',
-              id: 'CFSSMARTSMS-codemirror-'+ data_editor.theme +'-css',
-              href: data_editor.cdnURL +'/theme/'+ data_editor.theme +'.min.css',
-              type: 'text/css',
-              media: 'all'
-            });
-
-            CFSSMARTSMS.vars.code_themes.push(data_editor.theme);
-
-          }
-
-          CodeMirror.modeURL = data_editor.cdnURL +'/mode/%N/%N.min.js';
-          CodeMirror.autoLoadMode(code_editor, data_editor.mode);
-
-          code_editor.on( 'change', function( editor, event ) {
-            $textarea.val( code_editor.getValue() ).trigger('change');
-          });
-
-          clearInterval(interval);
-
-        }
-      });
-
-    });
-  };
-
-  //
   // Field: date
   //
   $.fn.csf_field_date = function() {
@@ -2447,7 +2391,7 @@
   //
   // Option Framework
   //
-  $.fn.csf_options = function() {
+  $.fn.CSFSMARTSMS_Options = function() {
     return this.each( function() {
 
       var $this         = $(this),
@@ -3372,7 +3316,6 @@
         $this.children('.CFSSMARTSMS-field-accordion').csf_field_accordion();
         $this.children('.CFSSMARTSMS-field-backup').csf_field_backup();
         $this.children('.CFSSMARTSMS-field-background').csf_field_background();
-        $this.children('.CFSSMARTSMS-field-code_editor').csf_field_code_editor();
         $this.children('.CFSSMARTSMS-field-date').csf_field_date();
         $this.children('.CFSSMARTSMS-field-datetime').csf_field_datetime();
         $this.children('.CFSSMARTSMS-field-fieldset').csf_field_fieldset();
@@ -3434,7 +3377,7 @@
   $(document).ready( function() {
 
     $('.CFSSMARTSMS-save').csf_save();
-    $('.CFSSMARTSMS-options').csf_options();
+    $('.CFSSMARTSMS-options').CSFSMARTSMS_Options();
     $('.CFSSMARTSMS-sticky-header').csf_sticky();
     $('.CFSSMARTSMS-nav-options').csf_nav_options();
     $('.CFSSMARTSMS-nav-metabox').csf_nav_metabox();

@@ -8,7 +8,7 @@
  *
  */
 if ( ! class_exists( 'CSF_Field_repeater' ) ) {
-  class CSF_Field_repeater extends CSF_Fields {
+  class CSF_Field_repeater extends CSFSMARTSMS_Fields {
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );
@@ -30,7 +30,7 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
 
         echo wp_kses_post($this->field_before());
 
-        echo '<div class="CFSSMARTSMS-repeater-item CFSSMARTSMS-repeater-hidden" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
+        echo '<div class="CFSSMARTSMS-repeater-item CFSSMARTSMS-repeater-hidden" data-depend-id="'. wp_kses_post( $this->field['id'] ) .'">';
         echo '<div class="CFSSMARTSMS-repeater-content">';
         foreach ( $this->field['fields'] as $field ) {
 
@@ -50,7 +50,7 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
         echo '</div>';
         echo '</div>';
 
-        echo '<div class="CFSSMARTSMS-repeater-wrapper CFSSMARTSMS-data-wrapper" data-field-id="['. esc_attr( $this->field['id'] ) .']" data-max="'. esc_attr( $args['max'] ) .'" data-min="'. esc_attr( $args['min'] ) .'">';
+        echo '<div class="CFSSMARTSMS-repeater-wrapper CFSSMARTSMS-data-wrapper" data-field-id="['. wp_kses_post( $this->field['id'] ) .']" data-max="'. wp_kses_post( $args['max'] ) .'" data-min="'. wp_kses_post( $args['min'] ) .'">';
 
         if ( ! empty( $this->value ) && is_array( $this->value ) ) {
 

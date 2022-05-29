@@ -3,6 +3,10 @@ CFSSMARTSMS::createSection( $prefix, array(
     'title'  => '<div class="nirweb_codestar_icon">'.esc_html__('Birthday congrats', 'nss').'<span><i class="fas fa-lock"></i>PRO</span></div>',
     'fields' => array(
         array(
+            'type'    => 'content',
+            'content' => '<div class="nirweb_activate_pro_notice">'.esc_html__('activate pro version for the settings.','nss').'</div>',
+        ),
+        array(
             'type'    => 'notice',
             'style'   => 'danger',
             'content' => esc_html__('to access user\'s birthday specify birthday meta key and to send sms specify phone user meta.Make sure it\'s in Gregorian date.','nss'),

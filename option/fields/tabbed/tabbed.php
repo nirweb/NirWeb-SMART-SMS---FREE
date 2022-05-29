@@ -8,7 +8,7 @@
  *
  */
 if ( ! class_exists( 'CSF_Field_tabbed' ) ) {
-  class CSF_Field_tabbed extends CSF_Fields {
+  class CSF_Field_tabbed extends CSFSMARTSMS_Fields {
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );
@@ -20,13 +20,13 @@ if ( ! class_exists( 'CSF_Field_tabbed' ) ) {
 
       echo wp_kses_post($this->field_before());
 
-      echo '<div class="CFSSMARTSMS-tabbed-nav" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
+      echo '<div class="CFSSMARTSMS-tabbed-nav" data-depend-id="'. wp_kses_post( $this->field['id'] ) .'">';
       foreach ( $this->field['tabs'] as $key => $tab ) {
 
-        $tabbed_icon   = ( ! empty( $tab['icon'] ) ) ? '<i class="CFSSMARTSMS--icon '. esc_attr( $tab['icon'] ) .'"></i>' : '';
+        $tabbed_icon   = ( ! empty( $tab['icon'] ) ) ? '<i class="CFSSMARTSMS--icon '. wp_kses_post( $tab['icon'] ) .'"></i>' : '';
         $tabbed_active = ( empty( $key ) ) ? 'CFSSMARTSMS-tabbed-active' : '';
 
-        echo '<a href="#" class="'. esc_attr( $tabbed_active ) .'"">'. wp_kses_post($tabbed_icon) . esc_attr( $tab['title'] ) .'</a>';
+        echo '<a href="#" class="'. wp_kses_post( $tabbed_active ) .'"">'. wp_kses_post($tabbed_icon) . wp_kses_post( $tab['title'] ) .'</a>';
 
       }
       echo '</div>';
@@ -36,7 +36,7 @@ if ( ! class_exists( 'CSF_Field_tabbed' ) ) {
 
         $tabbed_hidden = ( ! empty( $key ) ) ? ' hidden' : '';
 
-        echo '<div class="CFSSMARTSMS-tabbed-content'. esc_attr( $tabbed_hidden ) .'">';
+        echo '<div class="CFSSMARTSMS-tabbed-content'. wp_kses_post( $tabbed_hidden ) .'">';
 
         foreach ( $tab['fields'] as $field ) {
 

@@ -30,6 +30,7 @@ require_once NIRWEB_SMART_SMS.'/option/options/woocommerce/onsale.php';
 require_once NIRWEB_SMART_SMS.'/option/options/woocommerce/first-purchase.php';
 
 /********************************** WP  *******************************/
+require_once NIRWEB_SMART_SMS.'/option/options/wp/woowallet.php';
 require_once NIRWEB_SMART_SMS.'/option/options/wp/user.php';
 require_once NIRWEB_SMART_SMS.'/option/options/wp/scheduled.php';
 require_once NIRWEB_SMART_SMS.'/option/options/wp/post.php';

@@ -45,16 +45,11 @@ CFSSMARTSMS::createSection( $prefix, array(
             'dependency' => array( 'sms_panel', '==', 'melipayamak' )
         ),
         array(
-            'id'         => 'username_raygan',
+            'id'         => 'sender_meli',
             'type'       => 'text',
-            'title'  =>  esc_html__('RayganSMS username','nss'),
-            'dependency' => array( 'sms_panel', '==', 'raygansms' )
-        ),
-        array(
-            'id'         => 'password_raygan',
-            'type'       => 'text',
-            'title'  =>  esc_html__('RayganSMS password','nss'),
-            'dependency' => array( 'sms_panel', '==', 'raygansms' )
+            'title'  =>  esc_html__('Melipayamak Sender Number','nss'),
+            'dependency' => array( 'sms_panel', '==', 'melipayamak' ),
+            'subtitle' => esc_html__('used in bulk sms.','nss')
         ),
         array(
             'id'         => 'apikey_smsir',
@@ -69,9 +64,23 @@ CFSSMARTSMS::createSection( $prefix, array(
             'dependency' => array( 'sms_panel', '==', 'smsir' )
         ),
         array(
-            'id'         => 'to',
+            'id'         => 'linenumber_smsir',
             'type'       => 'text',
-            'title'  =>  esc_html__('Your Phone Number','nss'),
+            'title'  =>  esc_html__('SMS.IR Line Number','nss'),
+            'dependency' => array( 'sms_panel', '==', 'smsir' ),
+            'subtitle' => esc_html__('used in bulk sms.','nss')
+        ),
+        array(
+            'id'         => 'to',
+            'type'       => 'repeater',
+            'title'  =>  esc_html__('Admin Phone numbers','nss'),
+            'fields' => array(
+                array(
+                    'id' => 'to_phone',
+                    'type' => 'text',
+                    'title' => esc_html__('Admin Phone number','nss')
+                )
+            )
         ),
         array(
             'id'         => 'user_meta',

@@ -28,10 +28,10 @@ if ( ! function_exists( 'csf_get_icons' ) ) {
 
       foreach ( $icon_lists as $list ) {
 
-        echo ( count( $icon_lists ) >= 2 ) ? '<div class="CFSSMARTSMS-icon-title">'. esc_attr( $list['title'] ) .'</div>' : '';
+        echo ( count( $icon_lists ) >= 2 ) ? '<div class="CFSSMARTSMS-icon-title">'. wp_kses_post( $list['title'] ) .'</div>' : '';
 
         foreach ( $list['icons'] as $icon ) {
-          echo '<i title="'. esc_attr( $icon ) .'" class="'. esc_attr( $icon ) .'"></i>';
+          echo '<i title="'. wp_kses_post( $icon ) .'" class="'. wp_kses_post( $icon ) .'"></i>';
         }
 
       }
@@ -181,7 +181,7 @@ if ( ! function_exists( 'csf_chosen_ajax' ) ) {
     }
 
     // Success
-    $options = CSF_Fields::field_data( $type, $term, $query );
+    $options = CSFSMARTSMS_Fields::field_data( $type, $term, $query );
 
     wp_send_json_success( $options );
 

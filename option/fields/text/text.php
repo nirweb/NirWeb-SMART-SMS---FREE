@@ -8,7 +8,7 @@
  *
  */
 if ( ! class_exists( 'CSF_Field_text' ) ) {
-  class CSF_Field_text extends CSF_Fields {
+  class CSF_Field_text extends CSFSMARTSMS_Fields {
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );
@@ -20,7 +20,7 @@ if ( ! class_exists( 'CSF_Field_text' ) ) {
 
       echo wp_kses_post($this->field_before());
 
-      echo '<input type="'. esc_attr( $type ) .'" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'"'. wp_kses_post($this->field_attributes()) .' />';
+      echo '<input type="'. wp_kses_post( $type ) .'" name="'. wp_kses_post( $this->field_name() ) .'" value="'. wp_kses_post( $this->value ) .'"'. wp_kses_post($this->field_attributes()) .' />';
 
       echo wp_kses_post($this->field_after());
 
