@@ -37,7 +37,7 @@ if ( ! class_exists( 'CSFSMARTSMS_Abstract' ) ) {
           $field_type   = ( ! empty( $field['type'] ) ) ? $field['type'] : '';
           $field_output = ( ! empty( $field['output'] ) ) ? $field['output'] : '';
           $field_check  = ( $field_type === 'typography' || $field_output ) ? true : false;
-          $field_class  = 'CSF_Field_' . $field_type;
+          $field_class  = 'CSFSMARTSMS_Field_' . $field_type;
 
           if ( $field_type && $field_id ) {
 

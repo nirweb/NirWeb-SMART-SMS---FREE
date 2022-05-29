@@ -449,7 +449,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
 
       if ( ! empty( $fields ) ) {
         foreach ( $fields as $field ) {
-          if ( ! class_exists( 'CSF_Field_'. $field ) && class_exists( 'CSFSMARTSMS_Fields' ) ) {
+          if ( ! class_exists( 'CSFSMARTSMS_Field_'. $field ) && class_exists( 'CSFSMARTSMS_Fields' ) ) {
             self::include_plugin_file( 'fields/'. $field .'/'. $field .'.php' );
           }
         }
@@ -609,7 +609,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
       if ( ! empty( self::$fields ) ) {
         foreach ( self::$fields as $field ) {
           if ( ! empty( $field['type'] ) ) {
-            $classname = 'CSF_Field_' . $field['type'];
+            $classname = 'CSFSMARTSMS_Field_' . $field['type'];
             if ( class_exists( $classname ) && method_exists( $classname, 'enqueue' ) ) {
               $instance = new $classname( $field );
               if ( method_exists( $classname, 'enqueue' ) ) {
@@ -721,7 +721,7 @@ if ( ! class_exists( 'CFSSMARTSMS' ) ) {
         $value = ( ! isset( $value ) && isset( $field['default'] ) ) ? $field['default'] : $value;
         $value = ( isset( $field['value'] ) ) ? $field['value'] : $value;
 
-        $classname = 'CSF_Field_'. $field_type;
+        $classname = 'CSFSMARTSMS_Field_'. $field_type;
 
         if ( class_exists( $classname ) ) {
           $instance = new $classname( $field, $value, $unique, $where, $parent );
